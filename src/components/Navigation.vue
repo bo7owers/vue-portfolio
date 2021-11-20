@@ -83,7 +83,9 @@ header {
       display: flex;
       flex-flow: row wrap;
       gap: 0 2rem;
-      //   justify-content: space-around;
+      li {
+        padding: 1rem;
+      }
       & .link {
         font-weight: 500;
         color: $brand-black;
