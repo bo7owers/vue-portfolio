@@ -39,7 +39,9 @@
               >
             </li>
             <li>
-              <router-link class="link" :to="{ name: '' }">About</router-link>
+              <router-link class="link" :to="{ name: 'About' }"
+                >About</router-link
+              >
             </li>
             <li>
               <router-link class="link" :to="{ name: '' }"
@@ -51,7 +53,11 @@
             </li>
           </ul>
           <div class="close-nav">
-            <i class="fas fa-times close" tabindex="0"></i>
+            <i
+              @click="toggleSmallNav"
+              class="fas fa-times close"
+              tabindex="0"
+            ></i>
           </div>
         </div>
       </transition>
@@ -66,10 +72,15 @@ export default {
   data() {
     return {
       scrollPosition: null,
-      mobile: false,
+      mobile: true,
       mobileNav: false,
       windowWidth: null,
     };
+  },
+  methods: {
+    toggleSmallNav() {
+      this.mobileNav = !this.mobileNav;
+    },
   },
 };
 </script>
