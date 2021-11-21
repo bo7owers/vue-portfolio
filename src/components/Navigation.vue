@@ -60,6 +60,7 @@
 </template>
 
 <script>
+import "wicg-inert";
 export default {
   name: "main-nav",
   data() {
