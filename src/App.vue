@@ -1,5 +1,7 @@
 <template>
-  <a href="#main" class="skip-to-main"> Skip to main content </a>
+  <a href="#main" class="skip-to-main" v-show="!mobile">
+    Skip to main content
+  </a>
   <div class="app">
     <Navigation />
 
@@ -54,15 +56,16 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #2c3e50;
   text-align: center;
-  a {
+  a,
+  .close {
     &:visited:not(.link):not(.skip-to-main) {
-      color: $tertiary-color;
+      color: $underline-pink;
     }
     &:hover:not(.link):not(.skip-to-main),
     &:focus:not(.link):not(.skip-to-main),
     &:focus-visible:not(.link):not(.skip-to-main) {
       outline-color: $brand-blue;
-      color: $brand-pink;
+      color: $brand-blue;
       outline-style: solid;
       outline-offset: 0.1rem;
       outline-width: 4px;

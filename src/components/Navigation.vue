@@ -21,23 +21,6 @@
           <router-link class="link" :to="{ name: '' }">Contact</router-link>
         </li>
       </ul>
-      <transition name="mobile-nav">
-        <ul v-show="mobileNav" class="mobile-nav">
-          <!-- Add name for each component when they are done!! -->
-          <li>
-            <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
-          </li>
-          <li>
-            <router-link class="link" :to="{ name: '' }">About</router-link>
-          </li>
-          <li>
-            <router-link class="link" :to="{ name: '' }">Portfolio</router-link>
-          </li>
-          <li>
-            <router-link class="link" :to="{ name: '' }">Contact</router-link>
-          </li>
-        </ul>
-      </transition>
       <div class="hamburger" v-show="mobile">
         <!-- Move v-show="mobile" to the i if problems found -->
         <i
@@ -46,6 +29,32 @@
           :class="{ 'active-icon': mobileNav }"
         ></i>
       </div>
+      <transition name="mobile-nav">
+        <div class="mobile-nav">
+          <ul v-show="mobileNav" class="nav-list">
+            <!-- Add name for each component when they are done!! -->
+            <li>
+              <router-link class="link" :to="{ name: 'Home' }"
+                >Home</router-link
+              >
+            </li>
+            <li>
+              <router-link class="link" :to="{ name: '' }">About</router-link>
+            </li>
+            <li>
+              <router-link class="link" :to="{ name: '' }"
+                >Portfolio</router-link
+              >
+            </li>
+            <li>
+              <router-link class="link" :to="{ name: '' }">Contact</router-link>
+            </li>
+          </ul>
+          <div class="close-nav">
+            <i class="fas fa-times close" tabindex="0"></i>
+          </div>
+        </div>
+      </transition>
     </nav>
   </header>
 </template>
@@ -56,8 +65,8 @@ export default {
   data() {
     return {
       scrollPosition: null,
-      mobile: false,
-      mobileNav: false,
+      mobile: true,
+      mobileNav: true,
       windowWidth: null,
     };
   },
@@ -80,10 +89,6 @@ header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    & .mobile-nav {
-      flex-flow: column wrap;
-      justify-content: center;
-    }
     align-items: center;
     padding: 1rem 0;
     transition: 0.5s ease-out all;
@@ -106,17 +111,43 @@ header {
         }
       }
     }
+    // Mobile nav
+    & .mobile-nav {
+      // text-align: center;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 5rem;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 1.25rem 0rem 0 2rem;
+      z-index: 10000;
+      background: #fff;
+      border-top: 2px solid #2c2c2c;
+      border-right: 2px solid #2c2c2c;
+      .nav-list {
+        flex-flow: column wrap;
+        justify-content: start;
+        align-items: flex-start;
+        gap: 1rem 1rem;
+      }
+    }
+    //  desktop nav
     ul {
       list-style: none;
       display: flex;
-      &:not(.mobile-nav) {
-        flex-flow: row wrap;
-        gap: 0 2rem;
-      }
+      flex-flow: row wrap;
+      gap: 0 2rem;
+
       li {
         padding: 1rem;
         user-select: none;
       }
+
       & .link {
         font-weight: 500;
         color: $brand-black;
@@ -140,7 +171,7 @@ header {
       }
     }
     .hamburger {
-      i {
+      i:not(.close) {
         cursor: pointer;
         font-size: 1.5rem;
         transition: 500ms ease all;
