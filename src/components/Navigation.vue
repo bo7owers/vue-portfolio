@@ -1,6 +1,6 @@
 <template>
-  <header :class="{ 'shrink-nav': scrollPosition }">
-    <nav>
+  <header :class="{ 'shrink-nav': scrollPosition }" role="banner">
+    <nav role="navigation">
       <div class="logo">
         <img src="../assets/logo.png" alt="René Torres' logo" />
       </div>
@@ -54,6 +54,9 @@ export default {};
 
 <style lang="scss" scoped>
 $brand-black: #2c2c2c;
+$brand-pink: #e53d8d;
+$tertiary-color: #003cf0;
+$brand-blue: #005999;
 
 header {
   background: #fff;
@@ -77,6 +80,7 @@ header {
       img {
         width: 5rem;
         user-select: none;
+        transition: 0.5s ease-out all;
       }
     }
     ul {
@@ -92,6 +96,26 @@ header {
         font-weight: 500;
         color: $brand-black;
         text-decoration: none;
+        border-bottom: 3px solid transparent;
+        transition: 210ms ease-in all;
+        &:hover,
+        &:focus,
+        &:focus-visible {
+          color: $brand-blue;
+          border-color: $brand-pink;
+          border-bottom-left-radius: 2px;
+          border-bottom-right-radius: 2px;
+        }
+        &:focus,
+        &:focus-visible {
+          border-color: $brand-pink;
+          // outline-color: $brand-blue;
+          outline: $brand-blue solid 2px;
+          // outline-style: solid;
+          outline-offset: 0.5rem;
+          // outline-width: 4px;
+          border-radius: 2px;
+        }
       }
     }
   }
