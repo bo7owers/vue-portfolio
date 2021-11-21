@@ -1,8 +1,10 @@
 <template>
-  <header :class="{ 'shrink-nav': scrollPosition }" role="banner">
+  <header :class="{ 'shrink-nav': scrollPosition }">
     <nav role="navigation">
       <div class="logo">
-        <img src="../assets/logo.png" alt="René Torres' logo" />
+        <router-link class="link" :to="{ name: 'Home' }">
+          <img src="../assets/logo.png" alt="René Torres' logo" />
+        </router-link>
       </div>
       <ul v-show="!mobile" class="navigation">
         <!-- Add name for each component when they are done!! -->
@@ -54,9 +56,10 @@ export default {};
 
 <style lang="scss" scoped>
 $brand-black: #2c2c2c;
-$brand-pink: #e53d8d;
+$brand-pink: #654691;
+$underline-pink: #ed78b1;
 $tertiary-color: #003cf0;
-$brand-blue: #005999;
+$brand-blue: #285b86;
 
 header {
   background: #fff;
@@ -77,10 +80,16 @@ header {
     }
 
     .logo {
-      img {
+      .link > img,
+      .link {
         width: 5rem;
+        border-radius: 1rem;
         user-select: none;
-        transition: 0.5s ease-out all;
+        transition: 100ms ease-out all;
+        &:focus,
+        &:focus-visible {
+          outline: #2c2c2c solid 3px;
+        }
       }
     }
     ul {
@@ -102,18 +111,14 @@ header {
         &:focus,
         &:focus-visible {
           color: $brand-blue;
-          border-color: $brand-pink;
+          border-color: $underline-pink;
           border-bottom-left-radius: 2px;
           border-bottom-right-radius: 2px;
         }
         &:focus,
         &:focus-visible {
-          border-color: $brand-pink;
-          // outline-color: $brand-blue;
           outline: $brand-blue solid 2px;
-          // outline-style: solid;
           outline-offset: 0.5rem;
-          // outline-width: 4px;
           border-radius: 2px;
         }
       }
