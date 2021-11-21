@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ 'shrink-nav': scrollPosition }">
+  <header>
     <nav role="navigation">
       <div class="logo">
         <router-link class="link" :to="{ name: 'Home' }">
@@ -73,7 +73,7 @@ export default {
   name: "main-nav",
   data() {
     return {
-      scrollPosition: null,
+      scrolledNavigation: null,
       mobile: null,
       mobileNav: null,
       windowWidth: null,
