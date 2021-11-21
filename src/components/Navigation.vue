@@ -167,10 +167,11 @@ header {
       & i {
         cursor: pointer;
         font-size: 1.5rem;
-        transition: 500ms ease all;
-      }
-      .active-icon {
-        transform: rotate(180deg);
+        transform: rotate(90deg);
+        transition: 3000ms ease all;
+        &.active-icon {
+          transform: rotate(180deg);
+        }
       }
     }
     //  desktop nav
