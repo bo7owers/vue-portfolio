@@ -30,8 +30,8 @@
         ></i>
       </div>
       <transition name="mobile-nav">
-        <div class="mobile-nav">
-          <ul v-show="mobileNav" class="nav-list">
+        <div v-show="mobileNav" class="mobile-nav">
+          <ul class="nav-list">
             <!-- Add name for each component when they are done!! -->
             <li>
               <router-link class="link" :to="{ name: 'Home' }"
@@ -65,8 +65,8 @@ export default {
   data() {
     return {
       scrollPosition: null,
-      mobile: true,
-      mobileNav: true,
+      mobile: false,
+      mobileNav: false,
       windowWidth: null,
     };
   },
