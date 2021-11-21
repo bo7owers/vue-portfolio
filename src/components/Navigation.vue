@@ -21,14 +21,6 @@
           <router-link class="link" :to="{ name: '' }">Contact</router-link>
         </li>
       </ul>
-      <div class="hamburger" v-show="mobile">
-        <!-- Move v-show="mobile" to the i if problems found -->
-        <i
-          @click="toggleSmallNav"
-          class="fas fa-ellipsis-v"
-          :class="{ 'active-icon': mobileNav }"
-        ></i>
-      </div>
       <transition name="mobile-nav">
         <ul v-show="mobileNav" class="mobile-nav">
           <!-- Add name for each component when they are done!! -->
@@ -46,12 +38,30 @@
           </li>
         </ul>
       </transition>
+      <div class="hamburger" v-show="mobile">
+        <!-- Move v-show="mobile" to the i if problems found -->
+        <i
+          @click="toggleSmallNav"
+          class="fas fa-ellipsis-v"
+          :class="{ 'active-icon': mobileNav }"
+        ></i>
+      </div>
     </nav>
   </header>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "main-nav",
+  data() {
+    return {
+      scrollPosition: null,
+      mobile: false,
+      mobileNav: false,
+      windowWidth: null,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -70,6 +80,10 @@ header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    & .mobile-nav {
+      flex-flow: column wrap;
+      justify-content: center;
+    }
     align-items: center;
     padding: 1rem 0;
     transition: 0.5s ease-out all;
@@ -95,8 +109,10 @@ header {
     ul {
       list-style: none;
       display: flex;
-      flex-flow: row wrap;
-      gap: 0 2rem;
+      &:not(.mobile-nav) {
+        flex-flow: row wrap;
+        gap: 0 2rem;
+      }
       li {
         padding: 1rem;
         user-select: none;
@@ -121,6 +137,16 @@ header {
           outline-offset: 0.5rem;
           border-radius: 2px;
         }
+      }
+    }
+    .hamburger {
+      i {
+        cursor: pointer;
+        font-size: 1.5rem;
+        transition: 500ms ease all;
+      }
+      .active-icon {
+        transform: rotate(180deg);
       }
     }
   }
