@@ -76,6 +76,7 @@ header {
     .logo {
       img {
         width: 5rem;
+        user-select: none;
       }
     }
     ul {
@@ -85,6 +86,7 @@ header {
       gap: 0 2rem;
       li {
         padding: 1rem;
+        user-select: none;
       }
       & .link {
         font-weight: 500;
