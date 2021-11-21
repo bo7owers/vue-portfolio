@@ -58,7 +58,8 @@ body {
   color: #2c3e50;
   text-align: center;
   a,
-  .close {
+  .close,
+  .hamburger i {
     &:visited:not(.link):not(.skip-to-main) {
       color: $visited;
     }

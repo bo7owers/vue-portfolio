@@ -27,6 +27,7 @@
           @click="toggleSmallNav"
           class="fas fa-ellipsis-v"
           :class="{ 'active-icon': mobileNav }"
+          tabindex="0"
         ></i>
       </div>
       <transition name="mobile-nav">
@@ -56,6 +57,7 @@
             <i
               @click="toggleSmallNav"
               class="fas fa-times close"
+              :class="{ 'active-icon': mobileNav }"
               tabindex="0"
             ></i>
           </div>
@@ -72,14 +74,29 @@ export default {
   data() {
     return {
       scrollPosition: null,
-      mobile: true,
-      mobileNav: false,
+      mobile: null,
+      mobileNav: null,
       windowWidth: null,
     };
+  },
+  created() {
+    window.addEventListener("resize", this.checkScreenSize);
+    this.checkScreenSize();
   },
   methods: {
     toggleSmallNav() {
       this.mobileNav = !this.mobileNav;
+    },
+
+    checkScreenSize() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 750) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
+      return;
     },
   },
 };
@@ -147,6 +164,14 @@ header {
         align-items: flex-start;
         gap: 1rem 1rem;
       }
+      & i {
+        cursor: pointer;
+        font-size: 1.5rem;
+        transition: 500ms ease all;
+      }
+      .active-icon {
+        transform: rotate(180deg);
+      }
     }
     //  desktop nav
     ul {
@@ -183,7 +208,7 @@ header {
       }
     }
     .hamburger {
-      i:not(.close) {
+      i {
         cursor: pointer;
         font-size: 1.5rem;
         transition: 500ms ease all;
