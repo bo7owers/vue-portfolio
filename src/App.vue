@@ -25,7 +25,8 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 $brand-black: #2c2c2c;
-$brand-pink: #654691;
+$visited: #9700a8;
+$brand-pink: $visited;
 $underline-pink: #ed78b1;
 $tertiary-color: #003cf0;
 $brand-blue: #285b86;
@@ -59,7 +60,7 @@ body {
   a,
   .close {
     &:visited:not(.link):not(.skip-to-main) {
-      color: $underline-pink;
+      color: $visited;
     }
     &:hover:not(.link):not(.skip-to-main),
     &:focus:not(.link):not(.skip-to-main),
