@@ -1,37 +1,33 @@
 <template>
   <header>
-    <nav role="navigation">
+    <div class="interactions">
       <div class="logo">
         <router-link class="link" :to="{ name: 'Home' }">
           <img src="../assets/logo.png" alt="René Torres' logo" />
         </router-link>
       </div>
-      <ul v-show="!mobile" class="navigation">
-        <!-- Add name for each component when they are done!! -->
-        <li>
-          <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
-        </li>
-        <li>
-          <router-link class="link" :to="{ name: 'About' }">About</router-link>
-        </li>
-        <li>
-          <router-link class="link" :to="{ name: '' }">Portfolio</router-link>
-        </li>
-        <li>
-          <router-link class="link" :to="{ name: '' }">Contact</router-link>
-        </li>
-      </ul>
-      <div class="hamburger" v-show="mobile">
+      <a
+        class="hamburger"
+        v-show="mobile"
+        @click="toggleSmallNav"
+        @keypress.enter="toggleSmallNav"
+        @keypress.space="toggleSmallNav"
+        tabindex="0"
+        aria-label="Mobile Navigation"
+        :aria-expanded="ariaExpanded"
+      >
+        <!-- Maybe tabindex="0" for hamburger? -->
         <!-- Move v-show="mobile" to the i if problems found -->
-        <i
-          @click="toggleSmallNav"
-          class="fas fa-ellipsis-v"
-          :class="{ 'active-icon': mobileNav }"
-          tabindex="0"
-        ></i>
-      </div>
+        <i class="fas fa-ellipsis-v" :class="{ 'active-icon': mobileNav }"></i>
+      </a>
+    </div>
+    <nav role="navigation">
       <transition name="mobile-nav">
-        <div v-show="mobileNav" class="mobile-nav">
+        <div
+          v-show="mobileNav"
+          class="mobile-nav"
+          aria-label="Mobile navigation"
+        >
           <ul class="nav-list">
             <!-- Add name for each component when they are done!! -->
             <li>
@@ -56,13 +52,34 @@
           <div class="close-nav">
             <i
               @click="toggleSmallNav"
+              @keypress.enter="toggleSmallNav"
+              @keypress.space="toggleSmallNav"
               class="fas fa-times close"
               :class="{ 'active-icon': mobileNav }"
               tabindex="0"
+              title="Close"
+              aria-label="Close navigation"
             ></i>
           </div>
         </div>
       </transition>
+    </nav>
+    <nav v-show="!mobile">
+      <ul class="navigation">
+        <!-- Add name for each component when they are done!! -->
+        <li>
+          <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+        </li>
+        <li>
+          <router-link class="link" :to="{ name: 'About' }">About</router-link>
+        </li>
+        <li>
+          <router-link class="link" :to="{ name: '' }">Portfolio</router-link>
+        </li>
+        <li>
+          <router-link class="link" :to="{ name: '' }">Contact</router-link>
+        </li>
+      </ul>
     </nav>
   </header>
 </template>
@@ -73,7 +90,7 @@ export default {
   name: "main-nav",
   data() {
     return {
-      scrolledNavigation: null,
+      ariaExpanded: false,
       mobile: null,
       mobileNav: null,
       windowWidth: null,
@@ -86,6 +103,7 @@ export default {
   methods: {
     toggleSmallNav() {
       this.mobileNav = !this.mobileNav;
+      this.mobileNav ? (this.ariaExpanded = true) : (this.ariaExpanded = false);
     },
 
     checkScreenSize() {
@@ -114,6 +132,31 @@ header {
   z-index: 1000;
   width: 100%;
   transition: 0.5s ease-in all;
+  .interactions {
+    .logo {
+      .link > img,
+      .link {
+        width: 5rem;
+        border-radius: 1rem;
+        user-select: none;
+        transition: 100ms ease-out all;
+        &:focus,
+        &:focus-visible {
+          outline: #2c2c2c solid 3px;
+        }
+      }
+    }
+    .hamburger {
+      i {
+        cursor: pointer;
+        font-size: 1.5rem;
+        transition: 500ms ease all;
+      }
+      .active-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
   nav {
     display: flex;
     flex-flow: row wrap;
@@ -208,15 +251,16 @@ header {
         }
       }
     }
-    .hamburger {
-      i {
-        cursor: pointer;
-        font-size: 1.5rem;
-        transition: 500ms ease all;
-      }
-      .active-icon {
-        transform: rotate(180deg);
-      }
+    .mobile-nav-enter-active,
+    .mobile-nav-leave-active {
+      transition: 800ms ease all;
+    }
+    .mobile-nav-enter-from,
+    .mobile-nav-leave-to {
+      transform: translateX(-100%);
+    }
+    .mobile-nav-enter-to {
+      transform: translateX(0);
     }
   }
 }
