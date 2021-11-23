@@ -25,6 +25,8 @@
         <!-- Move v-show="mobile" to the i if problems found -->
         <i
           @click="toggleSmallNav"
+          @keypress.enter="toggleSmallNav"
+          @keypress.space="toggleSmallNav"
           class="fas fa-ellipsis-v"
           :class="{ 'active-icon': mobileNav }"
           tabindex="0"
@@ -35,26 +37,49 @@
           <ul class="nav-list">
             <!-- Add name for each component when they are done!! -->
             <li>
-              <router-link class="link" :to="{ name: 'Home' }"
+              <router-link
+                @click="toggleSmallNav"
+                @keypress.enter="toggleSmallNav"
+                @keypress.space="toggleSmallNav"
+                class="link"
+                :to="{ name: 'Home' }"
                 >Home</router-link
               >
             </li>
-            <li>
-              <router-link class="link" :to="{ name: 'About' }"
+            <li @keypress.enter="toggleSmallNav">
+              <router-link
+                @click="toggleSmallNav"
+                @keypress.space="toggleSmallNav"
+                class="link"
+                :to="{ name: 'About' }"
                 >About</router-link
               >
             </li>
             <li>
-              <router-link class="link" :to="{ name: '' }"
+              <router-link
+                @click="toggleSmallNav"
+                @keypress.enter="toggleSmallNav"
+                @keypress.space="toggleSmallNav"
+                class="link"
+                :to="{ name: '' }"
                 >Portfolio</router-link
               >
             </li>
             <li>
-              <router-link class="link" :to="{ name: '' }">Contact</router-link>
+              <router-link
+                @click="toggleSmallNav"
+                @keypress.enter="toggleSmallNav"
+                @keypress.space="toggleSmallNav"
+                class="link"
+                :to="{ name: '' }"
+                >Contact</router-link
+              >
             </li>
           </ul>
           <div class="close-nav">
             <i
+              @keypress="toggleSmallNav"
+              @keypress.space="toggleSmallNav"
               @click="toggleSmallNav"
               class="fas fa-times close"
               :class="{ 'active-icon': mobileNav }"
