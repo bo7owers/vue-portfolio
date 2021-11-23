@@ -46,9 +46,10 @@
                 >Home</router-link
               >
             </li>
-            <li @keypress.enter="toggleSmallNav">
+            <li>
               <router-link
                 @click="toggleSmallNav"
+                @keypress.enter="toggleSmallNav"
                 @keypress.space="toggleSmallNav"
                 class="link"
                 :to="{ name: 'About' }"
