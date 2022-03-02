@@ -164,6 +164,8 @@
 			.logo {
 				.link > img,
 				.link {
+					display: inline-block;
+					height: 5em;
 					width: 5rem;
 					border-radius: 1rem;
 					user-select: none;
