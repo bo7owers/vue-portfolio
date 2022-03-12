@@ -1,27 +1,27 @@
 @use '../vars/colors' as c;
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: #2c3e50;
-    a,
-    .close,
-    .hamburger i {
-        &:visited:not(.link):not(.skip-to-main) {
-            color: c.$visited;
-        }
-        &:hover:not(.link):not(.skip-to-main),
-        &:focus:not(.link):not(.skip-to-main),
-        &:focus-visible:not(.link):not(.skip-to-main) {
-            outline-color: c.$brand-blue;
-            color: c.$brand-blue;
-            outline-style: solid;
-            outline-offset: 0.1rem;
-            outline-width: 4px;
-            border-radius: 2px;
-            &:visited {
-                color: c.$visited;
-            }
-        }
-    }
+	font-family: 'Montserrat', sans-serif;
+	color: #2c3e50;
+}
+a,
+.close,
+.hamburger i {
+	&:visited:not(.link):not(.skip-to-main) {
+		color: c.$visited;
+	}
+	&:hover:not(.link):not(.skip-to-main),
+	&:focus:not(.link):not(.skip-to-main),
+	&:focus-visible:not(.link):not(.skip-to-main) {
+		outline-color: c.$brand-blue;
+		color: c.$brand-blue;
+		outline-style: solid;
+		outline-offset: 0.1rem;
+		outline-width: 4px;
+		border-radius: 2px;
+		&:visited {
+			color: c.$visited;
+		}
+	}
 }
 
 h1,
@@ -30,39 +30,5 @@ h3,
 h4,
 h5,
 h6 {
-    color: c.$brand-blue;
-}
-
-ul {
-    list-style: none;
-    display: flex;
-    flex-flow: row wrap;
-    gap: 0 2rem;
-
-    li {
-        padding: 1rem;
-        user-select: none;
-    }
-
-    & .link {
-        font-weight: 500;
-        color: $brand-black;
-        text-decoration: none;
-        border-bottom: 3px solid transparent;
-        transition: 210ms ease-in all;
-        &:hover,
-        &:focus,
-        &:focus-visible {
-            color: $brand-blue;
-            border-color: $underline-pink;
-            border-bottom-left-radius: 2px;
-            border-bottom-right-radius: 2px;
-        }
-        &:focus,
-        &:focus-visible {
-            outline: $brand-blue solid 2px;
-            outline-offset: 0.5rem;
-            border-radius: 2px;
-        }
-    }
+	color: c.$brand-blue;
 }
