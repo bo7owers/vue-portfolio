@@ -1,1 +1,41 @@
-/*# sourceMappingURL=styles.css.map */
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #2c3e50;
+}
+body a:visited:not(.link):not(.skip-to-main),
+body .close:visited:not(.link):not(.skip-to-main),
+body .hamburger i:visited:not(.link):not(.skip-to-main) {
+  color: #9700a8;
+}
+body a:hover:not(.link):not(.skip-to-main), body a:focus:not(.link):not(.skip-to-main), body a:focus-visible:not(.link):not(.skip-to-main),
+body .close:hover:not(.link):not(.skip-to-main),
+body .close:focus:not(.link):not(.skip-to-main),
+body .close:focus-visible:not(.link):not(.skip-to-main),
+body .hamburger i:hover:not(.link):not(.skip-to-main),
+body .hamburger i:focus:not(.link):not(.skip-to-main),
+body .hamburger i:focus-visible:not(.link):not(.skip-to-main) {
+  outline-color: #285b86;
+  color: #285b86;
+  outline-style: solid;
+  outline-offset: 0.1rem;
+  outline-width: 4px;
+  border-radius: 2px;
+}
+body a:hover:not(.link):not(.skip-to-main):visited, body a:focus:not(.link):not(.skip-to-main):visited, body a:focus-visible:not(.link):not(.skip-to-main):visited,
+body .close:hover:not(.link):not(.skip-to-main):visited,
+body .close:focus:not(.link):not(.skip-to-main):visited,
+body .close:focus-visible:not(.link):not(.skip-to-main):visited,
+body .hamburger i:hover:not(.link):not(.skip-to-main):visited,
+body .hamburger i:focus:not(.link):not(.skip-to-main):visited,
+body .hamburger i:focus-visible:not(.link):not(.skip-to-main):visited {
+  color: #9700a8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #285b86;
+}/*# sourceMappingURL=styles.css.map */

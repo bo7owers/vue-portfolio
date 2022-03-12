@@ -24,17 +24,12 @@
 <style lang="scss">
 	@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-	$brand-black: #2c2c2c;
-	$visited: #9700a8;
-	$underline-pink: #ed78b1;
-	$brand-pink: $underline-pink;
-	$tertiary-color: #003cf0;
-	$brand-blue: #285b86;
 	* {
 		background: #fff;
 	}
 	.skip-to-main {
-		background: $underline-pink;
+		// background: $underline-pink;
+		background: #ed78b1;
 		color: #000;
 		height: 30px;
 		top: 0;
@@ -53,40 +48,7 @@
 			transform: translateY(0%);
 		}
 	}
-	body {
-		font-family: 'Montserrat', sans-serif;
-		color: #2c3e50;
-		text-align: center;
-		a,
-		.close,
-		.hamburger i {
-			&:visited:not(.link):not(.skip-to-main) {
-				color: $visited;
-			}
-			&:hover:not(.link):not(.skip-to-main),
-			&:focus:not(.link):not(.skip-to-main),
-			&:focus-visible:not(.link):not(.skip-to-main) {
-				outline-color: $brand-blue;
-				color: $brand-blue;
-				outline-style: solid;
-				outline-offset: 0.1rem;
-				outline-width: 4px;
-				border-radius: 2px;
-				&:visited {
-					color: $visited;
-				}
-			}
-		}
-	}
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		color: $brand-blue;
-	}
 	// #app {
 	// }
 </style>

@@ -137,12 +137,6 @@
 </script>
 
 <style lang="scss" scoped>
-	$brand-black: #2c2c2c;
-	$brand-pink: #654691;
-	$underline-pink: #ed78b1;
-	$tertiary-color: #003cf0;
-	$brand-blue: #285b86;
-
 	header {
 		background: #fff;
 		z-index: 1000;
