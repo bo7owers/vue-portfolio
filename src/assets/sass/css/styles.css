@@ -158,4 +158,111 @@ header nav .hamburger i {
 }
 header nav .hamburger .active-icon {
   transform: rotate(180deg);
+}
+
+/* *************************************************************
+ * GET THE SVG CODE
+ * ************************************************************/
+/* *************************************************************
+ * GET THE SVG CODE
+ * ************************************************************/
+/* *************************************************************
+ * GET THE SVG CODE
+ * ************************************************************/
+/* *************************************************************
+ * GET THE SVG CODE
+ * ************************************************************/
+/* *************************************************************
+ * GET THE SVG CODE
+ * ************************************************************/
+/* *************************************************************
+ * GET THE SVG CODE
+ * ************************************************************/
+/* *************************************************************
+ * GET THE SVG CODE
+ * ************************************************************/
+/* *******************************************************************
+ * BUTTON ENGINE
+ * ***************************************************************** */
+button[class*=icon-],
+input[type=button][class*=icon-],
+input[type=file][class*=icon-] {
+  /* I get output to the CSS file */
+  background-color: #eeeeee;
+  height: 45px;
+  position: relative;
+  border-color: transparent;
+  text-align: left;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+button[class*=icon-]:before,
+input[type=button][class*=icon-]:before,
+input[type=file][class*=icon-]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: transparent solid 2px;
+  border-radius: 0px !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 0px;
+  left: 0px;
+}
+button[class*=icon-]:hover,
+input[type=button][class*=icon-]:hover,
+input[type=file][class*=icon-]:hover {
+  background-color: #dddddd;
+  border-color: transparent;
+}
+button[class*=icon-]:focus,
+input[type=button][class*=icon-]:focus,
+input[type=file][class*=icon-]:focus {
+  background-color: #dddddd;
+  border-color: transparent;
+}
+
+button.icon-xs {
+  display: inline;
+  text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+button.icon-md,
+button.icon-lg,
+button.icon-xl {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button.icon-xs {
+  width: 45px;
+  padding-left: 0px;
+}
+
+/* *************************************************************************
+* -------------------------------- ICONPACK LIST generation-------------------
+*   
+* ************************************************************************/
+/* *************************************************************
+ * adjust size
+ * ************************************************************/
+/* *************************************************************************
+ * -------------------------------- generate icon extends-------------------
+ * usage @include iconpack
+ * ************************************************************************/
+.icon-dyk::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #b4b2b2;
+  border-width: 0px;
+  top: 0px;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.08 23.04' style='fill:#9700a8;'%3E%3Cpath d='M132.27,77.27v2.64a12,12,0,0,1-2.63,4.42,5.77,5.77,0,0,0-1.59,4.26,1.3,1.3,0,0,1,.85,1.82,1.32,1.32,0,0,0-.07.62,1.33,1.33,0,0,1-1,1.7c-.11,0-.26,0-.32.1-.37.48-.73,1-1.09,1.48h-4.32a5,5,0,0,0-1.8-1.7,1.32,1.32,0,0,1-.72-1.33,1.61,1.61,0,0,0-.13-.75,1.37,1.37,0,0,1,.36-1.73,1.12,1.12,0,0,0,.59-1.42,7.86,7.86,0,0,0-2.19-3.88,6.64,6.64,0,0,1-1.67-2.74c-.1-.37-.21-.73-.32-1.09V76.91s.11-.07.12-.12a7,7,0,0,1,4.39-4.9,16.73,16.73,0,0,1,1.85-.62h3l1,.25c2.32.62,4.25,1.76,5.2,4.11C132,76.16,132.09,76.72,132.27,77.27Zm-7.41,6.12c-1-.39-1.85-.68-2.64-1a.89.89,0,0,1-.46-.64c0-.18.23-.45.43-.57.71-.39,1.44-.74,2.24-1.14a14.28,14.28,0,0,1-1.43-.92c-.17-.13-.33-.51-.26-.64a.93.93,0,0,1,.68-.4,1.71,1.71,0,0,1,.74.32c.6.36,1.21.72,1.79,1.11.23.16.53.45.5.63s-.34.49-.58.63c-.6.33-1.24.6-2,1,.85.33,1.57.58,2.26.88s.75.82.13,1.23a5.46,5.46,0,0,0-.68.47c-.16.15-.38.36-.39.55,0,1,0,2.06,0,3.11h1.31a12.55,12.55,0,0,1,.79-2.62,24.09,24.09,0,0,1,2.19-3,5.92,5.92,0,0,0,.33-7.23,6.31,6.31,0,0,0-5.07-2.6,6.61,6.61,0,0,0-6.12,2.65,5.26,5.26,0,0,0-.89,4.68,10.11,10.11,0,0,0,2,3.36,16.35,16.35,0,0,1,1.71,2.72,9,9,0,0,1,.48,2H124c0-1.1,0-2.16,0-3.22C124,84.11,124,83.58,124.86,83.39Z' transform='translate(-116.19 -71.27)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
 }/*# sourceMappingURL=styles.css.map */

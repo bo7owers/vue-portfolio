@@ -1,5 +1,4 @@
 @use '../../../vars/colors' as *;
-@use './_mixins' as *;
 @use './_iconpack-toolbar' as *;
 @use './_iconpack-snap' as *;
 @use './_iconpack-LOM' as *;
@@ -32,7 +31,7 @@ $mixin-def-color: $tertiary-color;
 	@include getIconsUsers($name, $icon-color);
 	@include getIconsRibbons($name, $icon-color);
 	@include getIconsFontawesome($name, $icon-color);
-	@include getIconsNew($name, $icon-color);
+	// @include getIconsNew($name, $icon-color);
 }
 
 /* *************************************************************

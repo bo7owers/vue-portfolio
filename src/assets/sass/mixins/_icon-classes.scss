@@ -1,5 +1,5 @@
-@use '../../vars/colors' as c;
-@use '../icons/iconpacks/mixins' as m;
+@use '../vars/colors' as c;
+@use './icons/iconpacks/mixins' as *;
 @mixin iconClass($icon-shape, $icon-color) {
 	.icon-#{$icon-shape} {
 		&::before {
