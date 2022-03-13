@@ -1,12 +1,2 @@
-//@use "./../_vars";
-@import "./iconpacks/_iconpacks";
-
-
-// WARNING ICA and SNOP
-
-
-
-
-
-
-
+// icons from the Snap! Framework https://github.com/snap-framework/snap/tree/master/core/scss/icons
+@forward './iconpacks/_iconpacks';

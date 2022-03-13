@@ -1,41 +1,43 @@
-@import "./iconpacks/_iconpacks";
+// icons from the Snap! Framework https://github.com/snap-framework/snap/tree/master/core/scss/icons
+@use './iconpacks/_iconpacks' as *;
+@use '../../vars/colors' as c;
+$ribbon-bg-color: c.$brand-blue;
 
 @function encodecolor($string) {
-  @if type-of($string) == 'color' and str-index(#{$string}, '#') == 1 {
-    $hex: str-slice(ie-hex-str($string), 4);
-    $string: unquote('#{$hex}');
+	@if type-of($string) == 'color' and str-index(#{$string}, '#') == 1 {
+		$hex: str-slice(ie-hex-str($string), 4);
+		$string: unquote('#{$hex}');
 
-    @return '%23' + $string;
-  }
+		@return '%23' + $string;
+	}
 
-  @return $string;
-} 
-
-@mixin getcode($name, $new-color){
-  $icon-color:encodecolor($new-color);
-  @include getIconsToolbar($name, $icon-color);
+	@return $string;
 }
 
-@mixin toolbar-icons($icon){
-  #wb-lng li>a.#{$icon}{
-    position:relative;
-      background-image:none!important;
-      &:before{
-          content:'';
-          display:block;
-          position:absolute;
-          background-size: contain;
-          background-position: center;
-          background-repeat:no-repeat;
-          @include getcode($icon, $toolbar-icon-color);
-          @include iconsize(30px, 10px);
-  
-      }
-      &:focus:before, &:hover:before{
-          @include getcode($icon, $toolbar-icon-color-hover);
-  
-      }
-  }
+@mixin getcode($name, $new-color) {
+	$icon-color: encodecolor($new-color);
+	@include getIconsToolbar($name, $icon-color);
+}
+
+@mixin toolbar-icons($icon) {
+	#wb-lng li > a.#{$icon} {
+		position: relative;
+		background-image: none !important;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			@include getcode($icon, $toolbar-icon-color);
+			@include iconsize(30px, 10px);
+		}
+		&:focus:before,
+		&:hover:before {
+			@include getcode($icon, $toolbar-icon-color-hover);
+		}
+	}
 }
 
 @include toolbar-icons(home);
@@ -46,36 +48,30 @@
 @include toolbar-icons(sitemap);
 @include toolbar-icons(quit);
 
-
-
-
-.LOM-icon{
-  
-
-  &:before{
-    content: '';
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 1.3em;
-    height: 1.3em;
-    margin: 2px;
-  }
+.LOM-icon {
+	&:before {
+		content: '';
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 1.3em;
+		height: 1.3em;
+		margin: 2px;
+	}
 }
-html:not(.LOM-pageEdit-active) .LOM-icon{
-  white-space: nowrap;
-  text-indent: 9999px;
-  height: 1.5em;
-  width: 1.5em;
-  display: inline-block;
-  background-color: $ribbon-bg-color;
-  &:before{
-    
-    display: block;
-    position: absolute;
-  }
+html:not(.LOM-pageEdit-active) .LOM-icon {
+	white-space: nowrap;
+	text-indent: 9999px;
+	height: 1.5em;
+	width: 1.5em;
+	display: inline-block;
+	background-color: $ribbon-bg-color;
+	&:before {
+		display: block;
+		position: absolute;
+	}
 }
-html.LOM-pageEdit-active .LOM-icon:before{
-  display: inline-block;
-  position: relative;
-  background-color: $ribbon-bg-color;
+html.LOM-pageEdit-active .LOM-icon:before {
+	display: inline-block;
+	position: relative;
+	background-color: $ribbon-bg-color;
 }
