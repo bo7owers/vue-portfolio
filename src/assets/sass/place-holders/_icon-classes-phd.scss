@@ -1,4 +1,5 @@
 @use '../vars/colors' as c;
+@use '../mixins/icons/iconpacks/mixins' as m;
 %icon-class {
 	margin: 0 0 0 60px;
 	&::before {
@@ -19,5 +20,12 @@
 		background-position: center;
 		background-color: c.$icon-bg-color;
 		border-radius: 50%;
+	}
+}
+
+.icon-tip {
+	@extend %icon-class;
+	&::before {
+		@include m.getcode(dyk, c.$so-white);
 	}
 }
