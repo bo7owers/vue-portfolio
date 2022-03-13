@@ -1,12 +1,35 @@
-$brand-black: #2c2c2c;
-$visited: #9700a8;
-$underline-pink: #ed78b1;
-$brand-pink: $underline-pink;
-$tertiary-color: #003cf0;
-$brand-blue: #285b86;
-$so-white: #fefefe;
+// ----- Colours
 
-// ----- background colors
+$mainVars: (
+	brand-black: '#2c2c2c',
+	visited: '#9700a8',
+	brand-pink: '#ed78b1',
+	tertiary-color: '#003cf0',
+	brand-blue: '#285b86',
+	so-white: '#fefefe',
+	underline-pink: '#ed78b1',
+);
+
+@mixin cssVars($prop, $var) {
+	#{$prop}: var(--#{$var});
+}
+
+// add css custom props from sass vars
+:root {
+	@each $colour-name, $val in $mainVars {
+		--#{$colour-name}: #{$val};
+	}
+}
+
+// Sass vars
+$brand-black: '#2c2c2c';
+$visited: '#9700a8';
+$brand-pink: '#ed78b1';
+$tertiary-color: '#003cf0';
+$brand-blue: '#285b86';
+$so-white: '#fefefe';
+$underline-pink: '#{$brand-pink}';
+
 $btn-bg-color: #eeeeee; //background for the button
 $btn-bg-color-hover: #dddddd;
 $btn-bg-color-focus: #dddddd;
