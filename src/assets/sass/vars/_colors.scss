@@ -10,11 +10,6 @@ $mainVars: (
 	underline-pink: '#ed78b1',
 );
 
-@mixin cssVars($prop, $var) {
-	#{$prop}: map-get($map: $mainVars, $key: $var);
-	#{$prop}: var(--#{$var});
-}
-
 // add css custom props from sass vars
 :root {
 	@each $colour-name, $val in $mainVars {

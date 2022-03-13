@@ -1,7 +1,8 @@
 @use '../vars/colors' as c;
+@use '../mixins/var-backups' as v;
 body {
 	font-family: 'Montserrat', sans-serif;
-	@include c.cssVars(color, brand-black);
+	@include v.cssVars(color, brand-black);
 }
 a,
 .close,
@@ -30,5 +31,5 @@ h3,
 h4,
 h5,
 h6 {
-	@include c.cssVars(color, brand-blue);
+	@include v.cssVars(color, brand-blue);
 }
