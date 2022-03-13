@@ -1,0 +1,23 @@
+@use '../vars/colors' as c;
+%icon-class {
+	margin: 0 0 0 60px;
+	&::before {
+		//---------- icon position
+		content: '';
+		position: relative;
+		display: block;
+		top: 27px;
+		left: -48px;
+		width: 40px;
+		height: 40px;
+		//---------- icon of choice
+		// @include getcode($name, $new-color);
+
+		//--------- icon bg
+		background-repeat: no-repeat;
+		background-size: 40%;
+		background-position: center;
+		background-color: c.$icon-bg-color;
+		border-radius: 50%;
+	}
+}

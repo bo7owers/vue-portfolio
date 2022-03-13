@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
 		<HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-		<p class="icon-dyk">Testing this icon</p>
+		<p class="icon-tip">Testing this icon</p>
 	</div>
 </template>
 

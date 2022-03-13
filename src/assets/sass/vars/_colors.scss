@@ -4,6 +4,7 @@ $underline-pink: #ed78b1;
 $brand-pink: $underline-pink;
 $tertiary-color: #003cf0;
 $brand-blue: #285b86;
+$so-white: #fefefe;
 
 // ----- background colors
 $btn-bg-color: #eeeeee; //background for the button
@@ -25,4 +26,4 @@ $big-padding: 15px;
 $small-padding: 5px;
 
 //-------- ICONS
-$icon-bg-color: #b4b2b2;
+$icon-bg-color: $brand-blue;
