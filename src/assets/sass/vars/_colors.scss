@@ -11,6 +11,7 @@ $mainVars: (
 );
 
 @mixin cssVars($prop, $var) {
+	#{$prop}: map-get($map: $mainVars, $key: $var);
 	#{$prop}: var(--#{$var});
 }
 
