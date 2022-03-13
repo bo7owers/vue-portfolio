@@ -15,6 +15,7 @@ img {
   --brand-blue: #285b86;
   --so-white: #fefefe;
   --underline-pink: #ed78b1;
+  --icon-bg-color: var(--brand-blue);
 }
 
 body {
@@ -36,7 +37,9 @@ a:hover:not(.link):not(.skip-to-main), a:focus:not(.link):not(.skip-to-main), a:
 .hamburger i:focus:not(.link):not(.skip-to-main),
 .hamburger i:focus-visible:not(.link):not(.skip-to-main) {
   outline-color: "#285b86";
+  outline-color: var(--brand-blue);
   color: "#285b86";
+  color: var(--brand-blue);
   outline-style: solid;
   outline-offset: 0.1rem;
   outline-width: 4px;
@@ -117,7 +120,8 @@ h6 {
 }
 
 header {
-  background: #fff;
+  background: "#fefefe";
+  background: var(--so-white);
   z-index: 1000;
   width: 100%;
   transition: 0.5s ease-in all;
@@ -152,7 +156,10 @@ header nav .logo .link {
 header nav .logo .link > img:focus, header nav .logo .link > img:focus-visible,
 header nav .logo .link:focus,
 header nav .logo .link:focus-visible {
-  outline: #2c2c2c solid 3px;
+  outline-color: "#2c2c2c";
+  outline-color: var(--brand-black);
+  outline-style: solid;
+  outline-width: 3px;
 }
 header nav .mobile-nav {
   display: flex;
@@ -167,7 +174,8 @@ header nav .mobile-nav {
   left: 0;
   padding: 1.25rem 0rem 0 2rem;
   z-index: 10000;
-  background: #fff;
+  background: "#fefefe";
+  background: var(--so-white);
   border-top: 2px solid #2c2c2c;
   border-right: 2px solid #2c2c2c;
 }
@@ -202,18 +210,24 @@ header nav ul li {
 header nav ul .link {
   font-weight: 500;
   color: "#2c2c2c";
+  color: var(--brand-black);
   text-decoration: none;
   border-bottom: 3px solid transparent;
   transition: 210ms ease-in all;
 }
 header nav ul .link:hover, header nav ul .link:focus, header nav ul .link:focus-visible {
   color: "#285b86";
+  color: var(--brand-blue);
   border-color: "#ed78b1";
+  border-color: var(--underline-pink);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
 header nav ul .link:focus, header nav ul .link:focus-visible {
-  outline: "#285b86" solid 2px;
+  outline-color: "#285b86";
+  outline-color: var(--brand-blue);
+  outline-style: solid;
+  outline-width: 2px;
   outline-offset: 0.5rem;
   border-radius: 2px;
 }

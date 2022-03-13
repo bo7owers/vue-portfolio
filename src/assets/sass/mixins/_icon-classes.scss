@@ -1,12 +1,13 @@
 @use '../vars/colors' as c;
 @use './icons/iconpacks/mixins' as *;
+@use './var-backups' as v;
 @mixin iconClass($icon-shape, $icon-color) {
 	.icon-#{$icon-shape} {
 		&::before {
 			content: '';
 			position: absolute;
 			display: block;
-			background-color: c.$icon-bg-color;
+			@include cssVars(background-color, icon-bg-color);
 			border-width: 0px;
 			top: 0px;
 			left: 0px;

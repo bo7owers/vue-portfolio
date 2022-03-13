@@ -1,6 +1,8 @@
 @use '../vars/colors' as c;
+@use '../mixins/var-backups' as v;
+
 header {
-	background: #fff;
+	@include v.cssVars(background, so-white);
 	z-index: 1000;
 	width: 100%;
 	transition: 0.5s ease-in all;
@@ -28,7 +30,9 @@ header {
 				transition: 100ms ease-out all;
 				&:focus,
 				&:focus-visible {
-					outline: #2c2c2c solid 3px;
+					@include v.cssVars(outline-color, brand-black);
+					outline-style: solid;
+					outline-width: 3px;
 				}
 			}
 		}
@@ -47,7 +51,7 @@ header {
 			left: 0;
 			padding: 1.25rem 0rem 0 2rem;
 			z-index: 10000;
-			background: #fff;
+			@include v.cssVars(background, so-white);
 			border-top: 2px solid #2c2c2c;
 			border-right: 2px solid #2c2c2c;
 			.nav-list {
@@ -80,21 +84,25 @@ header {
 
 			& .link {
 				font-weight: 500;
-				color: c.$brand-black;
+				@include v.cssVars(color, brand-black);
 				text-decoration: none;
 				border-bottom: 3px solid transparent;
 				transition: 210ms ease-in all;
 				&:hover,
 				&:focus,
 				&:focus-visible {
-					color: c.$brand-blue;
-					border-color: c.$underline-pink;
+					// color: c.$brand-blue;
+					@include v.cssVars(color, brand-blue);
+					@include v.cssVars(border-color, underline-pink);
+					// border-color: c.$underline-pink;
 					border-bottom-left-radius: 2px;
 					border-bottom-right-radius: 2px;
 				}
 				&:focus,
 				&:focus-visible {
-					outline: c.$brand-blue solid 2px;
+					@include v.cssVars(outline-color, brand-blue);
+					outline-style: solid;
+					outline-width: 2px;
 					outline-offset: 0.5rem;
 					border-radius: 2px;
 				}

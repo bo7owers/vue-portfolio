@@ -13,8 +13,8 @@ a,
 	&:hover:not(.link):not(.skip-to-main),
 	&:focus:not(.link):not(.skip-to-main),
 	&:focus-visible:not(.link):not(.skip-to-main) {
-		outline-color: c.$brand-blue;
-		color: c.$brand-blue;
+		@include v.cssVars(outline-color, brand-blue);
+		@include v.cssVars(color, brand-blue);
 		outline-style: solid;
 		outline-offset: 0.1rem;
 		outline-width: 4px;
