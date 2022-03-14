@@ -1,5 +1,6 @@
 @use '../vars/colors' as c;
 @use '../mixins/icons/iconpacks/mixins' as m;
+@use '../mixins/var-backups' as v;
 %icon-class {
 	margin: 0 0 0 60px;
 	&::before {
@@ -18,14 +19,7 @@
 		background-repeat: no-repeat;
 		background-size: 40%;
 		background-position: center;
-		background-color: c.$icon-bg-color;
+		@include v.cssVars(background-color, icon-bg-color);
 		border-radius: 50%;
-	}
-}
-
-.icon-tip {
-	@extend %icon-class;
-	&::before {
-		@include m.getcode(dyk, c.$so-white);
 	}
 }

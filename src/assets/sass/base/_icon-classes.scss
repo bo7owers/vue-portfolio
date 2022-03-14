@@ -1,0 +1,13 @@
+@use '../vars/colors' as c;
+@use '../mixins/var-backups' as v;
+@use '../mixins/icons/iconpacks/mixins' as m;
+@use '../place-holders/icon-classes-phd' as *;
+
+$so-white: #fefefe;
+
+.icon-tip {
+	@extend %icon-class;
+	&::before {
+		@include m.getcode(dyk, $so-white);
+	}
+}
