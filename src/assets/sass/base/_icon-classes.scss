@@ -102,4 +102,10 @@ $so-white: #fefefe;
 			@include m.getcode(warning, $so-white);
 		}
 	}
+	&apple {
+		@extend %icon-class;
+		&::before {
+			@include m.getcode(apple, $so-white);
+		}
+	}
 }
