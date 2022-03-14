@@ -1,0 +1,25 @@
+@use '../vars/colors' as c;
+@use '../mixins/icons/iconpacks/mixins' as m;
+@use '../mixins/var-backups' as v;
+%icon-class {
+	margin: 0 0 0 60px;
+	&::before {
+		//---------- icon position
+		content: '';
+		position: relative;
+		display: block;
+		top: 27px;
+		left: -48px;
+		width: 40px;
+		height: 40px;
+		//---------- icon of choice
+		// @include getcode($name, $new-color);
+
+		//--------- icon bg
+		background-repeat: no-repeat;
+		background-size: 40%;
+		background-position: center;
+		@include v.cssVars(background-color, icon-bg-color);
+		border-radius: 50%;
+	}
+}

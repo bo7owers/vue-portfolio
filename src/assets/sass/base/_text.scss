@@ -1,0 +1,35 @@
+@use '../vars/colors' as c;
+@use '../mixins/var-backups' as v;
+body {
+	font-family: 'Montserrat', sans-serif;
+	@include v.cssVars(color, brand-black);
+}
+a,
+.close,
+.hamburger i {
+	&:visited:not(.link):not(.skip-to-main) {
+		color: c.$visited;
+	}
+	&:hover:not(.link):not(.skip-to-main),
+	&:focus:not(.link):not(.skip-to-main),
+	&:focus-visible:not(.link):not(.skip-to-main) {
+		@include v.cssVars(outline-color, brand-blue);
+		@include v.cssVars(color, brand-blue);
+		outline-style: solid;
+		outline-offset: 0.1rem;
+		outline-width: 4px;
+		border-radius: 2px;
+		&:visited {
+			color: c.$visited;
+		}
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@include v.cssVars(color, brand-blue);
+}
