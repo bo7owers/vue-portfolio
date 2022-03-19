@@ -1,5 +1,32 @@
 @use '../vars/colors' as c;
 @use '../mixins/var-backups' as v;
+@use '../mixins/breakpoints' as b;
+
+//  mobile-nav
+.p-menubar-root-list {
+	width: 100vw;
+	height: 100vh;
+	top: 5.25em !important;
+	left: -0.5em;
+	.p-menuitem {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		a {
+			width: 100%;
+			text-align: center;
+		}
+	}
+	@include b.breakpoint(medium) {
+		width: auto;
+		height: auto;
+		top: 0;
+		left: 0;
+		.p-menuitem {
+			display: inline-block;
+		}
+	}
+}
 
 header {
 	@include v.cssVars(background, so-white);
