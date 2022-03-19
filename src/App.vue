@@ -1,9 +1,8 @@
 <template>
-	<a href="#main" class="skip-to-main" v-show="!mobile">
-		Skip to main content
-	</a>
+	<a href="#main" class="skip-to-main"> Skip to main content </a>
 	<div class="app">
-		<Navigation />
+		<Nav />
+		<!-- <Navigation /> -->
 
 		<main id="main" role="main">
 			<div class="dynamic-content" aria-busy="false" tabindex="-1">
@@ -13,11 +12,13 @@
 	</div>
 </template>
 <script>
-	import Navigation from './components/Navigation.vue'
+	// import Navigation from './components/Navigation.vue'
+	import Nav from './components/Nav.vue'
 	export default {
 		name: 'App',
 		components: {
-			Navigation,
+			// Navigation,
+			Nav,
 		},
 	}
 </script>

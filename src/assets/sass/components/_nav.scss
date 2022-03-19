@@ -1,12 +1,39 @@
 @use '../vars/colors' as c;
 @use '../mixins/var-backups' as v;
+@use '../mixins/breakpoints' as b;
+
+//  mobile-nav
+.p-menubar-root-list {
+	width: 100vw;
+	height: 100vh;
+	top: 5.25em !important;
+	left: -0.5em;
+	.p-menuitem {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		a {
+			width: 100%;
+			text-align: center;
+		}
+	}
+	@include b.breakpoint(medium) {
+		width: auto;
+		height: auto;
+		top: 0;
+		left: 0;
+		.p-menuitem {
+			display: inline-block;
+		}
+	}
+}
 
 header {
 	@include v.cssVars(background, so-white);
 	z-index: 1000;
 	width: 100%;
 	transition: 0.5s ease-in all;
-	nav {
+	.p-menubar {
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-between;
@@ -15,61 +42,39 @@ header {
 		transition: 0.5s ease-out all;
 		width: 90%;
 		margin: 0 auto;
+		// overwrite primevue styles
+		@include v.cssVars(background, so-white);
+		@include v.cssVars(color, brand-black);
+		@include v.cssVars(border, none);
+		@include v.cssVars(border-radius, 0);
 		@media (min-width: 1140px) {
 			max-width: 1140px;
 		}
 
-		.logo {
-			.link > img,
-			.link {
-				display: inline-block;
-				height: 5em;
-				width: 5rem;
-				border-radius: 1rem;
-				user-select: none;
-				transition: 100ms ease-out all;
-				&:focus,
-				&:focus-visible {
-					@include v.cssVars(outline-color, brand-black);
-					outline-style: solid;
-					outline-width: 3px;
-				}
+		// router link
+		.logo > a {
+			display: inline-block;
+			height: 5em;
+			width: 5rem;
+			border-radius: 1rem;
+			transition: 100ms ease-out all;
+			&:focus,
+			&:focus-visible {
+				@include v.cssVars(outline-color, brand-black);
+				outline-style: solid;
+				outline-width: 3px;
 			}
 		}
-		// Mobile nav
-		& .mobile-nav {
-			// text-align: center;
-			display: flex;
-			flex-flow: row nowrap;
-			align-items: flex-start;
-			justify-content: center;
-			gap: 5rem;
-			width: 100%;
-			height: 100%;
-			position: fixed;
-			top: 0;
-			left: 0;
-			padding: 1.25rem 0rem 0 2rem;
-			z-index: 10000;
-			@include v.cssVars(background, so-white);
-			border-top: 2px solid #2c2c2c;
-			border-right: 2px solid #2c2c2c;
-			.nav-list {
-				flex-flow: column wrap;
-				justify-content: start;
-				align-items: flex-start;
-				gap: 1rem 1rem;
-			}
-			& i {
-				cursor: pointer;
-				font-size: 1.5rem;
-				transform: rotate(90deg);
-				transition: 3000ms ease all;
-				&.active-icon {
-					transform: rotate(180deg);
-				}
-			}
+
+		// logo img in nav
+		.main-logo {
+			display: inline-block;
+			height: 5em;
+			width: 5rem;
+			border-radius: 1rem;
+			user-select: none;
 		}
+
 		//  desktop nav
 		ul {
 			list-style: none;
@@ -106,16 +111,6 @@ header {
 					outline-offset: 0.5rem;
 					border-radius: 2px;
 				}
-			}
-		}
-		.hamburger {
-			i {
-				cursor: pointer;
-				font-size: 1.5rem;
-				transition: 500ms ease all;
-			}
-			.active-icon {
-				transform: rotate(180deg);
 			}
 		}
 	}
