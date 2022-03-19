@@ -24,12 +24,12 @@ header {
 			max-width: 1140px;
 		}
 
-		.main-logo {
+		// router link
+		.logo > a {
 			display: inline-block;
 			height: 5em;
 			width: 5rem;
 			border-radius: 1rem;
-			user-select: none;
 			transition: 100ms ease-out all;
 			&:focus,
 			&:focus-visible {
@@ -39,40 +39,15 @@ header {
 			}
 		}
 
-		// Mobile nav
-		& .mobile-nav {
-			// text-align: center;
-			display: flex;
-			flex-flow: row nowrap;
-			align-items: flex-start;
-			justify-content: center;
-			gap: 5rem;
-			width: 100%;
-			height: 100%;
-			position: fixed;
-			top: 0;
-			left: 0;
-			padding: 1.25rem 0rem 0 2rem;
-			z-index: 10000;
-			@include v.cssVars(background, so-white);
-			border-top: 2px solid #2c2c2c;
-			border-right: 2px solid #2c2c2c;
-			.nav-list {
-				flex-flow: column wrap;
-				justify-content: start;
-				align-items: flex-start;
-				gap: 1rem 1rem;
-			}
-			& i {
-				cursor: pointer;
-				font-size: 1.5rem;
-				transform: rotate(90deg);
-				transition: 3000ms ease all;
-				&.active-icon {
-					transform: rotate(180deg);
-				}
-			}
+		// logo img in nav
+		.main-logo {
+			display: inline-block;
+			height: 5em;
+			width: 5rem;
+			border-radius: 1rem;
+			user-select: none;
 		}
+
 		//  desktop nav
 		ul {
 			list-style: none;
@@ -109,16 +84,6 @@ header {
 					outline-offset: 0.5rem;
 					border-radius: 2px;
 				}
-			}
-		}
-		.hamburger {
-			i {
-				cursor: pointer;
-				font-size: 1.5rem;
-				transition: 500ms ease all;
-			}
-			.active-icon {
-				transform: rotate(180deg);
 			}
 		}
 	}
