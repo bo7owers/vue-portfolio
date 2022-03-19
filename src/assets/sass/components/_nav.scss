@@ -6,7 +6,7 @@ header {
 	z-index: 1000;
 	width: 100%;
 	transition: 0.5s ease-in all;
-	nav {
+	.p-menubar {
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-between;
@@ -15,27 +15,30 @@ header {
 		transition: 0.5s ease-out all;
 		width: 90%;
 		margin: 0 auto;
+		// overwrite primevue styles
+		@include v.cssVars(background, so-white);
+		@include v.cssVars(color, brand-black);
+		@include v.cssVars(border, none);
+		@include v.cssVars(border-radius, 0);
 		@media (min-width: 1140px) {
 			max-width: 1140px;
 		}
 
-		.logo {
-			.link > img,
-			.link {
-				display: inline-block;
-				height: 5em;
-				width: 5rem;
-				border-radius: 1rem;
-				user-select: none;
-				transition: 100ms ease-out all;
-				&:focus,
-				&:focus-visible {
-					@include v.cssVars(outline-color, brand-black);
-					outline-style: solid;
-					outline-width: 3px;
-				}
+		.main-logo {
+			display: inline-block;
+			height: 5em;
+			width: 5rem;
+			border-radius: 1rem;
+			user-select: none;
+			transition: 100ms ease-out all;
+			&:focus,
+			&:focus-visible {
+				@include v.cssVars(outline-color, brand-black);
+				outline-style: solid;
+				outline-width: 3px;
 			}
 		}
+
 		// Mobile nav
 		& .mobile-nav {
 			// text-align: center;

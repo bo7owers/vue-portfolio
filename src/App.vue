@@ -1,7 +1,5 @@
 <template>
-	<a href="#main" class="skip-to-main" v-show="!mobile">
-		Skip to main content
-	</a>
+	<a href="#main" class="skip-to-main"> Skip to main content </a>
 	<div class="app">
 		<Nav />
 		<!-- <Navigation /> -->

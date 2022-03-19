@@ -33,3 +33,7 @@ h5,
 h6 {
 	@include v.cssVars(color, brand-blue);
 }
+
+.p-component {
+	font-family: 'Montserrat', sans-serif;
+}

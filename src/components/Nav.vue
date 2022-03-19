@@ -4,7 +4,11 @@
 			<template #start>
 				<div class="logo">
 					<router-link class="link" :to="{ name: 'Home' }">
-						<img src="../assets/logo.png" alt="René Torres' logo" />
+						<img
+							src="../assets/logo.png"
+							class="main-logo"
+							alt="René Torres' logo"
+						/>
 					</router-link>
 				</div>
 			</template>

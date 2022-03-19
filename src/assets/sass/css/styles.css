@@ -65,6 +65,10 @@ h6 {
   color: var(--brand-blue);
 }
 
+.p-component {
+  font-family: "Montserrat", sans-serif;
+}
+
 /* *************************************************************
  * GET THE SVG CODE
  * ************************************************************/
@@ -176,7 +180,7 @@ header {
   width: 100%;
   transition: 0.5s ease-in all;
 }
-header nav {
+header .p-menubar {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -185,14 +189,19 @@ header nav {
   transition: 0.5s ease-out all;
   width: 90%;
   margin: 0 auto;
+  background: "#fefefe";
+  background: var(--so-white);
+  color: "#2c2c2c";
+  color: var(--brand-black);
+  border: var(--none);
+  border-radius: var(--0);
 }
 @media (min-width: 1140px) {
-  header nav {
+  header .p-menubar {
     max-width: 1140px;
   }
 }
-header nav .logo .link > img,
-header nav .logo .link {
+header .p-menubar .main-logo {
   display: inline-block;
   height: 5em;
   width: 5rem;
@@ -203,15 +212,13 @@ header nav .logo .link {
           user-select: none;
   transition: 100ms ease-out all;
 }
-header nav .logo .link > img:focus, header nav .logo .link > img:focus-visible,
-header nav .logo .link:focus,
-header nav .logo .link:focus-visible {
+header .p-menubar .main-logo:focus, header .p-menubar .main-logo:focus-visible {
   outline-color: "#2c2c2c";
   outline-color: var(--brand-black);
   outline-style: solid;
   outline-width: 3px;
 }
-header nav .mobile-nav {
+header .p-menubar .mobile-nav {
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start;
@@ -229,35 +236,35 @@ header nav .mobile-nav {
   border-top: 2px solid #2c2c2c;
   border-right: 2px solid #2c2c2c;
 }
-header nav .mobile-nav .nav-list {
+header .p-menubar .mobile-nav .nav-list {
   flex-flow: column wrap;
   justify-content: start;
   align-items: flex-start;
   gap: 1rem 1rem;
 }
-header nav .mobile-nav i {
+header .p-menubar .mobile-nav i {
   cursor: pointer;
   font-size: 1.5rem;
   transform: rotate(90deg);
   transition: 3000ms ease all;
 }
-header nav .mobile-nav i.active-icon {
+header .p-menubar .mobile-nav i.active-icon {
   transform: rotate(180deg);
 }
-header nav ul {
+header .p-menubar ul {
   list-style: none;
   display: flex;
   flex-flow: row wrap;
   gap: 0 2rem;
 }
-header nav ul li {
+header .p-menubar ul li {
   padding: 1rem;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
-header nav ul .link {
+header .p-menubar ul .link {
   font-weight: 500;
   color: "#2c2c2c";
   color: var(--brand-black);
@@ -265,7 +272,7 @@ header nav ul .link {
   border-bottom: 3px solid transparent;
   transition: 210ms ease-in all;
 }
-header nav ul .link:hover, header nav ul .link:focus, header nav ul .link:focus-visible {
+header .p-menubar ul .link:hover, header .p-menubar ul .link:focus, header .p-menubar ul .link:focus-visible {
   color: "#285b86";
   color: var(--brand-blue);
   border-color: "#ed78b1";
@@ -273,7 +280,7 @@ header nav ul .link:hover, header nav ul .link:focus, header nav ul .link:focus-
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-header nav ul .link:focus, header nav ul .link:focus-visible {
+header .p-menubar ul .link:focus, header .p-menubar ul .link:focus-visible {
   outline-color: "#285b86";
   outline-color: var(--brand-blue);
   outline-style: solid;
@@ -281,11 +288,11 @@ header nav ul .link:focus, header nav ul .link:focus-visible {
   outline-offset: 0.5rem;
   border-radius: 2px;
 }
-header nav .hamburger i {
+header .p-menubar .hamburger i {
   cursor: pointer;
   font-size: 1.5rem;
   transition: 500ms ease all;
 }
-header nav .hamburger .active-icon {
+header .p-menubar .hamburger .active-icon {
   transform: rotate(180deg);
 }/*# sourceMappingURL=styles.css.map */
