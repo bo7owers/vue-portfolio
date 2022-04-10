@@ -289,4 +289,25 @@ header nav .hamburger i {
 }
 header nav .hamburger .active-icon {
   transform: rotate(180deg);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 1fr;
+  gap: 0em 1em;
+  grid-auto-flow: row;
+  grid-template-areas: "side-left content-area side-righ";
+}
+
+.side-left {
+  grid-area: side-left;
+}
+
+.content-area {
+  grid-area: content-area;
+}
+
+.side-righ {
+  grid-area: side-righ;
 }/*# sourceMappingURL=styles.css.map */
