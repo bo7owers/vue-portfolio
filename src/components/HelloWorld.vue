@@ -1,10 +1,6 @@
 <template>
 	<div class="hello">
 		<div class="container">
-			<div class="side-left">
-				<p>Sidebar test</p>
-			</div>
-
 			<div class="content-area">
 				<h1>{{ msg }}</h1>
 				<p>

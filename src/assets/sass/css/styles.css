@@ -18,10 +18,61 @@ img {
   --icon-bg-color: var(--brand-blue);
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
+  line-height: 1.65em;
   color: "#2c2c2c";
   color: var(--brand-black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: "#285b86";
+  color: var(--brand-blue);
+  line-height: 1.1em;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.625rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.125rem;
+}
+h6 {
+  font-size: 1.125rem;
+}
+
+p {
+  color: "#2c2c2c";
+  color: var(--brand-black);
+  font-size: 1.25rem;
+  line-height: 1.65em;
+}
+
+ul {
+  color: "#2c2c2c";
+  color: var(--brand-black);
+  font-size: 1.25rem;
+  line-height: 1.65em;
+  margin-left: 3rem;
 }
 
 a:visited:not(.link):not(.skip-to-main),
@@ -53,20 +104,6 @@ a:hover:not(.link):not(.skip-to-main):visited, a:focus:not(.link):not(.skip-to-m
 .hamburger i:focus:not(.link):not(.skip-to-main):visited,
 .hamburger i:focus-visible:not(.link):not(.skip-to-main):visited {
   color: "#9700a8";
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: "#285b86";
-  color: var(--brand-blue);
-}
-
-.p-component {
-  font-family: "Montserrat", sans-serif;
 }
 
 /* *************************************************************
