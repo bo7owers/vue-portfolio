@@ -212,7 +212,6 @@ a:hover:not(.link):not(.skip-to-main):visited, a:focus:not(.link):not(.skip-to-m
 
 .container {
   display: grid;
-  grid-template-columns: 0.5fr 1fr 0.5fr;
   grid-template-rows: 1fr;
   gap: 0em 1em;
   grid-auto-flow: row;
