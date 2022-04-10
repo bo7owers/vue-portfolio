@@ -127,6 +127,7 @@
 						>
 					</li>
 				</ul>
+				<p class="icon icon-tip">Testing this icon</p>
 			</div>
 		</div>
 	</div>
