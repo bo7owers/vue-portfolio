@@ -319,6 +319,14 @@ header nav ul .link:focus, header nav ul .link:focus-visible {
   outline-offset: 0.5rem;
   border-radius: 2px;
 }
+header nav ul .link.router-link-active {
+  color: "#285b86";
+  color: var(--brand-blue);
+  border-color: "#ed78b1";
+  border-color: var(--underline-pink);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
 header nav .hamburger i {
   cursor: pointer;
   font-size: 1.5rem;

@@ -105,6 +105,14 @@ header {
 					outline-offset: 0.5rem;
 					border-radius: 2px;
 				}
+				&.router-link-active {
+					color: '#285b86';
+					color: var(--brand-blue);
+					border-color: '#ed78b1';
+					border-color: var(--underline-pink);
+					border-bottom-left-radius: 2px;
+					border-bottom-right-radius: 2px;
+				}
 			}
 		}
 		.hamburger {
@@ -119,7 +127,6 @@ header {
 		}
 	}
 }
-
 // //  mobile-nav primevue
 // .p-menubar-root-list {
 // 	width: 100vw;
