@@ -1,7 +1,7 @@
 <template>
 	<a href="#main" class="skip-to-main"> Skip to main content </a>
 	<div class="app">
-		<Nav />
+		<Navigation />
 		<!-- <Navigation /> -->
 
 		<main id="main" role="main">
@@ -13,12 +13,12 @@
 </template>
 <script>
 	// import Navigation from './components/Navigation.vue'
-	import Nav from './components/Nav.vue'
+	import Navigation from './components/Navigation.vue'
 	export default {
 		name: 'App',
 		components: {
 			// Navigation,
-			Nav,
+			Navigation,
 		},
 	}
 </script>
