@@ -343,6 +343,10 @@ header nav .hamburger .active-icon {
 
 .content-area {
   grid-area: content-area;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
 }
 
 .side-righ {
