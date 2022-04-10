@@ -2,11 +2,11 @@
 	<a href="#main_content" class="skip-to-main"> Skip to main content </a>
 	<div class="app">
 		<Navigation />
-		<!-- <Navigation /> -->
-
-		<main id="main_content" role="main">
-			<router-view />
-		</main>
+		<div class="container">
+			<main id="main_content" class="content-area" role="main">
+				<router-view />
+			</main>
+		</div>
 	</div>
 </template>
 <script>
