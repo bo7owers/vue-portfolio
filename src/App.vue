@@ -1,13 +1,11 @@
 <template>
-	<a href="#main" class="skip-to-main"> Skip to main content </a>
+	<a href="#main_content" class="skip-to-main"> Skip to main content </a>
 	<div class="app">
 		<Navigation />
 		<!-- <Navigation /> -->
 
-		<main id="main" role="main">
-			<div class="dynamic-content" aria-busy="false" tabindex="-1">
-				<router-view />
-			</div>
+		<main id="main_content" role="main">
+			<router-view />
 		</main>
 	</div>
 </template>
