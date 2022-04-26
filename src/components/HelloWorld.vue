@@ -107,7 +107,8 @@
 				>
 			</li>
 		</ul>
-		<p class="icon icon-tip">Testing this icon</p>
+		<p class="icon icon-custom">Testing this icon</p>
+		<p class="icon icon-call">Testing this icon</p>
 	</div>
 </template>
 

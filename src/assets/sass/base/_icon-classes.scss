@@ -108,5 +108,17 @@ $so-white: #fefefe;
 				@include m.getcode(apple, $so-white);
 			}
 		}
+		&custom {
+			@extend %icon-class;
+			&::before {
+				@include m.getcode(vue, $so-white);
+			}
+		}
+		&call {
+			@extend %icon-class;
+			&::before {
+				@include m.getcode(lightbox, $so-white);
+			}
+		}
 	}
 }
