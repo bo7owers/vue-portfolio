@@ -19,12 +19,12 @@
 					>
 				</li>
 				<li>
-					<router-link class="link" :to="{ name: '' }"
+					<router-link class="link" :to="{ name: 'Portfolio' }"
 						>Portfolio</router-link
 					>
 				</li>
 				<li>
-					<router-link class="link" :to="{ name: '' }"
+					<router-link class="link" :to="{ name: 'Contact' }"
 						>Contact</router-link
 					>
 				</li>

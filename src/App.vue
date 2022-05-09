@@ -3,7 +3,7 @@
 	<div class="app">
 		<Navigation />
 		<div class="container">
-			<div class="side-left">Side left</div>
+			<!-- <div class="side-left">Aside goes here</div> -->
 			<main id="main_content" class="content-area" role="main">
 				<router-view />
 			</main>
