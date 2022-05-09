@@ -46,41 +46,41 @@
 						<!-- Add name for each component when they are done!! -->
 						<li>
 							<router-link
-								@click="toggleSmallNav"
-								@keypress.enter="toggleSmallNav"
-								@keypress.space="toggleSmallNav"
 								class="link"
 								:to="{ name: 'Home' }"
+								@keypress="toggleSmallNav"
+								@keypress.space="toggleSmallNav"
+								@click="toggleSmallNav"
 								>Home</router-link
 							>
 						</li>
 						<li>
 							<router-link
-								@click="toggleSmallNav"
-								@keypress.enter="toggleSmallNav"
-								@keypress.space="toggleSmallNav"
 								class="link"
 								:to="{ name: 'About' }"
+								@keypress="toggleSmallNav"
+								@keypress.space="toggleSmallNav"
+								@click="toggleSmallNav"
 								>About</router-link
 							>
 						</li>
 						<li>
 							<router-link
-								@click="toggleSmallNav"
-								@keypress.enter="toggleSmallNav"
-								@keypress.space="toggleSmallNav"
 								class="link"
-								:to="{ name: '' }"
+								:to="{ name: 'Portfolio' }"
+								@keypress="toggleSmallNav"
+								@keypress.space="toggleSmallNav"
+								@click="toggleSmallNav"
 								>Portfolio</router-link
 							>
 						</li>
 						<li>
 							<router-link
-								@click="toggleSmallNav"
-								@keypress.enter="toggleSmallNav"
-								@keypress.space="toggleSmallNav"
 								class="link"
-								:to="{ name: '' }"
+								:to="{ name: 'Contact' }"
+								@keypress="toggleSmallNav"
+								@keypress.space="toggleSmallNav"
+								@click="toggleSmallNav"
 								>Contact</router-link
 							>
 						</li>
