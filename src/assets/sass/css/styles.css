@@ -40,6 +40,7 @@ h6 {
   color: var(--brand-blue);
   line-height: 1.1em;
   font-weight: 400;
+  text-align: center;
 }
 
 h1 {

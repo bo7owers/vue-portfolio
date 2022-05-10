@@ -1,17 +1,13 @@
 <template>
-	<div class="home">
-		<HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-	</div>
+	<h1>René Torres</h1>
+	I am a web developer who wanst to make the web accessible to everybody.
+	<div class="main-img"></div>
 </template>
 
 <script lang="ts">
-	import { defineComponent } from 'vue'
-	import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
-
-	export default defineComponent({
-		name: 'Home',
-		components: {
-			HelloWorld,
-		},
+	const imgPath = ['../assets/img/memoji.png']
+	let mainImg = document.querySelector('.main-img')!
+	imgPath.forEach((image) => {
+		mainImg.innerHTML = `<img src="${image} class="img res" alt="3D design representintg René Torres">`
 	})
 </script>

@@ -20,6 +20,7 @@ h6 {
 	@include v.cssVars(color, brand-blue);
 	line-height: 1.1em;
 	font-weight: 400;
+	text-align: center;
 }
 
 h {
