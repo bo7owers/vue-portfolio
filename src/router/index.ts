@@ -20,13 +20,11 @@ const routes = [
     path: "/portfolio",
     name: "Portfolio",
     component: () => import("../views/Portfolio.vue"),
-    children: [
-      { path: "coding", component: () => import("../views/ProCoding.vue") },
-      {
-        path: "photography",
-        component: () => import("../views/Photography.vue"),
-      },
-    ],
+  },
+  {
+    path: "/programming",
+    name: "Programming",
+    component: () => import("../views/Programming.vue"),
   },
   {
     path: "/contact",

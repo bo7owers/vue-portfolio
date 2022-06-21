@@ -15,21 +15,9 @@
           <router-link class="link" :to="{ name: 'About' }">About</router-link>
         </li>
         <li>
-          <router-link class="link" :to="{ name: 'Portfolio' }"
-            >Portfolio</router-link
+          <router-link class="link" :to="{ name: 'Programming' }"
+            >Programming</router-link
           >
-          <!-- <ul>
-            <li>
-              <router-link class="link" :to="{ name: 'ProCoding' }"
-                >Professional Coding</router-link
-              >
-            </li>
-            <li>
-              <router-link class="link" :to="{ name: 'Photography' }"
-                >Photography></router-link
-              >
-            </li>
-          </ul> -->
         </li>
         <li>
           <router-link class="link" :to="{ name: 'Contact' }"
