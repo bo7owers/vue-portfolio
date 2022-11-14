@@ -4,6 +4,7 @@
         I am a web developer who wanst to make the web accessible to everybody.
     </p>
     <div class="main-img"></div>
+    <button>Hello there</button>
 </template>
 
 <!-- <script lang="ts">
