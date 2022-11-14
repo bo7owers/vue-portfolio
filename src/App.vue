@@ -4,7 +4,12 @@
         <Navigation />
         <div class="container">
             <!-- <div class="side-left">Aside goes here</div> -->
-            <main id="main_content" class="content-area" role="main">
+            <main
+                id="main_content"
+                class="content-area"
+                role="main"
+                tabindex="-1"
+            >
                 <router-view />
             </main>
         </div>
