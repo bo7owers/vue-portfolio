@@ -6,7 +6,7 @@
                     <img src="../assets/logo.png" alt="René Torres' logo" />
                 </router-link>
             </div>
-            <ul v-show="!mobile" class="navigation">
+            <ul v-if="!mobile" class="navigation">
                 <!-- Add name for each component when they are done!! -->
                 <li>
                     <router-link class="link" :to="{ name: 'Home' }"
@@ -29,7 +29,7 @@
                     >
                 </li>
             </ul>
-            <div class="hamburger" v-show="mobile">
+            <div class="hamburger" v-if="mobile">
                 <!-- Move v-show="mobile" to the i if problems found -->
                 <i
                     @click="toggleSmallNav"
@@ -41,7 +41,7 @@
                 ></i>
             </div>
             <transition name="mobile-nav">
-                <div v-show="mobileNav" class="mobile-nav">
+                <div v-if="mobileNav" class="mobile-nav">
                     <ul class="nav-list">
                         <!-- Add name for each component when they are done!! -->
                         <li>
