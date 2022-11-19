@@ -5,12 +5,17 @@
         <a href="#">testing styles</a>
     </p>
     <div class="main-img"></div>
-    <button>Hello there</button>
+    <button class="btn-test">Hello there</button>
 </template>
 
 <style lang="scss" scoped>
 button {
     width: 1rem;
+    &.btn-test{
+        width: 5rem;
+        background-color: #369;
+        color: #fefefe;
+    }
 }
 </style>
 
