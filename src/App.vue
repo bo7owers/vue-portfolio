@@ -1,3 +1,21 @@
+<script setup>
+import Navigation from './components/Navigation.vue'
+import { useScreenWidthStore } from './stores/ScreenWidthStore'
+import { storeToRefs } from 'pinia'
+import { onMounted, onUpdated } from 'vue'
+
+const screenWidth = useScreenWidthStore()
+
+const { innerWidth } = storeToRefs(screenWidth)
+
+onMounted(() => {
+    console.log(innerWidth.value, 'mounted')
+})
+
+onUpdated(() => {
+    console.log(innerWidth.value, 'updated')
+})
+</script>
 <template>
     <a href="#main_content" class="skip-to-main"> Skip to main content </a>
     <div class="app">
@@ -15,14 +33,3 @@
         </div>
     </div>
 </template>
-<script>
-// import Navigation from './components/Navigation.vue'
-import Navigation from './components/Navigation.vue'
-export default {
-    name: 'App',
-    components: {
-        // Navigation,
-        Navigation,
-    },
-}
-</script>

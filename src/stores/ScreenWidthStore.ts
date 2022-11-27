@@ -3,4 +3,8 @@ import { ref } from 'vue'
 
 export const useScreenWidthStore = defineStore('screenWidth', () => {
     const innerWidth = ref<Number>(window.innerWidth)
+
+    return {
+        innerWidth,
+    }
 })
