@@ -6,14 +6,18 @@ import { onMounted, onUpdated } from 'vue'
 
 const screenWidth = useScreenWidthStore()
 
-const { innerWidth } = storeToRefs(screenWidth)
+const { innerWidth, isDesktop, isPhone, isTablet } = storeToRefs(screenWidth)
+const { defineScreenWidth } = screenWidth
 
 onMounted(() => {
     console.log(innerWidth.value, 'mounted')
+    console.log(isDesktop.value, isPhone.value, isTablet.value)
+    defineScreenWidth(window.innerWidth)
 })
 
 onUpdated(() => {
     console.log(innerWidth.value, 'updated')
+    defineScreenWidth(window.innerWidth)
 })
 </script>
 <template>
