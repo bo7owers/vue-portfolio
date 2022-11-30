@@ -1,24 +1,5 @@
 <script setup>
 import Navigation from './components/Navigation.vue'
-import { useScreenWidthStore } from './stores/ScreenWidthStore'
-import { storeToRefs } from 'pinia'
-import { onMounted, onUpdated } from 'vue'
-
-const screenWidth = useScreenWidthStore()
-
-const { innerWidth, isDesktop, isPhone, isTablet } = storeToRefs(screenWidth)
-const { defineScreenWidth } = screenWidth
-
-onMounted(() => {
-    console.log(innerWidth.value, 'mounted')
-    console.log(isDesktop.value, isPhone.value, isTablet.value)
-    defineScreenWidth(window.innerWidth)
-})
-
-onUpdated(() => {
-    console.log(innerWidth.value, 'updated')
-    defineScreenWidth(window.innerWidth)
-})
 </script>
 <template>
     <a href="#main_content" class="skip-to-main"> Skip to main content </a>
