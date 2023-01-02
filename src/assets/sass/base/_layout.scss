@@ -1,28 +1,40 @@
 @use '../mixins/breakpoints' as b;
 
 .container {
-	display: grid;
-	// grid-template-columns: 0.5fr 1fr 0.5fr;
-	// grid-template-columns: repeat(auto-fill, minmax(50rem, 1fr));
-	// grid-template-columns: repeat(1, 0.5fr 1fr) 25em;
-	grid-template-rows: 1fr;
-	gap: 0em 1em;
-	grid-auto-flow: row;
-	grid-template-areas: 'side-left content-area side-righ';
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
 
-	.side-left {
-		grid-area: side-left;
-	}
+    .row {
+        &-center {
+            grid-column: 1 / 4;
+            padding: 0.25rem 0.75rem;
+            @include b.breakpoint(small) {
+                grid-column: 2 / 3;
+            }
+        }
 
-	.content-area {
-		grid-area: content-area;
-		display: flex;
-		flex-flow: column wrap;
-		justify-content: center;
-		align-content: center;
-	}
+        &-left {
+            grid-column: 1 / 4;
+            padding: 0.25rem 0.75rem;
+            @include b.breakpoint(small) {
+                grid-column: 3 / 4;
+            }
+        }
+        &-flex {
+            display: flex;
+            flex-flow: column wrap;
+            &-center {
+                align-items: center;
+            }
+        }
+    }
 
-	.side-righ {
-		grid-area: side-righ;
-	}
+    .grid-footer {
+        grid-column: 1 / 4;
+        // not sure about this...
+        @include b.breakpoint(xxlarge) {
+            grid-column: 2 / 3;
+        }
+    }
 }
