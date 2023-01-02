@@ -164,7 +164,7 @@ export default {
 
 // my nav
 header {
-    @include v.cssVars(background-color, so-white);
+    background-color: var(--so-white);
     z-index: 1000;
     width: 100%;
     transition: 0.5s ease-in all;
@@ -193,7 +193,7 @@ header {
                 &:focus,
                 &:focus-visible {
                     outline: #2c2c2c solid 3px;
-                    @include v.cssVars(outline-color, brand-black);
+                    outline-color: var(--brand-black);
                 }
             }
         }
@@ -245,15 +245,15 @@ header {
 
             & .link {
                 font-weight: 500;
-                @include v.cssVars(color, brand-black);
+                color: var(--brand-black);
                 text-decoration: none;
                 border-bottom: 3px solid transparent;
                 transition: 210ms ease-in all;
                 &:hover,
                 &:focus,
                 &:focus-visible {
-                    @include v.cssVars(color, brand-blue);
-                    @include v.cssVars(border-color, underline-pink);
+                    color: var(--brand-blue);
+                    border-color: var(--underline-pink);
                     border-bottom-left-radius: 2px;
                     border-bottom-right-radius: 2px;
                 }
@@ -261,14 +261,14 @@ header {
                 &:focus-visible {
                     outline: solid 2px;
 
-                    @include v.cssVars(outline-color, brand-blue);
+                    outline-color: var(--brand-blue);
                     outline-offset: 0.5rem;
                     border-radius: 2px;
                 }
                 &.router-link-active {
-                    color: '#285b86';
+                    // color: '#285b86';
                     color: var(--brand-blue);
-                    border-color: '#ed78b1';
+                    // border-color: '#ed78b1';
                     border-color: var(--underline-pink);
                     border-bottom-left-radius: 2px;
                     border-bottom-right-radius: 2px;
