@@ -6,7 +6,6 @@ import Navigation from './components/Navigation.vue'
     <div class="app">
         <Navigation />
         <div class="container">
-            <!-- <div class="side-left">Aside goes here</div> -->
             <main
                 id="main_content"
                 class="content-area row-center row-flex row-flex-center"
@@ -15,6 +14,7 @@ import Navigation from './components/Navigation.vue'
             >
                 <router-view />
             </main>
+            <div class="row-left">Aside goes here</div>
             <footer class="grid-footer row-flex">
                 Footer goes here
                 <p>
