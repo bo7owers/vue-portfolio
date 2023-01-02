@@ -1,28 +1,18 @@
 @use '../mixins/breakpoints' as b;
 
 .container {
-	display: grid;
-	// grid-template-columns: 0.5fr 1fr 0.5fr;
-	// grid-template-columns: repeat(auto-fill, minmax(50rem, 1fr));
-	// grid-template-columns: repeat(1, 0.5fr 1fr) 25em;
-	grid-template-rows: 1fr;
-	gap: 0em 1em;
-	grid-auto-flow: row;
-	grid-template-areas: 'side-left content-area side-righ';
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
 
-	.side-left {
-		grid-area: side-left;
-	}
-
-	.content-area {
-		grid-area: content-area;
-		display: flex;
-		flex-flow: column wrap;
-		justify-content: center;
-		align-content: center;
-	}
-
-	.side-righ {
-		grid-area: side-righ;
-	}
+    .row {
+        &-center {
+            grid-column: 2 / 3;
+        }
+        &-flex {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+        }
+    }
 }
