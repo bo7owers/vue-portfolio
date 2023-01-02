@@ -9,7 +9,7 @@ import Navigation from './components/Navigation.vue'
             <!-- <div class="side-left">Aside goes here</div> -->
             <main
                 id="main_content"
-                class="content-area"
+                class="content-area row-center row-flex"
                 role="main"
                 tabindex="-1"
             >
