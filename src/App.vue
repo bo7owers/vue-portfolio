@@ -14,7 +14,7 @@ import Navigation from './components/Navigation.vue'
             >
                 <router-view />
             </main>
-            <div class="row-left">Aside goes here</div>
+            <!-- <div class="row-left">Aside goes here</div> -->
             <footer class="grid-footer row-flex">
                 Footer goes here
                 <p>
