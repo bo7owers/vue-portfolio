@@ -8,7 +8,9 @@ onMounted(() => {
 </script>
 <template>
     <footer class="container">
-        <h3 class="call-to row-center">Get in touch</h3>
+        <div class="call-to row-center">
+            <h3>Get in touch</h3>
+        </div>
         <div class="icons row-center">
             <div class="icon icon-mastodon">
                 <svg
@@ -55,13 +57,25 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @use '../assets/sass/vars/colors' as c;
+@use '../assets/sass/mixins/breakpoints' as b;
+
 footer {
     margin-top: auto;
     background-color: c.$brand-grey;
     grid-column: 1/4;
+    padding-bottom: 0.5rem;
     .call-to {
-        color: c.$brand-black;
-        text-align: inherit;
+        > h3 {
+            color: c.$brand-black;
+            text-align: inherit;
+            padding: 0.5rem 0 0.5rem 0.75rem;
+            @include b.breakpoint(small) {
+                padding: 0.75rem 2rem 0 1rem;
+            }
+            @include b.breakpoint(large) {
+                padding: 0.75rem 2rem 0 5rem;
+            }
+        }
     }
 
     .year-of-creation {
