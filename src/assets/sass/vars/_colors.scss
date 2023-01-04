@@ -12,6 +12,7 @@ $mainVars: (
     icon-bg-color: 'var(--brand-blue)',
     btn-bg-color: #eee,
     btn-bg-pocus: #ddd,
+    brand-grey: #e8e8e8,
 );
 
 // add css custom props from sass vars
@@ -30,6 +31,7 @@ $brand-blue: var(--brand-blue);
 $so-white: var(--so-white);
 $underline-pink: var(--brand-pink);
 $solid-black: var(--solid-black);
+$brand-grey: var(--brand-grey);
 
 $btn-bg-color: var(--btn-bg-color); //background for the button
 $btn-bg-color-hover: var(--btn-bg-pocus);
