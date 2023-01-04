@@ -5,6 +5,11 @@
     gap: 1rem;
     grid-template-columns: 0.5fr 1fr 0.5fr;
 
+    &.all-info {
+        grid-template-rows: auto 1fr auto;
+        height: 100vh;
+    }
+
     .row {
         &-full {
             grid-column: 1/4;

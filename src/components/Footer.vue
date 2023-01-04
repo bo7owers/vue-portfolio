@@ -56,7 +56,9 @@ onMounted(() => {
 <style lang="scss" scoped>
 @use '../assets/sass/vars/colors' as c;
 footer {
+    margin-top: auto;
     background-color: c.$brand-grey;
+    grid-column: 1/4;
     .call-to {
         color: c.$brand-black;
         text-align: inherit;
