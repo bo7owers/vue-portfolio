@@ -109,13 +109,13 @@ footer {
     .icon {
         margin-block: auto;
         color: c.$brand-black;
+        transition: all 200ms ease-in;
         &:hover,
         &:focus-visible {
             outline: none;
         }
         & > svg {
             height: 2.5em;
-            transition: all 250ms ease-in;
         }
     }
 }
