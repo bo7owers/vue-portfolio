@@ -7,12 +7,11 @@ onMounted(() => {
 </script>
 <template>
     <footer class="container">
+        <h3 class="call-to row-center">Get in touch</h3>
         <div class="icons row-center">
             <div class="icon icon-mastodon">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="0.88em"
-                    height="1em"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 448 512"
                 >
@@ -25,8 +24,6 @@ onMounted(() => {
             <div class="icon icon-linkedin">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="0.88em"
-                    height="1em"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 448 512"
                 >
@@ -39,8 +36,6 @@ onMounted(() => {
             <div class="icon icon-github">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="0.88em"
-                    height="1em"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 448 512"
                 >
@@ -58,9 +53,27 @@ onMounted(() => {
 @use '../assets/sass/vars/colors' as c;
 footer {
     background-color: c.$brand-grey;
+    .call-to {
+        color: c.$brand-black;
+        text-align: inherit;
+    }
 }
 .icons {
     display: flex;
     gap: 2rem;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+        margin-block: auto;
+        & > svg {
+            height: 2.5em;
+            transition: all 250ms ease-in;
+            &:hover,
+            &:focus {
+                color: #369;
+            }
+        }
+    }
 }
 </style>
