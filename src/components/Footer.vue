@@ -1,5 +1,6 @@
-<script setup>
-import { onMounted } from 'vue'
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+const year = ref(new Date().getFullYear())
 
 onMounted(() => {
     console.log('icons from https://iconify.design/')
@@ -46,6 +47,9 @@ onMounted(() => {
                 </svg>
             </div>
         </div>
+        <div class="year-of-creation row-center">
+            <p>Made in {{ year }} by René Torres</p>
+        </div>
     </footer>
 </template>
 
@@ -56,6 +60,13 @@ footer {
     .call-to {
         color: c.$brand-black;
         text-align: inherit;
+    }
+
+    .year-of-creation {
+        display: flex;
+        > p {
+            margin-inline: auto;
+        }
     }
 }
 .icons {
