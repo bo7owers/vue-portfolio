@@ -111,7 +111,6 @@ footer {
         color: c.$brand-black;
         &:hover,
         &:focus-visible {
-            color: #369;
             outline: none;
         }
         & > svg {
