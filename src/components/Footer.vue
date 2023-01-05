@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import { onMounted, ref, defineComponent, h } from 'vue'
-import { useTippy } from 'vue-tippy'
-const button = ref()
-useTippy(button, {
-    content: 'Hi',
-})
+import { onMounted, ref } from 'vue'
+
 const year = ref(new Date().getFullYear())
 
 onMounted(() => {
