@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, defineComponent, h } from 'vue'
+import { useTippy } from 'vue-tippy'
+const button = ref()
+useTippy(button, {
+    content: 'Hi',
+})
 const year = ref(new Date().getFullYear())
 
 onMounted(() => {
@@ -17,6 +22,7 @@ onMounted(() => {
                 target="_blank"
                 rel="noopener noreferrer"
                 class="icon icon-mastodon"
+                v-tippy="'Open in a new tab'"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -34,6 +40,7 @@ onMounted(() => {
                 target="_blank"
                 rel="noopener noreferrer"
                 class="icon icon-github"
+                v-tippy="'Open in a new tab'"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -51,6 +58,7 @@ onMounted(() => {
                 target="_blank"
                 rel="noopener noreferrer"
                 class="icon icon-linkedin"
+                v-tippy="'Open in a new tab'"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
