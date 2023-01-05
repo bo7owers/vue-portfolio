@@ -10,7 +10,7 @@ defineProps<{
         target="_blank"
         rel="noopener noreferrer"
         v-tippy="'Open in a new tab'"
-        aria-label="Open in a new tab"
+        aria-label="Open this link in a new tab"
         >{{ description }}</a
     >
 </template>

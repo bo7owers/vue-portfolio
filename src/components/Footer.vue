@@ -23,6 +23,7 @@ onMounted(() => {
                 rel="noopener noreferrer"
                 class="icon icon-mastodon"
                 v-tippy="'Open in a new tab'"
+                aria-label="Open this link in a new tab"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +42,7 @@ onMounted(() => {
                 rel="noopener noreferrer"
                 class="icon icon-github"
                 v-tippy="'Open in a new tab'"
+                aria-label="Open this link in a new tab"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -59,6 +61,7 @@ onMounted(() => {
                 rel="noopener noreferrer"
                 class="icon icon-linkedin"
                 v-tippy="'Open in a new tab'"
+                aria-label="Open this link in a new tab"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
