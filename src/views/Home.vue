@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import ExternalLink from '../components/ExternalLink.vue'
 interface person {
     name: String
     lName: String
@@ -16,8 +17,12 @@ const rene: person = {
     <h1>{{ rene.name }} {{ rene.lName }}</h1>
     <p>
         I am a web developer who wanst to make the web accessible to everybody.
-        <a href="#">testing styles</a>
+        <ExternalLink
+            href="https://vue.7orresrene.com"
+            description="My website's beta version"
+        />
     </p>
+
     <div class="main-img"></div>
     <button class="btn-test">Hello there</button>
 </template>
