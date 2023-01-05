@@ -1,18 +1,20 @@
 // ----- Colours
 
 $mainVars: (
-    brand-black: '#2c2c2c',
-    visited: '#9700a8',
-    brand-pink: '#ed78b1',
-    tertiary-color: '#003cf0',
-    brand-blue: '#285b86',
-    so-white: '#fefefe',
-    solid-black: '#000',
-    underline-pink: '#ed78b1',
-    icon-bg-color: 'var(--brand-blue)',
+    brand-black: #2c2c2c,
+    visited: #9700a8,
+    brand-pink: #ed78b1,
+    tertiary-color: #003cf0,
+    brand-blue: #285b86,
+    so-white: #fefefe,
+    solid-black: #000,
+    underline-pink: #ed78b1,
+    icon-bg-color: var(--brand-blue),
     btn-bg-color: #eee,
     btn-bg-pocus: #ddd,
     brand-grey: #e8e8e8,
+    highlight-bg: #5cb5c2,
+    highlight-txt: #1c1c1c,
 );
 
 // add css custom props from sass vars
@@ -32,6 +34,8 @@ $so-white: var(--so-white);
 $underline-pink: var(--brand-pink);
 $solid-black: var(--solid-black);
 $brand-grey: var(--brand-grey);
+$highlight-bg: var(--highlight-bg);
+$highlight-txt: var(--highlight-txt);
 
 $btn-bg-color: var(--btn-bg-color); //background for the button
 $btn-bg-color-hover: var(--btn-bg-pocus);
