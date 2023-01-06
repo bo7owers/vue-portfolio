@@ -61,6 +61,25 @@ onUpdated(() => {
                     :class="{ 'active-icon': mobileNav }"
                     tabindex="0"
                 ></i>
+                <button
+                    @click="toggleSmallNav"
+                    @keypress.enter="toggleSmallNav"
+                    class="menu-ellipsis"
+                    :class="{ 'active-icon': mobileNav }"
+                    tabindex="0"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                    >
+                        <circle cx="16" cy="8" r="2" fill="currentColor" />
+                        <circle cx="16" cy="16" r="2" fill="currentColor" />
+                        <circle cx="16" cy="24" r="2" fill="currentColor" />
+                    </svg>
+                </button>
             </div>
             <transition name="mobile-nav">
                 <div v-if="mobileNav" class="mobile-nav">
@@ -220,15 +239,6 @@ header {
                 align-items: flex-start;
                 gap: 1rem 1rem;
             }
-            & i {
-                cursor: pointer;
-                font-size: 1.5rem;
-                transform: rotate(90deg);
-                transition: 3000ms ease all;
-                &.active-icon {
-                    transform: rotate(180deg);
-                }
-            }
         }
         //  desktop nav
         ul {
@@ -273,10 +283,15 @@ header {
             }
         }
         .hamburger {
-            i {
+            & .menu-ellipsis {
+                background-color: transparent;
+                border: none;
                 cursor: pointer;
                 font-size: 1.5rem;
-                transition: 500ms ease all;
+                transition: 350ms ease all;
+                &.active-icon {
+                    transform: rotate(180deg);
+                }
             }
             .active-icon {
                 transform: rotate(180deg);
