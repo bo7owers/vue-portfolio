@@ -29,26 +29,10 @@ onUpdated(() => {
                 </router-link>
             </div>
             <ul v-if="!mobile" class="navigation">
-                <!-- Add name for each component when they are done!! -->
-                <li>
-                    <router-link class="link" :to="{ name: 'Home' }"
-                        >Home</router-link
-                    >
-                </li>
-                <li>
-                    <router-link class="link" :to="{ name: 'About' }"
-                        >About</router-link
-                    >
-                </li>
-                <li>
-                    <router-link class="link" :to="{ name: 'Programming' }"
-                        >Programming</router-link
-                    >
-                </li>
-                <li>
-                    <router-link class="link" :to="{ name: 'Contact' }"
-                        >Contact</router-link
-                    >
+                <li v-for="route in appPages" key="route.name">
+                    <router-link class="link" :to="{ name: route.name }">{{
+                        route.name
+                    }}</router-link>
                 </li>
             </ul>
             <div class="hamburger" v-if="mobile">
@@ -84,45 +68,13 @@ onUpdated(() => {
             <transition name="mobile-nav">
                 <div v-if="mobileNav" class="mobile-nav">
                     <ul class="nav-list">
-                        <!-- Add name for each component when they are done!! -->
-                        <li>
+                        <li v-for="route in appPages" key="route.name">
                             <router-link
                                 class="link"
-                                :to="{ name: 'Home' }"
+                                :to="{ name: route.name }"
                                 @keypress="toggleSmallNav"
-                                @keypress.space="toggleSmallNav"
                                 @click="toggleSmallNav"
-                                >Home</router-link
-                            >
-                        </li>
-                        <li>
-                            <router-link
-                                class="link"
-                                :to="{ name: 'About' }"
-                                @keypress="toggleSmallNav"
-                                @keypress.space="toggleSmallNav"
-                                @click="toggleSmallNav"
-                                >About</router-link
-                            >
-                        </li>
-                        <li>
-                            <router-link
-                                class="link"
-                                :to="{ name: 'Portfolio' }"
-                                @keypress="toggleSmallNav"
-                                @keypress.space="toggleSmallNav"
-                                @click="toggleSmallNav"
-                                >Portfolio</router-link
-                            >
-                        </li>
-                        <li>
-                            <router-link
-                                class="link"
-                                :to="{ name: 'Contact' }"
-                                @keypress="toggleSmallNav"
-                                @keypress.space="toggleSmallNav"
-                                @click="toggleSmallNav"
-                                >Contact</router-link
+                                >{{ route.name }}</router-link
                             >
                         </li>
                     </ul>
@@ -143,6 +95,8 @@ onUpdated(() => {
 </template>
 
 <script>
+import { appPages } from '../composables/pages'
+console.log(appPages.home.name)
 export default {
     name: 'main-nav',
     data() {
@@ -236,8 +190,8 @@ header {
             .nav-list {
                 flex-flow: column wrap;
                 justify-content: start;
-                align-items: flex-start;
-                gap: 1rem 1rem;
+                align-items: center;
+                gap: 1rem;
             }
         }
         //  desktop nav
