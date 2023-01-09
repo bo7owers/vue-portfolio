@@ -119,6 +119,7 @@ footer {
         transition: all 200ms ease-in;
         &:hover,
         &:focus-visible {
+            color: c.$brand-blue;
             outline: none;
         }
         & > svg {
