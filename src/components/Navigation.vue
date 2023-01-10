@@ -2,22 +2,26 @@
 import { useScreenWidthStore } from '../stores/ScreenWidthStore'
 import { storeToRefs } from 'pinia'
 import { onMounted, onUpdated } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const screenWidth = useScreenWidthStore()
+// Translations
+const { t, d, locale, availableLocales } = useI18n()
 
-const { innerWidth, isDesktop, isPhone, isTablet } = storeToRefs(screenWidth)
-const { defineScreenWidth } = screenWidth
+// const screenWidth = useScreenWidthStore()
 
-onMounted(() => {
-    console.log(innerWidth.value, 'mounted')
-    console.log(isDesktop.value, isPhone.value, isTablet.value)
-    defineScreenWidth(window.innerWidth)
-})
+// const { innerWidth, isDesktop, isPhone, isTablet } = storeToRefs(screenWidth)
+// const { defineScreenWidth } = screenWidth
 
-onUpdated(() => {
-    console.log(innerWidth.value, 'updated')
-    defineScreenWidth(window.innerWidth)
-})
+// onMounted(() => {
+//     console.log(innerWidth.value, 'mounted')
+//     console.log(isDesktop.value, isPhone.value, isTablet.value)
+//     defineScreenWidth(window.innerWidth)
+// })
+
+// onUpdated(() => {
+//     console.log(innerWidth.value, 'updated')
+//     defineScreenWidth(window.innerWidth)
+// })
 </script>
 
 <template>

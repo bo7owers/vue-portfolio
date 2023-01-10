@@ -1,3 +1,7 @@
 {
-    "Hello": "Hola"
+    "Hello": "Hola",
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "programming": "Programación",
+    "contact": "Conectar conmigo"
 }

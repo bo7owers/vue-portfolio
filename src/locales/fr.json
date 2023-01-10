@@ -1,3 +1,7 @@
 {
-    "Hello": "Bonjour"
+    "Hello": "Bonjour",
+    "home": "Accueil",
+    "about": "À propos de moi",
+    "programming": "Programmation",
+    "contact": "Contactez-moi"
 }
