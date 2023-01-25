@@ -2,6 +2,7 @@
 defineProps<{
     href: string
     description: string
+    pageName: string
 }>()
 </script>
 <template>
@@ -9,8 +10,7 @@ defineProps<{
         :href="href"
         target="_blank"
         rel="noopener noreferrer"
-        v-tippy="'Open in a new tab'"
-        aria-label="Open this link in a new tab"
+        v-tippy="`Open link in a new tab`"
         >{{ description }}</a
     >
 </template>
