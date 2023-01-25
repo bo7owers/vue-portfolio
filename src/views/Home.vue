@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import ExternalLink from '../components/ExternalLink.vue'
+import { useI18n } from 'vue-i18n'
 interface person {
     name: String
     lName: String
@@ -11,10 +12,14 @@ const rene: person = {
     lName: 'Torres',
     age: 29,
 }
+
+const { t } = useI18n()
 </script>
 
 <template>
-    <h1>{{ rene.name }} {{ rene.lName }}</h1>
+    <h1>{{ t('homeHeading') }}</h1>
+
+    <h2>{{ rene.name }} {{ rene.lName }}</h2>
     <p>
         I am a web developer who wanst to make the web accessible to everybody.
         <ExternalLink
