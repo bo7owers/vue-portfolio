@@ -14,23 +14,11 @@ import es from './locales/es.json'
 import fr from './locales/fr.json'
 const i18n = createI18n({
     locale: 'en',
-    en,
-    es,
-    fr,
-    datetimeFormats: {
-        en: {
-            short: {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-            },
-            long: {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                weekday: 'long',
-            },
-        },
+
+    messages: {
+        en,
+        es,
+        fr,
     },
 })
 
