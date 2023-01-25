@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const year = ref(new Date().getFullYear())
+
+const { t } = useI18n()
 
 onMounted(() => {
     console.log('icons from https://iconify.design/')
@@ -10,7 +13,7 @@ onMounted(() => {
 <template>
     <footer class="container">
         <div class="call-to row-center">
-            <h3>Get in touch</h3>
+            <h3>{{ t('getInTouch') }}</h3>
         </div>
         <div class="icons row-center">
             <a
@@ -72,7 +75,7 @@ onMounted(() => {
             </a>
         </div>
         <div class="year-of-creation row-center">
-            <p>Made in {{ year }} by René Torres</p>
+            <p>{{ t('madeIn') }} {{ year }} {{ t('by') }} René Torres</p>
         </div>
     </footer>
 </template>
@@ -119,6 +122,7 @@ footer {
         transition: all 200ms ease-in;
         &:hover,
         &:focus-visible {
+            color: c.$brand-blue;
             outline: none;
         }
         & > svg {

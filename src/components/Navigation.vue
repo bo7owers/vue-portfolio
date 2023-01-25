@@ -1,23 +1,27 @@
 <script setup>
 import { useScreenWidthStore } from '../stores/ScreenWidthStore'
 import { storeToRefs } from 'pinia'
-import { onMounted, onUpdated } from 'vue'
+import { onMounted, onUpdated, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const screenWidth = useScreenWidthStore()
+// Translations
+const { t, d, locale, availableLocales } = useI18n()
 
-const { innerWidth, isDesktop, isPhone, isTablet } = storeToRefs(screenWidth)
-const { defineScreenWidth } = screenWidth
+// const screenWidth = useScreenWidthStore()
 
-onMounted(() => {
-    console.log(innerWidth.value, 'mounted')
-    console.log(isDesktop.value, isPhone.value, isTablet.value)
-    defineScreenWidth(window.innerWidth)
-})
+// const { innerWidth, isDesktop, isPhone, isTablet } = storeToRefs(screenWidth)
+// const { defineScreenWidth } = screenWidth
 
-onUpdated(() => {
-    console.log(innerWidth.value, 'updated')
-    defineScreenWidth(window.innerWidth)
-})
+// onMounted(() => {
+//     console.log(innerWidth.value, 'mounted')
+//     console.log(isDesktop.value, isPhone.value, isTablet.value)
+//     defineScreenWidth(window.innerWidth)
+// })
+
+// onUpdated(() => {
+//     console.log(innerWidth.value, 'updated')
+//     defineScreenWidth(window.innerWidth)
+// })
 </script>
 
 <template>
@@ -29,10 +33,25 @@ onUpdated(() => {
                 </router-link>
             </div>
             <ul v-if="!mobile" class="navigation">
-                <li v-for="route in appPages" key="route.name">
-                    <router-link class="link" :to="{ name: route.name }">{{
-                        route.name
-                    }}</router-link>
+                <li>
+                    <router-link class="link" to="/">
+                        {{ t('home') }}
+                    </router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/about">
+                        {{ t('about') }}
+                    </router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/programming">
+                        {{ t('programming') }}
+                    </router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/contact">
+                        {{ t('contact') }}
+                    </router-link>
                 </li>
             </ul>
             <div class="hamburger" v-if="mobile">
@@ -68,14 +87,45 @@ onUpdated(() => {
             <transition name="mobile-nav">
                 <div v-if="mobileNav" class="mobile-nav">
                     <ul class="nav-list">
-                        <li v-for="route in appPages" key="route.name">
+                        <li>
                             <router-link
                                 class="link"
-                                :to="{ name: route.name }"
                                 @keypress="toggleSmallNav"
                                 @click="toggleSmallNav"
-                                >{{ route.name }}</router-link
+                                to="/"
                             >
+                                {{ t('home') }}
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link
+                                class="link"
+                                @keypress="toggleSmallNav"
+                                @click="toggleSmallNav"
+                                to="/about"
+                            >
+                                {{ t('about') }}
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link
+                                class="link"
+                                @keypress="toggleSmallNav"
+                                @click="toggleSmallNav"
+                                to="/programming"
+                            >
+                                {{ t('programming') }}
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link
+                                class="link"
+                                @keypress="toggleSmallNav"
+                                @click="toggleSmallNav"
+                                to="/contact"
+                            >
+                                {{ t('contact') }}
+                            </router-link>
                         </li>
                     </ul>
                     <div class="close-nav">
@@ -95,8 +145,6 @@ onUpdated(() => {
 </template>
 
 <script>
-import { appPages } from '../composables/pages'
-console.log(appPages.home.name)
 export default {
     name: 'main-nav',
     data() {
