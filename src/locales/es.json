@@ -10,5 +10,8 @@
     "ContactHeading": "Contacto titulo",
     "getInTouch": "Contáctame",
     "madeIn": "Hecho en",
-    "by": "por"
+    "by": "por",
+    "mastoLink": "Perfil de Mastodon de René Torres (Abrir enlace en otra pestaña)",
+    "ghLink": "Perfil de GitHub de René Torres (Abrir enlace en otra pestaña)",
+    "linkedLink": "Perfil de LinkedIn de René Torres (Abrir enlace en otra pestaña)"
 }
