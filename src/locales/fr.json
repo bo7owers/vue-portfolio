@@ -3,5 +3,9 @@
     "home": "Accueil",
     "about": "À propos",
     "programming": "Programmation",
-    "contact": "Contactez-moi"
+    "contact": "Contactez-moi",
+    "homeHeading": "Accueil titre",
+    "aboutHeading": "À propos titre",
+    "programmingHeading": "Programmation titre",
+    "ContactHeading": "Contactez-moi titre"
 }
