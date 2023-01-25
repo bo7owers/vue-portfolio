@@ -1,7 +1,7 @@
 <script setup>
 import { useScreenWidthStore } from '../stores/ScreenWidthStore'
 import { storeToRefs } from 'pinia'
-import { onMounted, onUpdated } from 'vue'
+import { onMounted, onUpdated, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 // Translations
@@ -33,10 +33,25 @@ const { t, d, locale, availableLocales } = useI18n()
                 </router-link>
             </div>
             <ul v-if="!mobile" class="navigation">
-                <li v-for="route in appPages" key="route.name">
-                    <router-link class="link" :to="{ name: route.name }">{{
-                        route.name
-                    }}</router-link>
+                <li>
+                    <router-link class="link" to="/">
+                        {{ t('home') }}
+                    </router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/about">
+                        {{ t('about') }}
+                    </router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/programming">
+                        {{ t('programming') }}
+                    </router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/contact">
+                        {{ t('contact') }}
+                    </router-link>
                 </li>
             </ul>
             <div class="hamburger" v-if="mobile">
@@ -72,14 +87,45 @@ const { t, d, locale, availableLocales } = useI18n()
             <transition name="mobile-nav">
                 <div v-if="mobileNav" class="mobile-nav">
                     <ul class="nav-list">
-                        <li v-for="route in appPages" key="route.name">
+                        <li>
                             <router-link
                                 class="link"
-                                :to="{ name: route.name }"
                                 @keypress="toggleSmallNav"
                                 @click="toggleSmallNav"
-                                >{{ route.name }}</router-link
+                                to="/"
                             >
+                                {{ t('home') }}
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link
+                                class="link"
+                                @keypress="toggleSmallNav"
+                                @click="toggleSmallNav"
+                                to="/about"
+                            >
+                                {{ t('about') }}
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link
+                                class="link"
+                                @keypress="toggleSmallNav"
+                                @click="toggleSmallNav"
+                                to="/programming"
+                            >
+                                {{ t('programming') }}
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link
+                                class="link"
+                                @keypress="toggleSmallNav"
+                                @click="toggleSmallNav"
+                                to="/contact"
+                            >
+                                {{ t('contact') }}
+                            </router-link>
                         </li>
                     </ul>
                     <div class="close-nav">
@@ -99,8 +145,6 @@ const { t, d, locale, availableLocales } = useI18n()
 </template>
 
 <script>
-import { appPages } from '../composables/pages'
-console.log(appPages.home.name)
 export default {
     name: 'main-nav',
     data() {
