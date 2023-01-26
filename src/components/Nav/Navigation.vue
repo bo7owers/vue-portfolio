@@ -1,5 +1,5 @@
 <script setup>
-import { useScreenWidthStore } from '../stores/ScreenWidthStore'
+import { useScreenWidthStore } from '../../stores/ScreenWidthStore'
 import { storeToRefs } from 'pinia'
 import { onMounted, onUpdated, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -29,7 +29,7 @@ const { t, d, locale, availableLocales } = useI18n()
         <nav role="navigation">
             <div class="logo">
                 <router-link class="link" :to="{ name: 'Home' }">
-                    <img src="../assets/logo.png" alt="René Torres' logo" />
+                    <img src="../../assets/logo.png" alt="René Torres' logo" />
                 </router-link>
             </div>
             <ul v-if="!mobile" class="navigation">
@@ -52,6 +52,9 @@ const { t, d, locale, availableLocales } = useI18n()
                     <router-link class="link" to="/contact">
                         {{ t('contact') }}
                     </router-link>
+                </li>
+                <li style="margin-left: auto; flex-shrink: 1">
+                    <a href="#" class="link">Change Language</a>
                 </li>
             </ul>
             <div class="hamburger" v-if="mobile">
@@ -179,9 +182,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use '../assets/sass/vars/colors' as c;
-@use '../assets/sass/mixins/var-backups' as v;
-@use '../assets/sass/mixins/breakpoints' as b;
+@use '../../assets/sass/vars/colors' as c;
+@use '../../assets/sass/mixins/var-backups' as v;
+@use '../../assets/sass/mixins/breakpoints' as b;
 
 // my nav
 header {
