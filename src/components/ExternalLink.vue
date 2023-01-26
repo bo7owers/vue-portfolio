@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 defineProps<{
     href: string
     description: string
@@ -10,7 +13,7 @@ defineProps<{
         :href="href"
         target="_blank"
         rel="noopener noreferrer"
-        v-tippy="`Open link in a new tab`"
+        v-tippy="t('openIn')"
         >{{ description }}</a
     >
 </template>
