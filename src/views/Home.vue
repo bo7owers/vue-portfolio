@@ -23,6 +23,7 @@ const { t } = useI18n()
     <p>
         I am a web developer who wanst to make the web accessible to everybody.
         <ExternalLink
+            pageName="7orresrene"
             href="https://vue.7orresrene.com"
             description="My website's beta version"
         />

@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n'
 
 const year = ref(new Date().getFullYear())
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 onMounted(() => {
     console.log('icons from https://iconify.design/')
@@ -21,13 +21,14 @@ onMounted(() => {
                 target="_blank"
                 rel="noopener noreferrer"
                 class="icon icon-mastodon"
-                v-tippy="'Open in a new tab'"
-                aria-label="Open this link in a new tab"
+                v-tippy="t('mastoLink')"
+                :aria-label="t('mastoLink')"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 448 512"
+                    aria-hidden="true"
                 >
                     <path
                         fill="currentColor"
@@ -40,13 +41,14 @@ onMounted(() => {
                 target="_blank"
                 rel="noopener noreferrer"
                 class="icon icon-github"
-                v-tippy="'Open in a new tab'"
-                aria-label="Open this link in a new tab"
+                :aria-label="t('ghLink')"
+                v-tippy="t('ghLink')"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 448 512"
+                    aria-hidden="true"
                 >
                     <path
                         fill="currentColor"
@@ -59,13 +61,14 @@ onMounted(() => {
                 target="_blank"
                 rel="noopener noreferrer"
                 class="icon icon-linkedin"
-                v-tippy="'Open in a new tab'"
-                aria-label="Open this link in a new tab"
+                v-tippy="t('linkedLink')"
+                :aria-label="t('linkedLink')"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 448 512"
+                    aria-hidden="true"
                 >
                     <path
                         fill="currentColor"
