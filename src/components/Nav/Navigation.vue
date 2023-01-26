@@ -3,6 +3,7 @@ import { useScreenWidthStore } from '../../stores/ScreenWidthStore'
 import { storeToRefs } from 'pinia'
 import { onMounted, onUpdated, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import LangDropdown from './LangDropdown.vue'
 
 // Translations
 const { t, d, locale, availableLocales } = useI18n()
@@ -53,9 +54,7 @@ const { t, d, locale, availableLocales } = useI18n()
                         {{ t('contact') }}
                     </router-link>
                 </li>
-                <li style="margin-left: auto; flex-shrink: 1">
-                    <a href="#" class="link">Change Language</a>
-                </li>
+                <li><LangDropdown title="Change Language" /></li>
             </ul>
             <div class="hamburger" v-if="mobile">
                 <!-- Move v-show="mobile" to the i if problems found -->
@@ -271,7 +270,7 @@ header {
                     border-bottom-left-radius: 2px;
                     border-bottom-right-radius: 2px;
                 }
-                &:focus,
+                &:focus:not(.lang-dropdown),
                 &:focus-visible {
                     outline: solid 2px;
 
