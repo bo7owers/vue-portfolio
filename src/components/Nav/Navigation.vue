@@ -180,7 +180,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use '../../assets/sass/vars/colors' as c;
 @use '../../assets/sass/mixins/var-backups' as v;
 @use '../../assets/sass/mixins/breakpoints' as b;
@@ -195,7 +195,7 @@ header {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         padding: 1rem 0;
         transition: 0.5s ease-out all;
         width: 90%;
