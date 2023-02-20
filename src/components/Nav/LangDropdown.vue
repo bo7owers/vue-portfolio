@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 defineProps<{
     title: string
@@ -8,26 +8,36 @@ defineProps<{
 
 const { t, d, locale, availableLocales } = useI18n()
 
-let active = ref<Boolean>(false)
-let opened = ref(false)
+let isActive = ref(false)
+let isOpened = ref(false)
+
+const closeDropdown = () => {
+    return setTimeout(() => {
+        isActive.value && (isActive.value = false)
+    }, 500)
+}
+
+const openDropdown = () => {
+    return (isActive.value = true && (isOpened.value = true))
+}
 </script>
 
 <template>
     <a
         href="#"
         class="link lang-dropdown"
-        @click="active === true ? (active = false) : (active = true)"
-        @mouseenter="active = true && (opened = true)"
-        @mouseleave="active === true && !opened && (active = false)"
-        :class="active && 'active'"
+        @click="isActive === true ? (isActive = false) : (isActive = true)"
+        @mouseenter="openDropdown"
+        @mouseleave="isActive === true && !isOpened && (isActive = false)"
+        :class="isActive && 'active'"
         >{{ title }}</a
     >
     <ul
         class="dropdown-menu"
-        v-if="active === true"
-        @mouseenter="opened = true"
-        @mouseleave="active = false"
-        :class="opened && 'opened'"
+        v-if="isActive === true"
+        @mouseenter="isOpened = true"
+        @mouseleave="closeDropdown"
+        :class="isOpened && 'opened'"
     >
         <li v-for="lang in availableLocales">
             <a href="#" class="link">
