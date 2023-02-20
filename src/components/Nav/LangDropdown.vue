@@ -9,6 +9,7 @@ defineProps<{
 const { t, d, locale, availableLocales } = useI18n()
 
 let active = ref<Boolean>(false)
+let opened = ref(false)
 </script>
 
 <template>
@@ -16,10 +17,18 @@ let active = ref<Boolean>(false)
         href="#"
         class="link lang-dropdown"
         @click="active === true ? (active = false) : (active = true)"
+        @mouseenter="active = true && (opened = true)"
+        @mouseleave="active === true && !opened && (active = false)"
         :class="active && 'active'"
         >{{ title }}</a
     >
-    <ul class="dropdown-menu" v-if="active === true">
+    <ul
+        class="dropdown-menu"
+        v-if="active === true"
+        @mouseenter="opened = true"
+        @mouseleave="active = false"
+        :class="opened && 'opened'"
+    >
         <li v-for="lang in availableLocales">
             <a href="#" class="link">
                 {{ lang }}
@@ -31,7 +40,7 @@ let active = ref<Boolean>(false)
 <style lang="scss" scoped>
 .lang-dropdown {
     // color: #369 !important;
-    // outline: 1px solid #000;
+    outline: 1px solid #000;
     margin-block-end: 0;
     &::after {
         content: '';
@@ -55,8 +64,14 @@ let active = ref<Boolean>(false)
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    // border: 1px solid #000;
+    outline: 1px solid #000;
     position: absolute;
-    top: 64px;
+    top: 50px;
+    right: 0;
+    width: 10em;
+
+    a.link {
+        width: 100%;
+    }
 }
 </style>
