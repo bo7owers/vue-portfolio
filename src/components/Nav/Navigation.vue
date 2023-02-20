@@ -250,6 +250,7 @@ header {
             display: flex;
             flex-flow: row wrap;
             gap: 0 2rem;
+            position: relative;
 
             li {
                 padding: 1rem;
