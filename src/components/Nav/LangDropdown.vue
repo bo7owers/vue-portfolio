@@ -31,7 +31,7 @@ let active = ref<Boolean>(false)
 <style lang="scss" scoped>
 .lang-dropdown {
     // color: #369 !important;
-    outline: 1px solid #000;
+    // outline: 1px solid #000;
     margin-block-end: 0;
     &::after {
         content: '';
@@ -55,7 +55,7 @@ let active = ref<Boolean>(false)
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    border: 1px solid #000;
+    // border: 1px solid #000;
     position: absolute;
     top: 64px;
 }
