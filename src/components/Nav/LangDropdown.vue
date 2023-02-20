@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { ref, computed } from 'vue'
+import { ref, onMounted } from 'vue'
 
 defineProps<{
     title: string
@@ -20,6 +20,12 @@ const closeDropdown = () => {
 const openDropdown = () => {
     return (isActive.value = true && (isOpened.value = true))
 }
+
+onMounted(() => {
+    // TODO: select lost link to call closeDropdown on focusleave
+    let lastLink = document.querySelector('.dropdown-menu')
+    console.log(lastLink)
+})
 </script>
 
 <template>
