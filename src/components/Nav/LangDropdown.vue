@@ -15,8 +15,11 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
 
 const closeDropdown = () => {
     return setTimeout(() => {
-        dropdownMenuActive && (dropdownMenuActive.value = false)
-    }, 500)
+        if (dropdownMenuActive) {
+            dropdownMenuActive.value = false
+            isNavOpen.value = false
+        }
+    }, 700)
 }
 
 const openDropdown = () => {
@@ -30,31 +33,26 @@ const openDropdown = () => {
         class="link lang-dropdown"
         @click="
             dropdownMenuActive === true
-                ? (dropdownMenuActive = false)
-                : (dropdownMenuActive = true)
+                ? (dropdownMenuActive = false) && (isNavOpen = false)
+                : (dropdownMenuActive = true) && (isNavOpen = true)
         "
         @mouseleave="
             dropdownMenuActive === true &&
-                !isNavOpen &&
-                (dropdownMenuActive = false)
+                isNavOpen &&
+                (dropdownMenuActive = false) &&
+                (isNavOpen = false)
         "
         :class="dropdownMenuActive && 'active'"
         >{{ title }}</a
     >
     <ul
         class="dropdown-menu"
-        v-if="dropdownMenuActive === true"
-        @mouseenter="isNavOpen = true"
+        v-show="dropdownMenuActive === true"
         @mouseleave="closeDropdown"
         :class="isNavOpen && 'opened'"
     >
         <li v-for="lang in availableLocales" :key="lang">
-            <a
-                href="#"
-                class="link"
-                :class="lang"
-                :data-focusout="availableLocales[2] === lang ? true : false"
-            >
+            <a href="#" class="link" :class="lang">
                 {{ lang }}
             </a>
         </li>
