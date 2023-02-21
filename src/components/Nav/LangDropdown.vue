@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-import { ref, onMounted, watch } from 'vue'
-import { useNavStore } from '../../stores/NavStore'
 import { storeToRefs } from 'pinia'
+import { useI18n } from 'vue-i18n'
+import { useNavStore } from '../../stores/NavStore'
 
 defineProps<{
     title: string
@@ -12,50 +11,28 @@ const { t, d, locale, availableLocales } = useI18n()
 
 const navStore = useNavStore()
 const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
-
-const closeDropdown = () => {
-    return setTimeout(() => {
-        if (dropdownMenuActive) {
-            dropdownMenuActive.value = false
-            isNavOpen.value = false
-        }
-    }, 700)
-}
-
-const openDropdown = () => {
-    return (dropdownMenuActive.value = true && (isNavOpen.value = true))
-}
-
-const toggleIsNavOpen = () => {
-    if (dropdownMenuActive.value === true) {
-        setTimeout(() => {
-            dropdownMenuActive.value = false
-            isNavOpen.value = false
-        }, 700)
-    } else {
-        dropdownMenuActive.value = true
-        isNavOpen.value = true
-    }
-}
 </script>
 
 <template>
     <a
         href="#"
         class="link lang-dropdown"
-        @click="toggleIsNavOpen"
-        @mouseleave="toggleIsNavOpen"
+        @click="navStore.toggleIsNavOpen"
         :class="dropdownMenuActive && 'active'"
         >{{ title }}</a
     >
     <ul
         class="dropdown-menu"
         v-show="dropdownMenuActive === true"
-        @mouseleave="toggleIsNavOpen"
         :class="isNavOpen && 'opened'"
     >
         <li v-for="lang in availableLocales" :key="lang">
-            <a href="#" class="link" :class="lang">
+            <a
+                href="#"
+                class="link"
+                :class="lang"
+                @focusout="lang === 'fr' && navStore.closeIsNavOPen"
+            >
                 {{ lang }}
             </a>
         </li>
