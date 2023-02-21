@@ -25,30 +25,33 @@ const closeDropdown = () => {
 const openDropdown = () => {
     return (dropdownMenuActive.value = true && (isNavOpen.value = true))
 }
+
+const toggleIsNavOpen = () => {
+    if (dropdownMenuActive.value === true) {
+        setTimeout(() => {
+            dropdownMenuActive.value = false
+            isNavOpen.value = false
+        }, 700)
+    } else {
+        dropdownMenuActive.value = true
+        isNavOpen.value = true
+    }
+}
 </script>
 
 <template>
     <a
         href="#"
         class="link lang-dropdown"
-        @click="
-            dropdownMenuActive === true
-                ? (dropdownMenuActive = false) && (isNavOpen = false)
-                : (dropdownMenuActive = true) && (isNavOpen = true)
-        "
-        @mouseleave="
-            dropdownMenuActive === true &&
-                isNavOpen &&
-                (dropdownMenuActive = false) &&
-                (isNavOpen = false)
-        "
+        @click="toggleIsNavOpen"
+        @mouseleave="toggleIsNavOpen"
         :class="dropdownMenuActive && 'active'"
         >{{ title }}</a
     >
     <ul
         class="dropdown-menu"
         v-show="dropdownMenuActive === true"
-        @mouseleave="closeDropdown"
+        @mouseleave="toggleIsNavOpen"
         :class="isNavOpen && 'opened'"
     >
         <li v-for="lang in availableLocales" :key="lang">
