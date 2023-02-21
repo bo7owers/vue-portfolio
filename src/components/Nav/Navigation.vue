@@ -1,10 +1,8 @@
 <script setup>
-import { useScreenWidthStore } from '../../stores/ScreenWidthStore'
 import { storeToRefs } from 'pinia'
-import { onMounted, onUpdated, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import LangDropdown from './LangDropdown.vue'
 import { useNavStore } from '../../stores/NavStore'
+import LangDropdown from './LangDropdown.vue'
 
 // Translations
 const { t, d, locale, availableLocales } = useI18n()
@@ -58,7 +56,10 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
                         {{ t('contact') }}
                     </router-link>
                 </li>
-                <li :aria-expanded="isNavOpen ? true : false">
+                <li
+                    :aria-expanded="isNavOpen ? true : false"
+                    @mouseleave="navStore.toggleIsNavOpen"
+                >
                     <LangDropdown title="Change Language" />
                 </li>
             </ul>
