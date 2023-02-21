@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
+import { useNavStore } from '../../stores/NavStore'
+import { storeToRefs } from 'pinia'
 
 defineProps<{
     title: string
@@ -8,45 +10,51 @@ defineProps<{
 
 const { t, d, locale, availableLocales } = useI18n()
 
-let isActive = ref(false)
-let isOpened = ref(false)
+const navStore = useNavStore()
+const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
 
 const closeDropdown = () => {
     return setTimeout(() => {
-        isActive.value && (isActive.value = false)
+        dropdownMenuActive && (dropdownMenuActive.value = false)
     }, 500)
 }
 
 const openDropdown = () => {
-    return (isActive.value = true && (isOpened.value = true))
+    return (dropdownMenuActive.value = true && (isNavOpen.value = true))
 }
-
-onMounted(() => {
-    // TODO: select lost link to call closeDropdown on focusleave
-    let lastLink = document.querySelector('.dropdown-menu')
-    console.log(lastLink)
-})
 </script>
 
 <template>
     <a
         href="#"
         class="link lang-dropdown"
-        @click="isActive === true ? (isActive = false) : (isActive = true)"
-        @mouseenter="openDropdown"
-        @mouseleave="isActive === true && !isOpened && (isActive = false)"
-        :class="isActive && 'active'"
+        @click="
+            dropdownMenuActive === true
+                ? (dropdownMenuActive = false)
+                : (dropdownMenuActive = true)
+        "
+        @mouseleave="
+            dropdownMenuActive === true &&
+                !isNavOpen &&
+                (dropdownMenuActive = false)
+        "
+        :class="dropdownMenuActive && 'active'"
         >{{ title }}</a
     >
     <ul
         class="dropdown-menu"
-        v-if="isActive === true"
-        @mouseenter="isOpened = true"
+        v-if="dropdownMenuActive === true"
+        @mouseenter="isNavOpen = true"
         @mouseleave="closeDropdown"
-        :class="isOpened && 'opened'"
+        :class="isNavOpen && 'opened'"
     >
-        <li v-for="lang in availableLocales">
-            <a href="#" class="link">
+        <li v-for="lang in availableLocales" :key="lang">
+            <a
+                href="#"
+                class="link"
+                :class="lang"
+                :data-focusout="availableLocales[2] === lang ? true : false"
+            >
                 {{ lang }}
             </a>
         </li>
