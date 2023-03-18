@@ -56,10 +56,7 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
                         {{ t('contact') }}
                     </router-link>
                 </li>
-                <li
-                    :aria-expanded="isNavOpen ? true : false"
-                    @mouseleave="navStore.toggleIsNavOpen"
-                >
+                <li :aria-expanded="isNavOpen ? true : false">
                     <LangDropdown title="Change Language" />
                 </li>
             </ul>
