@@ -40,6 +40,8 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
 </template>
 
 <style lang="scss" scoped>
+@use '../../assets/sass/vars/colors' as c;
+
 .lang-dropdown {
     // color: #369 !important;
     outline: 1px solid #000;
@@ -63,6 +65,7 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
 }
 
 .dropdown-menu {
+    --ddm-width: 5em;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -70,10 +73,14 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
     position: absolute;
     top: 50px;
     right: 0;
-    width: 10em;
-
+    width: var(--ddm-width);
+    background-color: c.$so-white;
+    li {
+        width: calc(var(--ddm-width) - 2rem);
+    }
     a.link {
-        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
 </style>
