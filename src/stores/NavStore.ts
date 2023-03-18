@@ -7,18 +7,14 @@ export const useNavStore = defineStore('navStore', () => {
 
     // methods
     function closeIsNavOPen() {
-        setTimeout(() => {
-            dropdownMenuActive.value = false
-            isNavOpen.value = false
-        }, 400)
+        dropdownMenuActive.value = false
+        isNavOpen.value = false
     }
 
     function toggleIsNavOpen() {
         if (dropdownMenuActive.value === true) {
-            setTimeout(() => {
-                dropdownMenuActive.value = false
-                isNavOpen.value = false
-            }, 500)
+            dropdownMenuActive.value = false
+            isNavOpen.value = false
         } else {
             dropdownMenuActive.value = true
             isNavOpen.value = true
