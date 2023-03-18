@@ -14,13 +14,25 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
 </script>
 
 <template>
-    <a
+    <button
         href="#"
         class="link lang-dropdown"
         @click="navStore.toggleIsNavOpen"
         :class="dropdownMenuActive && 'active'"
-        >{{ title }}</a
+        :title="title"
     >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+        >
+            <path
+                fill="currentColor"
+                d="M12.65 15.67c.14-.36.05-.77-.23-1.05l-2.09-2.06l.03-.03A17.52 17.52 0 0 0 14.07 6h1.94c.54 0 .99-.45.99-.99v-.02c0-.54-.45-.99-.99-.99H10V3c0-.55-.45-1-1-1s-1 .45-1 1v1H1.99c-.54 0-.99.45-.99.99c0 .55.45.99.99.99h10.18A15.66 15.66 0 0 1 9 11.35c-.81-.89-1.49-1.86-2.06-2.88A.885.885 0 0 0 6.16 8c-.69 0-1.13.75-.79 1.35c.63 1.13 1.4 2.21 2.3 3.21L3.3 16.87a.99.99 0 0 0 0 1.42c.39.39 1.02.39 1.42 0L9 14l2.02 2.02c.51.51 1.38.32 1.63-.35zM17.5 10c-.6 0-1.14.37-1.35.94l-3.67 9.8c-.24.61.22 1.26.87 1.26c.39 0 .74-.24.88-.61l.89-2.39h4.75l.9 2.39c.14.36.49.61.88.61c.65 0 1.11-.65.88-1.26l-3.67-9.8c-.22-.57-.76-.94-1.36-.94zm-1.62 7l1.62-4.33L19.12 17h-3.24z"
+            />
+        </svg>
+    </button>
     <ul
         class="dropdown-menu"
         v-show="dropdownMenuActive === true"
@@ -46,22 +58,8 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
     // color: #369 !important;
     outline: 1px solid #000;
     margin-block-end: 0;
-    &::after {
-        content: '';
-        background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1em" height="1em" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 8l6 6m-7 0l6-6l2-3M2 5h12M7 2h1m14 20l-5-10l-5 10m2-4h6"%2F%3E%3C%2Fsvg%3E');
-        display: block;
-        width: 1rem;
-        height: 1rem;
-        background-repeat: no-repeat;
-        position: relative;
-        top: -1.5rem;
-        right: -12rem;
-
-        &:focus-visible,
-        &:hover {
-            outline: none !important;
-        }
-    }
+    background-color: c.$so-white;
+    border: none;
 }
 
 .dropdown-menu {
