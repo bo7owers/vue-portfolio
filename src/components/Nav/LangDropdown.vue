@@ -10,7 +10,13 @@ defineProps<{
 const { t, d, locale, availableLocales } = useI18n()
 
 const navStore = useNavStore()
+const { closeIsNavOPen } = navStore
 const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
+
+const changeLang = (lang: string) => {
+    locale.value = lang
+    closeIsNavOPen()
+}
 </script>
 
 <template>
@@ -39,11 +45,7 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
         :class="isNavOpen && 'opened'"
     >
         <li v-for="lang in availableLocales" :key="lang">
-            <button
-                class="link"
-                :class="lang"
-                @focusout="lang === 'fr' && navStore.closeIsNavOPen"
-            >
+            <button class="link" :class="lang" @click="changeLang(lang)">
                 {{ lang }}
             </button>
         </li>
@@ -60,6 +62,7 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
     margin-block-end: 0;
     background-color: c.$so-white;
     border: none;
+    cursor: pointer;
 }
 
 .dropdown-menu {
@@ -81,6 +84,7 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
         justify-content: center;
         background-color: c.$so-white;
         border: none;
+        cursor: pointer;
         @extend %link-styles;
 
         &:hover,
