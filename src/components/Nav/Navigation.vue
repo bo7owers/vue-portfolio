@@ -191,6 +191,7 @@ export default {
 @use '../../assets/sass/vars/colors' as c;
 @use '../../assets/sass/mixins/var-backups' as v;
 @use '../../assets/sass/mixins/breakpoints' as b;
+@use '../../assets/sass/base/extends';
 
 // my nav
 header {
@@ -265,18 +266,11 @@ header {
             }
 
             & .link {
-                font-weight: 500;
-                color: c.$brand-black;
-                text-decoration: none;
-                border-bottom: 3px solid transparent;
-                transition: 210ms ease-in all;
+                @extend %link-styles;
                 &:hover,
                 &:focus,
                 &:focus-visible {
-                    color: c.$brand-blue;
-                    border-color: c.$underline-pink;
-                    border-bottom-left-radius: 2px;
-                    border-bottom-right-radius: 2px;
+                    @extend %link-styles-hover;
                 }
                 &:focus:not(.lang-dropdown),
                 &:focus-visible {
@@ -287,10 +281,7 @@ header {
                     border-radius: 2px;
                 }
                 &.router-link-active {
-                    color: c.$brand-blue;
-                    border-color: c.$underline-pink;
-                    border-bottom-left-radius: 2px;
-                    border-bottom-right-radius: 2px;
+                    @extend %link-styles-hover;
                 }
             }
         }

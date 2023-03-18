@@ -27,20 +27,20 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
         :class="isNavOpen && 'opened'"
     >
         <li v-for="lang in availableLocales" :key="lang">
-            <a
-                href="#"
+            <button
                 class="link"
                 :class="lang"
                 @focusout="lang === 'fr' && navStore.closeIsNavOPen"
             >
                 {{ lang }}
-            </a>
+            </button>
         </li>
     </ul>
 </template>
 
 <style lang="scss" scoped>
 @use '../../assets/sass/vars/colors' as c;
+@use '../../assets/sass/base/extends';
 
 .lang-dropdown {
     // color: #369 !important;
@@ -78,9 +78,18 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
     li {
         width: calc(var(--ddm-width) - 2rem);
     }
-    a.link {
+    button.link {
         display: flex;
         justify-content: center;
+        background-color: c.$so-white;
+        border: none;
+        @extend %link-styles;
+
+        &:hover,
+        &:focus,
+        &:focus-visible {
+            @extend %link-styles-hover;
+        }
     }
 }
 </style>
