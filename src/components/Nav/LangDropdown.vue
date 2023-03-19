@@ -13,9 +13,11 @@ const navStore = useNavStore()
 const { closeIsNavOPen } = navStore
 const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
 
+let mainCont = document.querySelector<HTMLInputElement>('#main_content')
 const changeLang = (lang: string) => {
     locale.value = lang
     closeIsNavOPen()
+    mainCont?.focus()
 }
 </script>
 
