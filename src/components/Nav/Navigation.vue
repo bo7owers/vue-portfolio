@@ -29,7 +29,10 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
 
 <template>
     <header>
-        <nav role="navigation">
+        <nav
+            role="navigation"
+            :aria-label="!mobile ? 'Top navigation' : 'Mobile navigation'"
+        >
             <div class="logo">
                 <router-link class="link" :to="{ name: 'Home' }">
                     <img src="../../assets/logo.png" alt="René Torres' logo" />
@@ -76,6 +79,7 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
                     class="menu-ellipsis"
                     :class="{ 'active-icon': mobileNav }"
                     tabindex="0"
+                    aria-label="Open mobile navigation"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -132,6 +136,9 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
                             >
                                 {{ t('contact') }}
                             </router-link>
+                        </li>
+                        <li :aria-expanded="isNavOpen ? true : false">
+                            <LangDropdown :title="t('chLang')" />
                         </li>
                     </ul>
                     <div class="close-nav">
