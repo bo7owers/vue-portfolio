@@ -81,6 +81,7 @@ const closeDropdown = (e: any) => {
 <style lang="scss" scoped>
 @use '../../assets/sass/vars/colors' as c;
 @use '../../assets/sass/base/extends';
+@use '../../assets/sass/mixins/breakpoints' as b;
 %btn-width {
     width: calc(var(--ddm-width) - 2rem);
 }
@@ -98,10 +99,13 @@ const closeDropdown = (e: any) => {
     align-items: center;
     outline: 1px solid #000;
     position: absolute;
-    top: 50px;
+    // top: 0;
     right: 0;
     width: var(--ddm-width);
     background-color: c.$so-white;
+    @include b.breakpoint(medium) {
+        top: 50px;
+    }
     li {
         @extend %btn-width;
     }
