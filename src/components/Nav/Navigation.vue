@@ -296,6 +296,7 @@ header {
                 cursor: pointer;
                 font-size: 1.5rem;
                 transition: 350ms ease all;
+                color: c.$brand-black;
                 &.active-icon {
                     transform: rotate(180deg);
                 }
