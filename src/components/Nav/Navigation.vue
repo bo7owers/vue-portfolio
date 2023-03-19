@@ -57,7 +57,7 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
                     </router-link>
                 </li>
                 <li :aria-expanded="isNavOpen ? true : false">
-                    <LangDropdown title="Change Language" />
+                    <LangDropdown :title="t('chLang')" />
                 </li>
             </ul>
             <div class="hamburger" v-if="mobile">
