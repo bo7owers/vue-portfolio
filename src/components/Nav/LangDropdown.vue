@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
+import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useNavStore } from '../../stores/NavStore'
 
@@ -19,6 +20,21 @@ const changeLang = (lang: string) => {
     closeIsNavOPen()
     mainCont?.focus()
 }
+
+const langDropDown = ref()
+onMounted(() => {
+    // grab ref to lang-dropdown
+    langDropDown.value = document.querySelector('.lang-dropdown')
+})
+
+const closeDropdown = (e: any) => {
+    if (e.target.classList.contains('lang-dropdown')) {
+        e.target.focus()
+    } else {
+        langDropDown.value?.focus()
+    }
+    closeIsNavOPen()
+}
 </script>
 
 <template>
@@ -26,8 +42,10 @@ const changeLang = (lang: string) => {
         href="#"
         class="link lang-dropdown"
         @click.prevent="navStore.toggleIsNavOpen"
+        @keyup.esc="closeDropdown($event)"
         :class="dropdownMenuActive && 'router-link-active'"
         v-tippy="title"
+        aria-haspopup="menu"
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,6 +70,7 @@ const changeLang = (lang: string) => {
                 :class="lang"
                 @click.prevent="changeLang(lang)"
                 href="#"
+                @keyup.esc="closeDropdown($event)"
             >
                 {{ lang }}
             </a>
