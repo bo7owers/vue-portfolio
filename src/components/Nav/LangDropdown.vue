@@ -99,12 +99,12 @@ const closeDropdown = (e: any) => {
     align-items: center;
     outline: 1px solid #000;
     position: absolute;
-    // top: 0;
-    right: 0;
+    right: 35px;
     width: var(--ddm-width);
     background-color: c.$so-white;
     @include b.breakpoint(medium) {
         top: 50px;
+        right: 0;
     }
     li {
         @extend %btn-width;
