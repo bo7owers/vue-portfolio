@@ -24,7 +24,9 @@ function toggleSmallNav() {
 
 function checkScreenSize() {
     windowWidth.value = window.innerWidth
-    if (windowWidth.value <= 750) {
+    console.log(windowWidth.value)
+
+    if (windowWidth.value <= 768) {
         mobile.value = true
         return
     }
@@ -209,19 +211,44 @@ header {
         transition: 0.5s ease-out all;
         width: 90%;
         margin: 0 auto;
-        @media (min-width: 1140px) {
-            max-width: 1140px;
+
+        @include b.breakpoint(small) {
+            width: 95%;
+        }
+        @include b.breakpoint(medium) {
+            width: 90%;
+            // width: 75%;
+        }
+
+        @include b.breakpoint(large) {
+            // max-width: 1140px;
+            max-width: 895px;
         }
 
         .logo {
             .link > img,
             .link {
                 display: inline-block;
-                height: 5em;
-                width: 5rem;
+                height: var(--logo-height);
+                width: var(--logo-width);
                 border-radius: 1rem;
                 user-select: none;
                 transition: 100ms ease-out all;
+
+                @include b.breakpoint(small) {
+                    --logo-height: 2.5rem;
+                    --logo-width: 2.5rem;
+                }
+
+                @include b.breakpoint(bt-medium) {
+                    --logo-height: 3rem;
+                    --logo-width: 3rem;
+                }
+
+                @include b.breakpoint(medium) {
+                    --logo-height: 5rem;
+                    --logo-width: 5rem;
+                }
                 &:focus,
                 &:focus-visible {
                     outline: #2c2c2c solid 3px;
