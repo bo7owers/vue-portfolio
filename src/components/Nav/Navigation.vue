@@ -138,7 +138,7 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
                             @keypress.space="toggleSmallNav"
                             @click="toggleSmallNav"
                             class="btn-close"
-                            :class="{ 'active-icon': mobileNav }"
+                            :class="mobileNav && 'active-icon'"
                             aria-label="Close menu"
                         >
                             <svg
