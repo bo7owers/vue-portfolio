@@ -65,20 +65,11 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
             </ul>
             <div class="hamburger" v-if="mobile">
                 <!-- Move v-show="mobile" to the i if problems found -->
-                <i
-                    @click="toggleSmallNav"
-                    @keypress.enter="toggleSmallNav"
-                    @keypress.space="toggleSmallNav"
-                    class="fas fa-ellipsis-v"
-                    :class="{ 'active-icon': mobileNav }"
-                    tabindex="0"
-                ></i>
                 <button
                     @click="toggleSmallNav"
                     @keypress.enter="toggleSmallNav"
                     class="menu-ellipsis"
                     :class="{ 'active-icon': mobileNav }"
-                    tabindex="0"
                     aria-label="Open mobile navigation"
                 >
                     <svg
@@ -142,14 +133,31 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
                         </li>
                     </ul>
                     <div class="close-nav">
-                        <i
+                        <button
                             @keypress="toggleSmallNav"
                             @keypress.space="toggleSmallNav"
                             @click="toggleSmallNav"
-                            class="fas fa-times close"
+                            class="btn-close"
                             :class="{ 'active-icon': mobileNav }"
-                            tabindex="0"
-                        ></i>
+                            aria-label="Close menu"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                            >
+                                <g fill="none">
+                                    <path
+                                        d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z"
+                                    />
+                                    <path
+                                        fill="currentColor"
+                                        d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2ZM9.879 8.464a1 1 0 0 0-1.498 1.32l.084.095l2.12 2.12l-2.12 2.122a1 1 0 0 0 1.32 1.498l.094-.083L12 13.414l2.121 2.122a1 1 0 0 0 1.498-1.32l-.083-.095L13.414 12l2.122-2.121a1 1 0 0 0-1.32-1.498l-.095.083L12 10.586L9.879 8.464Z"
+                                    />
+                                </g>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </transition>
@@ -238,17 +246,15 @@ header {
             flex-flow: row nowrap;
             align-items: flex-start;
             justify-content: center;
-            gap: 5rem;
+            gap: 5rem 3.75rem;
             width: 100%;
             height: 100%;
             position: fixed;
             top: 0;
             left: 0;
-            padding: 1.25rem 0rem 0 2rem;
+            padding: 1.25rem 0;
             z-index: 10000;
             background: #fff;
-            border-top: 2px solid #2c2c2c;
-            border-right: 2px solid #2c2c2c;
             .nav-list {
                 flex-flow: column wrap;
                 justify-content: start;
@@ -289,22 +295,21 @@ header {
                 }
             }
         }
-        .hamburger {
-            & .menu-ellipsis {
-                background-color: transparent;
-                border: none;
-                cursor: pointer;
-                font-size: 1.5rem;
-                transition: 350ms ease all;
-                color: c.$brand-black;
-                &.active-icon {
-                    transform: rotate(180deg);
-                }
-            }
-            .active-icon {
-                transform: rotate(180deg);
-            }
-        }
     }
+}
+.menu-ellipsis,
+.btn-close {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 350ms ease all;
+    color: c.$brand-black;
+    &.active-icon {
+        transform: rotate(180deg);
+    }
+}
+.active-icon {
+    transform: rotate(180deg);
 }
 </style>
