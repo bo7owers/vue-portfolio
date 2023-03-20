@@ -102,7 +102,7 @@ const closeDropdown = (e: any) => {
     right: 35px;
     width: var(--ddm-width);
     background-color: c.$so-white;
-    @include b.breakpoint(medium) {
+    @include b.breakpoint(small) {
         top: 50px;
         right: 0;
     }
