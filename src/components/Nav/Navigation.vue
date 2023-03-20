@@ -1,14 +1,37 @@
-<script setup>
+<script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
 import { useNavStore } from '../../stores/NavStore'
 import LangDropdown from './LangDropdown.vue'
+import { ref } from 'vue'
 
 // Translations
 const { t, d, locale, availableLocales } = useI18n()
 
 const navStore = useNavStore()
 const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
+
+const mobile = ref<boolean>(false)
+const mobileNav = ref<boolean>(false)
+const windowWidth = ref<number>()
+
+// check window size
+window.addEventListener('resize', checkScreenSize)
+
+function toggleSmallNav() {
+    mobileNav.value = !mobileNav.value
+}
+
+function checkScreenSize() {
+    windowWidth.value = window.innerWidth
+    if (windowWidth.value <= 750) {
+        mobile.value = true
+        return
+    }
+    mobile.value = false
+    mobileNav.value = false
+    return
+}
 
 // const screenWidth = useScreenWidthStore()
 
@@ -164,40 +187,6 @@ const { dropdownMenuActive, isNavOpen } = storeToRefs(navStore)
         </nav>
     </header>
 </template>
-
-<script>
-export default {
-    name: 'main-nav',
-    data() {
-        return {
-            scrolledNavigation: null,
-            mobile: null,
-            mobileNav: null,
-            windowWidth: null,
-        }
-    },
-    created() {
-        window.addEventListener('resize', this.checkScreenSize)
-        this.checkScreenSize()
-    },
-    methods: {
-        toggleSmallNav() {
-            this.mobileNav = !this.mobileNav
-        },
-
-        checkScreenSize() {
-            this.windowWidth = window.innerWidth
-            if (this.windowWidth <= 750) {
-                this.mobile = true
-                return
-            }
-            this.mobile = false
-            this.mobileNav = false
-            return
-        },
-    },
-}
-</script>
 
 <style lang="scss">
 @use '../../assets/sass/vars/colors' as c;
