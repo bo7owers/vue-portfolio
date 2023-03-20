@@ -238,11 +238,9 @@ header {
                 @include b.breakpoint(small) {
                     --logo-height: 2.5rem;
                     --logo-width: 2.5rem;
-                    background-color: green;
                 }
 
                 @include b.breakpoint(bt-medium) {
-                    background-color: blue;
                     --logo-height: 3rem;
                     --logo-width: 3rem;
                 }
@@ -250,7 +248,6 @@ header {
                 @include b.breakpoint(medium) {
                     --logo-height: 5rem;
                     --logo-width: 5rem;
-                    background-color: yellow;
                 }
                 &:focus,
                 &:focus-visible {
