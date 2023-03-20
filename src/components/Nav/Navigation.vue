@@ -267,7 +267,6 @@ header {
             list-style: none;
             display: flex;
             flex-flow: row wrap;
-            gap: 0 2rem;
             position: relative;
 
             li {
