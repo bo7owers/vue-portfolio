@@ -24,7 +24,7 @@ function toggleSmallNav() {
 
 function checkScreenSize() {
     windowWidth.value = window.innerWidth
-    if (windowWidth.value <= 750) {
+    if (windowWidth.value <= 768) {
         mobile.value = true
         return
     }
