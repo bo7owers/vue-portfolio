@@ -1,6 +1,21 @@
-<script setup>
+<script setup lang="ts">
 import Navigation from './components/Nav/Navigation.vue'
 import Footer from './components/Footer.vue'
+import { useNavStore } from './stores/NavStore'
+import { storeToRefs } from 'pinia'
+
+const navStore = useNavStore()
+const { dropdownMenuActive } = storeToRefs(navStore)
+
+// Close dropdown menu if is open and you click outside of it
+document.addEventListener('click', (e: any) => {
+    if (
+        dropdownMenuActive.value === true &&
+        !e.target.closest('li[aria-expanded="true"]')
+    ) {
+        dropdownMenuActive.value = false
+    }
+})
 </script>
 <template>
     <a href="#main_content" class="skip-to-main"> Skip to main content </a>
