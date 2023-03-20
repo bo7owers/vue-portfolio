@@ -9,7 +9,10 @@ const { dropdownMenuActive } = storeToRefs(navStore)
 
 // Close dropdown menu if is open and you click outside of it
 document.addEventListener('click', (e: any) => {
-    if (dropdownMenuActive.value === true && !e.target.closest('ul')) {
+    if (
+        dropdownMenuActive.value === true &&
+        !e.target.closest('li[aria-expanded="true"]')
+    ) {
         dropdownMenuActive.value = false
     }
 })
