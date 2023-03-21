@@ -97,14 +97,18 @@ const closeDropdown = (e: any) => {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    outline: 1px solid #000;
+    border-radius: 16px;
+    background: c.$so-white;
+    box-shadow: -10px 10px 19px #e8e8e8, 10px -10px 19px #f6f6f6;
     position: absolute;
     right: 35px;
+    bottom: -11rem;
     width: var(--ddm-width);
     background-color: c.$so-white;
     @include b.breakpoint(small) {
-        top: 50px;
-        right: 0;
+        top: 60px;
+        right: -50px;
+        bottom: auto;
     }
     li {
         @extend %btn-width;
@@ -114,7 +118,6 @@ const closeDropdown = (e: any) => {
         justify-content: center;
         @extend %btn-width;
         height: 1.75rem;
-        background-color: c.$so-white;
         cursor: pointer;
         @extend %link-styles;
 
