@@ -99,7 +99,8 @@ const closeDropdown = (e: any) => {
     align-items: center;
     border-radius: 16px;
     background: c.$so-white;
-    box-shadow: -10px 10px 19px #e8e8e8, 10px -10px 19px #f6f6f6;
+    box-shadow: -10px 10px 19px c.$dropdown-shadow1,
+        10px -10px 19px c.$dropdown-shadow2;
     position: absolute;
     right: 35px;
     bottom: -11rem;
