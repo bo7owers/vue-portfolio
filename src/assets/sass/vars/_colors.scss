@@ -17,6 +17,8 @@ $mainVars: (
     highlight-txt: #1c1c1c,
     logo-width: 5rem,
     logo-height: 5rem,
+    dropdown-shadow1: #e8e8e8,
+    dropdown-shadow2: #f6f6f6,
 );
 
 // add css custom props from sass vars
@@ -43,6 +45,8 @@ $btn-bg-color: var(--btn-bg-color); //background for the button
 $btn-bg-color-hover: var(--btn-bg-pocus);
 $btn-bg-color-focus: var(--btn-bg-pocus);
 
+$dropdown-shadow1: var(--dropdown-shadow1);
+$dropdown-shadow2: var(--dropdown-shadow2);
 //-------- BORDERS
 $border-radius: 0px;
 
