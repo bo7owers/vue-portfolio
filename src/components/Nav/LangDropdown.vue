@@ -108,6 +108,11 @@ const closeDropdown = (e: any) => {
     background-color: c.$so-white;
     @include b.breakpoint(small) {
         top: 60px;
+        right: -10px;
+        bottom: auto;
+    }
+    @include b.breakpoint(large) {
+        top: 60px;
         right: -50px;
         bottom: auto;
     }
