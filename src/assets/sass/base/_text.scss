@@ -54,18 +54,18 @@ ul {
 a,
 .close,
 .hamburger i {
-    &:visited:not(.link):not(.skip-to-main):not(.icon) {
+    &:visited {
         color: c.$visited;
+
+        &:hover {
+            color: c.$tertiary-color;
+        }
     }
-    &:hover:not(.link):not(.skip-to-main):not(.icon),
+
     &:focus:not(.link):not(.skip-to-main),
     &:focus-visible:not(.link):not(.skip-to-main) {
-        outline-color: c.$brand-blue;
         color: c.$brand-blue;
-        outline-style: solid;
-        outline-offset: 0.1rem;
-        outline-width: 4px;
-        border-radius: 2px;
+
         &:visited {
             color: c.$visited;
         }
