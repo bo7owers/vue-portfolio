@@ -17,6 +17,18 @@
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.15.18.tgz#128b76ecb9be48b60cf5cfc1c63a4f00691a3239"
   integrity sha512-L4jVKS82XVhw2nvzLg/19ClLWg0y27ulRwuP7lcyL6AbUWB5aPglXY3M21mauDQMDfRLs8cQmeT03r/+X3cZYQ==
 
+"@iconify/types@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"
+  integrity sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==
+
+"@iconify/vue@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/vue/-/vue-4.1.0.tgz#ce3dc1b34b08fe2a1e34ef9e0c860796a18e76ea"
+  integrity sha512-rBQVxNoSDooqgWkQg2MqkIHkH/huNuvXGqui5wijc1zLnU7TKzbBHW9VGmbnV4asNTmIHmqV4Nvt0M2rZ/9nHA==
+  dependencies:
+    "@iconify/types" "^2.0.0"
+
 "@intlify/bundle-utils@^3.4.0":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@intlify/bundle-utils/-/bundle-utils-3.4.0.tgz#72558611f4b223a6791f591363dc48a4bcacdf70"
