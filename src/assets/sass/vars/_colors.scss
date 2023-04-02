@@ -18,6 +18,24 @@ $lightMode: (
     dropdown-shadow1: #e8e8e8,
     dropdown-shadow2: #f6f6f6,
 );
+$darkMode: (
+    brand-black: #fefefe,
+    visited: #9700a8,
+    brand-pink: #ed78b1,
+    tertiary-color: #003cf0,
+    brand-blue: var(--brand-black),
+    so-white: #1c1b22,
+    solid-black: #000,
+    underline-pink: #ed78b1,
+    icon-bg-color: var(--brand-blue),
+    btn-bg-color: #eee,
+    btn-bg-pocus: #ddd,
+    brand-grey: var(--so-white),
+    highlight-bg: #5cb5c2,
+    highlight-txt: #1c1c1c,
+    dropdown-shadow1: #e8e8e8,
+    dropdown-shadow2: #f6f6f6,
+);
 
 // Measurements
 $measurements: (
@@ -30,8 +48,17 @@ $measurements: (
     @each $measurement, $val in $measurements {
         --#{$measurement}: #{$val};
     }
-    @each $colour-name, $val in $lightMode {
-        --#{$colour-name}: #{$val};
+
+    // light mode styles
+    @media (prefers-color-scheme: light) {
+        @each $colour-name, $val in $lightMode {
+            --#{$colour-name}: #{$val};
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+        @each $colour-name, $val in $darkMode {
+            --#{$colour-name}: #{$val};
+        }
     }
 }
 
