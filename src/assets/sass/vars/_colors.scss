@@ -15,14 +15,21 @@ $lightMode: (
     brand-grey: #e8e8e8,
     highlight-bg: #5cb5c2,
     highlight-txt: #1c1c1c,
-    logo-width: 5rem,
-    logo-height: 5rem,
     dropdown-shadow1: #e8e8e8,
     dropdown-shadow2: #f6f6f6,
 );
 
+// Measurements
+$measurements: (
+    logo-width: 5rem,
+    logo-height: 5rem,
+);
+
 // add css custom props from sass vars
 :root {
+    @each $measurement, $val in $measurements {
+        --#{$measurement}: #{$val};
+    }
     @each $colour-name, $val in $lightMode {
         --#{$colour-name}: #{$val};
     }
