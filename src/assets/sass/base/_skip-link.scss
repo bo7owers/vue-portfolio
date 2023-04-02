@@ -9,6 +9,7 @@
     position: absolute;
     transform: translateY(-90%);
     transition: transform 0.3s;
+    z-index: 1001;
 
     &:visited {
         color: #000;
