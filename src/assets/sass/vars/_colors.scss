@@ -17,6 +17,7 @@ $lightMode: (
     highlight-txt: #1c1c1c,
     dropdown-shadow1: #e8e8e8,
     dropdown-shadow2: #f6f6f6,
+    bg-color: var(--so-white),
 );
 $darkMode: (
     brand-black: #fefefe,
@@ -35,6 +36,7 @@ $darkMode: (
     highlight-txt: #1c1c1c,
     dropdown-shadow1: #e8e8e8,
     dropdown-shadow2: #f6f6f6,
+    bg-color: var(--so-white),
 );
 
 // Measurements
@@ -74,6 +76,7 @@ $solid-black: var(--solid-black);
 $brand-grey: var(--brand-grey);
 $highlight-bg: var(--highlight-bg);
 $highlight-txt: var(--highlight-txt);
+$bg-color: var(--bg-color);
 
 $btn-bg-color: var(--btn-bg-color); //background for the button
 $btn-bg-color-hover: var(--btn-bg-pocus);
