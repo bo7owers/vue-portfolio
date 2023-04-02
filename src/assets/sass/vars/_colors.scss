@@ -1,6 +1,6 @@
 // ----- Colours
 
-$mainVars: (
+$lightMode: (
     brand-black: #2c2c2c,
     visited: #9700a8,
     brand-pink: #ed78b1,
@@ -23,7 +23,7 @@ $mainVars: (
 
 // add css custom props from sass vars
 :root {
-    @each $colour-name, $val in $mainVars {
+    @each $colour-name, $val in $lightMode {
         --#{$colour-name}: #{$val};
     }
 }

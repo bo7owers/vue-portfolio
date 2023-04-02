@@ -1,5 +1,4 @@
 @use '../vars/colors' as c;
-@use '../mixins/var-backups' as v;
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -13,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-    @include v.cssVars(color, brand-blue);
+    color: c.$brand-blue;
     line-height: 1.1em;
     font-weight: 400;
     text-align: center;
