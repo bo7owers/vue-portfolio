@@ -103,7 +103,7 @@ const closeDropdown = (e: any) => {
     right: 35px;
     bottom: -11rem;
     width: var(--ddm-width);
-    background-color: c.$so-white;
+    background-color: c.$bg-color;
 
     @media (prefers-color-scheme: light) {
         box-shadow: -10px 10px 19px c.$dropdown-shadow1,
