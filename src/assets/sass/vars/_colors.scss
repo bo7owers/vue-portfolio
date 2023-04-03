@@ -28,7 +28,7 @@ $darkMode: (
     brand-blue: var(--brand-black),
     so-white: #1c1b22,
     solid-black: #000,
-    underline-pink: #ed78b1,
+    underline-pink: var(--brand-pink),
     icon-bg-color: var(--brand-blue),
     btn-bg-color: #eee,
     btn-bg-pocus: #ddd,
@@ -38,7 +38,7 @@ $darkMode: (
     dropdown-shadow1: #e8e8e8,
     dropdown-shadow2: #f6f6f6,
     bg-color: var(--so-white),
-    text-color: var(--brand-black)
+    text-color: var(--brand-black),
 );
 
 // Measurements
