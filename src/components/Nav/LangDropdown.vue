@@ -99,13 +99,19 @@ const closeDropdown = (e: any) => {
     align-items: center;
     border-radius: 16px;
     background: c.$so-white;
-    box-shadow: -10px 10px 19px c.$dropdown-shadow1,
-        10px -10px 19px c.$dropdown-shadow2;
     position: absolute;
     right: 35px;
     bottom: -11rem;
     width: var(--ddm-width);
-    background-color: c.$so-white;
+    background-color: c.$bg-color;
+
+    @media (prefers-color-scheme: light) {
+        box-shadow: -10px 10px 19px c.$dropdown-shadow1,
+            10px -10px 19px c.$dropdown-shadow2;
+    }
+    @media (prefers-color-scheme: dark) {
+        outline: 1px solid c.$dropdown-shadow1;
+    }
     @include b.breakpoint(small) {
         top: 60px;
         right: -10px;

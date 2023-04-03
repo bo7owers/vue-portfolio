@@ -127,6 +127,9 @@ footer {
         &:focus-visible {
             color: c.$brand-blue;
             outline: none;
+            @media (prefers-color-scheme: dark) {
+                color: c.$brand-pink;
+            }
         }
         & > svg {
             height: 2.5em;

@@ -1,6 +1,6 @@
 // ----- Colours
 
-$mainVars: (
+$lightMode: (
     brand-black: #2c2c2c,
     visited: #9700a8,
     brand-pink: #ed78b1,
@@ -15,16 +15,54 @@ $mainVars: (
     brand-grey: #e8e8e8,
     highlight-bg: #5cb5c2,
     highlight-txt: #1c1c1c,
-    logo-width: 5rem,
-    logo-height: 5rem,
     dropdown-shadow1: #e8e8e8,
     dropdown-shadow2: #f6f6f6,
+    bg-color: var(--so-white),
+    text-color: var(--brand-black),
+);
+$darkMode: (
+    brand-black: #fefefe,
+    visited: #9700a8,
+    brand-pink: #f1a2c8,
+    tertiary-color: #003cf0,
+    brand-blue: var(--brand-black),
+    so-white: #1c1b22,
+    solid-black: #000,
+    underline-pink: var(--brand-pink),
+    icon-bg-color: var(--brand-blue),
+    btn-bg-color: #eee,
+    btn-bg-pocus: #ddd,
+    brand-grey: var(--so-white),
+    highlight-bg: #5cb5c2,
+    highlight-txt: #1c1c1c,
+    dropdown-shadow1: #e8e8e8,
+    dropdown-shadow2: #f6f6f6,
+    bg-color: var(--so-white),
+    text-color: var(--brand-black),
+);
+
+// Measurements
+$measurements: (
+    logo-width: 5rem,
+    logo-height: 5rem,
 );
 
 // add css custom props from sass vars
 :root {
-    @each $colour-name, $val in $mainVars {
-        --#{$colour-name}: #{$val};
+    @each $measurement, $val in $measurements {
+        --#{$measurement}: #{$val};
+    }
+
+    // light mode styles
+    @media (prefers-color-scheme: light) {
+        @each $colour-name, $val in $lightMode {
+            --#{$colour-name}: #{$val};
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+        @each $colour-name, $val in $darkMode {
+            --#{$colour-name}: #{$val};
+        }
     }
 }
 
@@ -40,6 +78,7 @@ $solid-black: var(--solid-black);
 $brand-grey: var(--brand-grey);
 $highlight-bg: var(--highlight-bg);
 $highlight-txt: var(--highlight-txt);
+$bg-color: var(--bg-color);
 
 $btn-bg-color: var(--btn-bg-color); //background for the button
 $btn-bg-color-hover: var(--btn-bg-pocus);
