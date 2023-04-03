@@ -197,7 +197,7 @@ function checkScreenSize() {
 
 // my nav
 header {
-    background-color: c.$so-white;
+    background-color: c.$bg-color;
     z-index: 1000;
     width: 100%;
     transition: 0.5s ease-in all;
@@ -269,7 +269,7 @@ header {
             left: 0;
             padding: 1.25rem 0;
             z-index: 10000;
-            background: #fff;
+            background-color: c.$bg-color;
             .nav-list {
                 flex-flow: column wrap;
                 justify-content: start;
