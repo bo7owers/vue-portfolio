@@ -1,9 +1,5 @@
 {
     "Hello": "Hello",
-    "home": "Home",
-    "about": "About",
-    "programming": "Programming",
-    "contact": "Contact",
     "homeHeading": "Home heading",
     "aboutHeading": "About heading",
     "programmingHeading": "Programming heading",
@@ -17,5 +13,17 @@
     "openIn": "Open link in a new tab",
     "langName": "En",
     "chLang": "Change Language",
-    "skipLink": "Skip to main content."
+    "skipLink": "Skip to main content.",
+    "navigation": {
+        "home": "Home",
+        "about": "About",
+        "programming": "Programming",
+        "contact": "Contact",
+        "ariaLabels":{
+            "openMobile": "Open navigation menu.",
+            "topNav": "Top navigation.",
+            "mobileNav": "Mobile Navigation",
+            "closeMenu": "Close menu"
+        }
+    }
 }

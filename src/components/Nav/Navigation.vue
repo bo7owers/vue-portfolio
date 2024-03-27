@@ -33,29 +33,13 @@ function checkScreenSize() {
     mobileNav.value = false
     return
 }
-
-// const screenWidth = useScreenWidthStore()
-
-// const { innerWidth, isDesktop, isPhone, isTablet } = storeToRefs(screenWidth)
-// const { defineScreenWidth } = screenWidth
-
-// onMounted(() => {
-//     console.log(innerWidth.value, 'mounted')
-//     console.log(isDesktop.value, isPhone.value, isTablet.value)
-//     defineScreenWidth(window.innerWidth)
-// })
-
-// onUpdated(() => {
-//     console.log(innerWidth.value, 'updated')
-//     defineScreenWidth(window.innerWidth)
-// })
 </script>
 
 <template>
     <header>
         <nav
             role="navigation"
-            :aria-label="!mobile ? 'Top navigation' : 'Mobile navigation'"
+            :aria-label=" t('navigation.ariaLabels.topNav')"
         >
             <div class="logo">
                 <router-link class="link" :to="{ name: 'Home' }">
@@ -65,22 +49,22 @@ function checkScreenSize() {
             <ul v-if="!mobile" class="navigation">
                 <li>
                     <router-link class="link" to="/">
-                        {{ t('home') }}
+                        {{ t('navigation.home') }}
                     </router-link>
                 </li>
                 <li>
                     <router-link class="link" to="/about">
-                        {{ t('about') }}
+                        {{ t('navigation.about') }}
                     </router-link>
                 </li>
                 <li>
                     <router-link class="link" to="/programming">
-                        {{ t('programming') }}
+                        {{ t('navigation.programming') }}
                     </router-link>
                 </li>
                 <li>
                     <router-link class="link" to="/contact">
-                        {{ t('contact') }}
+                        {{ t('navigation.contact') }}
                     </router-link>
                 </li>
                 <li :aria-expanded="isNavOpen ? true : false">
@@ -94,7 +78,7 @@ function checkScreenSize() {
                     @keypress.enter="toggleSmallNav"
                     class="menu-ellipsis"
                     :class="{ 'active-icon': mobileNav }"
-                    aria-label="Open mobile navigation"
+                    :aria-label="t('navigation.ariaLabels.openMobile')"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +147,7 @@ function checkScreenSize() {
                             @click="toggleSmallNav"
                             class="btn-close"
                             :class="mobileNav && 'active-icon'"
-                            aria-label="Close menu"
+                            :aria-label="t('navigation.ariaLabels.closeMenu')"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

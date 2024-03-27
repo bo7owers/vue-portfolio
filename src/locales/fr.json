@@ -1,9 +1,5 @@
 {
     "Hello": "Bonjour",
-    "home": "Accueil",
-    "about": "À propos",
-    "programming": "Programmation",
-    "contact": "Contactez-moi",
     "homeHeading": "Accueil titre",
     "aboutHeading": "À propos titre",
     "programmingHeading": "Programmation titre",
@@ -17,5 +13,17 @@
     "openIn": "Ouvrir le lien dans un nouvel onglet",
     "langName": "Fr",
     "chLang": "Changer de langue",
-    "skipLink": "Passer au contenu principal"
+    "skipLink": "Passer au contenu principal",
+    "navigation": {
+        "home": "Accueil",
+        "about": "À propos",
+        "programming": "Programmation",
+        "contact": "Contactez-moi",
+        "ariaLabels":{
+            "openMobile": "Ouvrir le menu de navigation",
+            "topNav": "Menu de navigation principal",
+            "mobileNav": "Mobile Navigation",
+            "closeMenu": "Fermer le menu de navigation"
+        }
+    }
 }
