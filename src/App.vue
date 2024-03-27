@@ -3,6 +3,7 @@ import Navigation from './components/Nav/Navigation.vue'
 import Footer from './components/Footer.vue'
 import { useNavStore } from './stores/NavStore'
 import { storeToRefs } from 'pinia'
+import { useI18n } from 'vue-i18n'
 
 const navStore = useNavStore()
 const { dropdownMenuActive } = storeToRefs(navStore)
@@ -16,9 +17,12 @@ document.addEventListener('click', (e: any) => {
         dropdownMenuActive.value = false
     }
 })
+
+// localization
+const {t} = useI18n()
 </script>
 <template>
-    <a href="#main_content" class="skip-to-main"> Skip to main content </a>
+    <a href="#main_content" class="skip-to-main"> {{t('skipLink') }}</a>
     <div class="container all-info">
         <Navigation class="row-full" />
         <div class="row-center">
