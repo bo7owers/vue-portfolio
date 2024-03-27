@@ -4,12 +4,6 @@
     "aboutHeading": "Sobre mí titulo",
     "programmingHeading": "Programación titulo",
     "ContactHeading": "Contacto titulo",
-    "getInTouch": "Contáctame",
-    "madeIn": "Hecho en",
-    "by": "por",
-    "mastoLink": "Perfil de Mastodon de René Torres (Abrir enlace en otra pestaña)",
-    "ghLink": "Perfil de GitHub de René Torres (Abrir enlace en otra pestaña)",
-    "linkedLink": "Perfil de LinkedIn de René Torres (Abrir enlace en otra pestaña)",
     "openIn": "Abrir enlace en otra pestaña",
     "langName": "Es",
     "chLang": "Cambiar de idioma",
@@ -25,5 +19,13 @@
             "mobileNav": "Menú móbil",
             "closeMenu": "Cerrar el menú de navegación."
         }
+    },
+    "footer":{
+        "getInTouch": "Contáctame",
+        "madeIn": "Hecho en",
+        "by": "por",
+        "mastoLink": "Perfil de Mastodon de René Torres (Abrir enlace en otra pestaña)",
+        "ghLink": "Perfil de GitHub de René Torres (Abrir enlace en otra pestaña)",
+        "linkedLink": "Perfil de LinkedIn de René Torres (Abrir enlace en otra pestaña)"
     }
 }

@@ -13,7 +13,7 @@ onMounted(() => {
 <template>
     <footer class="container">
         <div class="call-to row-center">
-            <h3>{{ t('getInTouch') }}</h3>
+            <h3>{{ t('footer.getInTouch') }}</h3>
         </div>
         <div class="icons row-center">
             <a
@@ -21,8 +21,8 @@ onMounted(() => {
                 target="_blank"
                 rel="noopener noreferrer"
                 class="icon icon-mastodon"
-                v-tippy="t('mastoLink')"
-                :aria-label="t('mastoLink')"
+                v-tippy="t('footer.mastoLink')"
+                :aria-label="t('footer.mastoLink')"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -41,8 +41,8 @@ onMounted(() => {
                 target="_blank"
                 rel="noopener noreferrer"
                 class="icon icon-github"
-                :aria-label="t('ghLink')"
-                v-tippy="t('ghLink')"
+                :aria-label="t('footer.ghLink')"
+                v-tippy="t('footer.ghLink')"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -61,8 +61,8 @@ onMounted(() => {
                 target="_blank"
                 rel="noopener noreferrer"
                 class="icon icon-linkedin"
-                v-tippy="t('linkedLink')"
-                :aria-label="t('linkedLink')"
+                v-tippy="t('footer.linkedLink')"
+                :aria-label="t('footer.linkedLink')"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ onMounted(() => {
             </a>
         </div>
         <div class="year-of-creation row-center">
-            <p>{{ t('madeIn') }} {{ year }} {{ t('by') }} René Torres</p>
+            <p>{{ t('footer.madeIn') }} {{ year }} {{ t('footer.by') }} René Torres</p>
         </div>
     </footer>
 </template>
