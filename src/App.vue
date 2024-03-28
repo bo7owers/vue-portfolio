@@ -71,7 +71,7 @@ const { t } = useI18n()
     border: 2px solid var(--btn-border-color);
     border-radius: 0.25rem;
 
-    transition: background-color 150ms ease-in;
+    transition: background-color 150ms ease-in, color 100ms ease-in-out;
 
     &:hover {
         color: var(--btn-hover-color);
@@ -88,7 +88,30 @@ const { t } = useI18n()
     &.btn-primary {
         /* regular state */
         --btn-color: var(--so-white);
-        --btn-bg-color: var(--brand-blue);
+        --btn-bg-color: #5c6ec2;
+        --btn-border-color: var(--highlight-bg);
+        /* hover state */
+        --btn-hover-bg-color: color-mix(
+            in srgb,
+            var(--highlight-bg) 88%,
+            var(--brand-black) 10%
+        );
+        --btn-hover-color: var(--btn-color);
+        --btn-hover-border-color: var(--btn-hover-bg-color);
+        /* active state */
+        --btn-active-color: var(--btn-color);
+        --btn-active-bg-color: var(--btn-bg-color);
+        --btn-active-border-color: color-mix(
+            in srgb,
+            var(--btn-bg-color) 70%,
+            var(--so-white) 20%
+        );
+    }
+
+    &.btn-secondary {
+        /* regular state */
+        --btn-bg-color: var(--so-white);
+        --btn-color: var(--brand-blue);
         --btn-border-color: var(--brand-blue);
         /* hover state */
         --btn-hover-bg-color: color-mix(
@@ -96,7 +119,7 @@ const { t } = useI18n()
             var(--brand-blue) 88%,
             var(--so-white) 10%
         );
-        --btn-hover-color: var(--btn-color);
+        --btn-hover-color: var(--btn-bg-color);
         --btn-hover-border-color: var(--btn-hover-bg-color);
         /* active state */
         --btn-active-color: var(--btn-color);
@@ -106,14 +129,6 @@ const { t } = useI18n()
             var(--brand-blue) 70%,
             var(--brand-black) 20%
         );
-    }
-    &.btn-secondary {
-    }
-
-    &.btn-outlined {
-    }
-
-    &.btn-contained {
     }
 }
 </style>

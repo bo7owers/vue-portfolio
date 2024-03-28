@@ -31,5 +31,7 @@ const { t } = useI18n()
 
     <div class="main-img"></div>
     <input type="text" name="test" id="test" />
-    <button class="btn btn-primary">Hello there</button>
+    <button class="btn">button</button>
+    <button class="btn btn-primary">Hello pramary</button>
+    <button class="btn btn-secondary">Hello there secondary</button>
 </template>
