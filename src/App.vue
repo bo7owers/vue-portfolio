@@ -96,7 +96,7 @@ const { t } = useI18n()
             var(--highlight-bg) 88%,
             var(--brand-black) 10%
         );
-        --btn-hover-color: var(--btn-color);
+        --btn-hover-color: var(-solid-black);
         --btn-hover-border-color: var(--btn-hover-bg-color);
         /* active state */
         --btn-active-color: var(--btn-color);
@@ -129,6 +129,16 @@ const { t } = useI18n()
             var(--brand-blue) 70%,
             var(--brand-black) 20%
         );
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .btn {
+        &.btn-primary {
+            --btn-bg-color: #292d44;
+            --btn-color: #fff;
+            --btn-hover-color: var(--btn-bg-color);
+        }
     }
 }
 </style>
