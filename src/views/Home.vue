@@ -30,16 +30,8 @@ const { t } = useI18n()
     </p>
 
     <div class="main-img"></div>
-    <button class="btn-test">Hello there</button>
+    <input type="text" name="test" id="test" />
+    <button class="btn">button</button>
+    <button class="btn btn-primary">Hello pramary</button>
+    <button class="btn btn-secondary">Hello there secondary</button>
 </template>
-
-<style lang="scss" scoped>
-button {
-    width: 1rem;
-    &.btn-test {
-        width: 5rem;
-        background-color: #369;
-        color: #fefefe;
-    }
-}
-</style>
