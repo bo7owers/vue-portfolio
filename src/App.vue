@@ -135,9 +135,9 @@ const { t } = useI18n()
 @media (prefers-color-scheme: dark) {
     .btn {
         &.btn-primary {
-            --btn-bg-color: #292d44;
-            --btn-color: #fff;
-            --btn-hover-color: var(--btn-bg-color);
+            /* --btn-bg-color: #292d44; */
+            --btn-color: var(--solid-black);
+            --btn-hover-color: var(--btn-color);
         }
     }
 }
