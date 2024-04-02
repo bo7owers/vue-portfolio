@@ -105,7 +105,7 @@ function checkScreenSize() {
                                 @click="toggleSmallNav"
                                 to="/"
                             >
-                                {{ t('home') }}
+                                {{ t('navigation.home') }}
                             </router-link>
                         </li>
                         <li>
@@ -115,7 +115,7 @@ function checkScreenSize() {
                                 @click="toggleSmallNav"
                                 to="/about"
                             >
-                                {{ t('about') }}
+                                {{ t('navigation.about') }}
                             </router-link>
                         </li>
                         <li>
@@ -125,7 +125,7 @@ function checkScreenSize() {
                                 @click="toggleSmallNav"
                                 to="/programming"
                             >
-                                {{ t('programming') }}
+                                {{ t('navigation.programming') }}
                             </router-link>
                         </li>
                         <li>
@@ -135,12 +135,13 @@ function checkScreenSize() {
                                 @click="toggleSmallNav"
                                 to="/contact"
                             >
-                                {{ t('contact') }}
+                                {{ t('navigation.contact') }}
                             </router-link>
                         </li>
                         <li :aria-expanded="isNavOpen ? true : false">
                             <LangDropdown :title="t('chLang')" />
                         </li>
+                        <li><ThemeToggle /></li>
                     </ul>
                     <div class="close-nav">
                         <button
