@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { ref, watch, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 let html = document.querySelector('html')
 const currentTheme = ref('')
+
+// localization
+
+const { t } = useI18n()
 
 onMounted(() => {
     currentTheme.value = 'dark'
@@ -23,10 +29,10 @@ function setTheme() {
 </script>
 <template>
     <div class="theme-select">
-        <label for="theme_slector">Select a theme</label>
+        <label for="theme_slector">{{ t('navigation.theme.label') }}</label>
         <select name="selector" id="theme_selector" v-model="currentTheme">
-            <option value="dark">Dark</option>
-            <option value="light">Light</option>
+            <option value="dark">{{ t('navigation.theme.dark') }}</option>
+            <option value="light">{{ t('navigation.theme.light') }}</option>
         </select>
     </div>
 </template>

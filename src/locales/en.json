@@ -13,14 +13,19 @@
         "about": "About",
         "programming": "Programming",
         "contact": "Contact",
-        "ariaLabels":{
+        "ariaLabels": {
             "openMobile": "Open navigation menu.",
             "topNav": "Top navigation.",
             "mobileNav": "Mobile Navigation",
             "closeMenu": "Close menu"
+        },
+        "theme": {
+            "label": "Select a theme",
+            "dark": "Dark",
+            "light": "Light"
         }
     },
-    "footer":{
+    "footer": {
         "getInTouch": "Get in touch",
         "madeIn": "Made in",
         "by": "by",

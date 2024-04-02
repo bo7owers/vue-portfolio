@@ -13,14 +13,19 @@
         "about": "Sobre mí",
         "programming": "Programación",
         "contact": "Conectar conmigo",
-        "ariaLabels":{
+        "ariaLabels": {
             "openMobile": "Abrir el menú de navegación.",
             "topNav": "Menú principal.",
             "mobileNav": "Menú móbil",
             "closeMenu": "Cerrar el menú de navegación."
+        },
+        "theme": {
+            "label": "Seleccione un tema",
+            "dark": "Oscuro",
+            "light": "Luminoso"
         }
     },
-    "footer":{
+    "footer": {
         "getInTouch": "Contáctame",
         "madeIn": "Hecho en",
         "by": "por",
