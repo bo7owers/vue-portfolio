@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { useNavStore } from '../../stores/NavStore'
 import LangDropdown from './LangDropdown.vue'
 import { ref } from 'vue'
+import ThemeToggle from './ThemeToggle.vue'
 
 // Translations
 const { t, d, locale, availableLocales } = useI18n()
@@ -37,10 +38,7 @@ function checkScreenSize() {
 
 <template>
     <header>
-        <nav
-            role="navigation"
-            :aria-label=" t('navigation.ariaLabels.topNav')"
-        >
+        <nav role="navigation" :aria-label="t('navigation.ariaLabels.topNav')">
             <div class="logo">
                 <router-link class="link" :to="{ name: 'Home' }">
                     <img src="../../assets/logo.png" alt="René Torres' logo" />
@@ -70,6 +68,7 @@ function checkScreenSize() {
                 <li :aria-expanded="isNavOpen ? true : false">
                     <LangDropdown :title="t('chLang')" />
                 </li>
+                <li><ThemeToggle /></li>
             </ul>
             <div class="hamburger" v-if="mobile">
                 <!-- Move v-show="mobile" to the i if problems found -->
