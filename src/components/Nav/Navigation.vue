@@ -65,7 +65,10 @@ function checkScreenSize() {
                         {{ t('navigation.contact') }}
                     </router-link>
                 </li>
-                <li :aria-expanded="isNavOpen ? true : false">
+                <li
+                    :aria-expanded="isNavOpen ? true : false"
+                    style="position: relative"
+                >
                     <LangDropdown :title="t('chLang')" />
                 </li>
                 <li><ThemeToggle /></li>
