@@ -1,37 +1,48 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { onMounted, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 let html = document.querySelector('html')
-const currentTheme = ref('')
+const theme = ref<string>()
 
 // localization
-
 const { t } = useI18n()
 
 onMounted(() => {
-    currentTheme.value = 'dark'
+    theme.value = 'dark'
     setTheme()
 })
 
-watch(currentTheme, () => {
-    console.log(currentTheme.value)
-    setTheme()
-})
 
 function setTheme() {
-    html?.setAttribute('style', `color-scheme: ${currentTheme.value}`)
-    currentTheme.value === 'dark'
+    html?.setAttribute('style', `color-scheme: ${theme.value}`)
+    theme.value === 'dark'
         ? html?.classList.remove('light-theme')
         : html?.classList.remove('dark-theme')
-    html?.classList.add(`${currentTheme.value}-theme`)
+    html?.classList.add(`${theme.value}-theme`)
 }
+
+function toggleTheme() {
+    theme.value === 'dark' ? theme.value = 'light' : theme.value = 'dark'
+
+    html?.setAttribute('style', `color-scheme: ${theme.value}`)
+
+    if (theme.value === 'dark') {
+        html?.classList.remove('light-theme')
+    } else {
+        html?.classList.remove('dark-theme')
+    }
+
+    html?.classList.add(`${theme.value}-theme`)
+}
+
 </script>
 <template>
     <div class="theme-select">
-        <label for="theme_slector" :title="t('navigation.theme.label')"><span v-if="currentTheme === 'dark'">
+        <button class="select-btn" v-tippy="t('navigation.theme.label')" @click="toggleTheme">
+            <span v-if="theme === 'dark'" class="icon dark-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                    <g fill="currentColor" fill-opacity="0">
+                    <g fill="white" fill-opacity="0">
                         <path
                             d="M15.22 6.03L17.75 4.09L14.56 4L13.5 1L12.44 4L9.25 4.09L11.78 6.03L10.87 9.09L13.5 7.28L16.13 9.09L15.22 6.03Z">
                             <animate fill="freeze" attributeName="fill-opacity" begin="0.7s" dur="0.4s" values="0;1" />
@@ -41,14 +52,14 @@ function setTheme() {
                             <animate fill="freeze" attributeName="fill-opacity" begin="1.1s" dur="0.4s" values="0;1" />
                         </path>
                     </g>
-                    <path fill="none" stroke="currentColor" stroke-dasharray="56" stroke-dashoffset="56"
-                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    <path fill="none" stroke="white" stroke-dasharray="56" stroke-dashoffset="56" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2"
                         d="M7 6 C7 12.08 11.92 17 18 17 C18.53 17 19.05 16.96 19.56 16.89 C17.95 19.36 15.17 21 12 21 C7.03 21 3 16.97 3 12 C3 8.83 4.64 6.05 7.11 4.44 C7.04 4.95 7 5.47 7 6 Z">
                         <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="56;0" />
                     </path>
                 </svg>
             </span>
-            <span v-else>
+            <span v-else class="icon light-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                     <g stroke="currentColor" stroke-linecap="round" stroke-width="2">
                         <path fill="currentColor" fill-opacity="0" stroke-dasharray="34" stroke-dashoffset="34"
@@ -73,10 +84,56 @@ function setTheme() {
                     </g>
                 </svg>
             </span>
-        </label>
-        <select name="selector" id="theme_selector" v-model="currentTheme">
-            <option value="dark">{{ t('navigation.theme.dark') }}</option>
-            <option value="light">{{ t('navigation.theme.light') }}</option>
-        </select>
+        </button>
     </div>
 </template>
+
+<style scoped>
+.select-btn {
+    --btn-color: var(--so-white);
+    --btn-bg-color: #2c2c2c;
+    --btn-border-color: var(--brand-pink);
+    --icon-border-color: var(--btn-bg-pocus);
+    --icon-bg-color: var(--solid-black);
+
+    background-color: var(--btn-bg-color);
+    border: none;
+    border-radius: 11px;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--btn-color);
+    cursor: pointer;
+    display: flex;
+    height: 22px;
+    margin: 0;
+    outline: 1px solid var(--btn-border-color);
+    padding: 1px;
+    width: 40px;
+
+    & .icon {
+        padding-inline: 0.20rem;
+        border: 1px solid var(--icon-border-color);
+        border-radius: 50%;
+        background-color: var(--icon-bg-color);
+
+        &.dark-icon {
+            margin-inline-start: auto;
+        }
+
+        &.light-icon {
+            margin-inline-end: auto;
+            padding-block-start: 0.15rem;
+        }
+    }
+}
+
+.light-theme {
+    .select-btn {
+        --btn-color: var(--solid-black);
+        --btn-bg-color: #d8d8d8;
+        --btn-border-color: var(--highlight-bg);
+        --icon-border-color: var(--brand-black);
+        --icon-bg-color: var(--so-white);
+    }
+}
+</style>
