@@ -1,36 +1,36 @@
 {
-    "Hello": "Bonjour",
-    "homeHeading": "Accueil titre",
-    "aboutHeading": "À propos titre",
-    "programmingHeading": "Programmation titre",
-    "ContactHeading": "Contactez-moi titre",
-    "openIn": "Ouvrir le lien dans un nouvel onglet",
-    "langName": "Fr",
-    "chLang": "Changer de langue",
-    "skipLink": "Passer au contenu principal",
-    "navigation": {
-        "home": "Accueil",
-        "about": "À propos",
-        "programming": "Programmation",
-        "contact": "Contactez-moi",
-        "ariaLabels": {
-            "openMobile": "Ouvrir le menu de navigation",
-            "topNav": "Menu de navigation principal",
-            "mobileNav": "Mobile Navigation",
-            "closeMenu": "Fermer le menu de navigation"
-        },
-        "theme": {
-            "label": "Sélectionnez un thème",
-            "dark": "Thème sombre",
-            "light": "Thème lumineux"
-        }
-    },
-    "footer": {
-        "getInTouch": "Contactez-moi à",
-        "madeIn": "Créé en",
-        "by": "par",
-        "mastoLink": "Profil Mastodon de René Torres (Ouvrir le lien dans un nouvel onglet)",
-        "ghLink": "Profil GitHub de René Torres (Ouvrir le lien dans un nouvel onglet)",
-        "linkedLink": "Profil LinkedIn de René Torres (Ouvrir le lien dans un nouvel onglet)"
-    }
+	"Hello": "Bonjour",
+	"homeHeading": "Accueil titre",
+	"aboutHeading": "À propos titre",
+	"programmingHeading": "Programmation titre",
+	"ContactHeading": "Contactez-moi titre",
+	"openIn": "Ouvrir le lien dans un nouvel onglet",
+	"langName": "Fr",
+	"chLang": "Changer de langue",
+	"skipLink": "Passer au contenu principal",
+	"navigation": {
+		"home": "Accueil",
+		"about": "À propos",
+		"programming": "Programmation",
+		"contact": "Contactez-moi",
+		"ariaLabels": {
+			"openMobile": "Ouvrir le menu de navigation",
+			"topNav": "Menu de navigation principal",
+			"mobileNav": "Mobile Navigation",
+			"closeMenu": "Fermer le menu de navigation"
+		},
+		"theme": {
+			"label": "Changer de thème",
+			"dark": "Thème sombre",
+			"light": "Thème lumineux"
+		}
+	},
+	"footer": {
+		"getInTouch": "Contactez-moi à",
+		"madeIn": "Créé en",
+		"by": "par",
+		"mastoLink": "Profil Mastodon de René Torres (Ouvrir le lien dans un nouvel onglet)",
+		"ghLink": "Profil GitHub de René Torres (Ouvrir le lien dans un nouvel onglet)",
+		"linkedLink": "Profil LinkedIn de René Torres (Ouvrir le lien dans un nouvel onglet)"
+	}
 }
