@@ -1,39 +1,30 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useThemeStore } from '../../stores/ThemeToggle'
+import { storeToRefs } from 'pinia';
 
 let html = document.querySelector('html')
-const theme = ref<string>()
+// const theme = ref<string>()
+
+const themeStore = useThemeStore()
+const { currentTheme } = storeToRefs(themeStore)
 
 // localization
 const { t } = useI18n()
 
-onMounted(() => {
-    theme.value = 'dark'
-    setTheme()
-})
-
-
-function setTheme() {
-    html?.setAttribute('style', `color-scheme: ${theme.value}`)
-    theme.value === 'dark'
-        ? html?.classList.remove('light-theme')
-        : html?.classList.remove('dark-theme')
-    html?.classList.add(`${theme.value}-theme`)
-}
-
 function toggleTheme() {
-    theme.value === 'dark' ? theme.value = 'light' : theme.value = 'dark'
+    currentTheme.value === 'dark' ? currentTheme.value = 'light' : currentTheme.value = 'dark'
 
-    html?.setAttribute('style', `color-scheme: ${theme.value}`)
+    html?.setAttribute('style', `color-scheme: ${currentTheme.value}`)
 
-    if (theme.value === 'dark') {
+    if (currentTheme.value === 'dark') {
         html?.classList.remove('light-theme')
     } else {
         html?.classList.remove('dark-theme')
     }
 
-    html?.classList.add(`${theme.value}-theme`)
+    html?.classList.add(`${currentTheme.value}-theme`)
 }
 
 </script>
@@ -41,7 +32,7 @@ function toggleTheme() {
     <div class="theme-select">
         <button class="select-btn" v-tippy="t('navigation.theme.label')" @click="toggleTheme">
             <Transition name="theme">
-                <span v-if="theme === 'dark'" class="theme-icon">
+                <span v-if="currentTheme === 'dark'" class="theme-icon">
                     <span class="icon dark-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                             <g fill="white" fill-opacity="0">
