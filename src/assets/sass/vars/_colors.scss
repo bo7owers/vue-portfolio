@@ -54,15 +54,15 @@ $measurements: (
     }
 
     // light mode styles
-    @media (prefers-color-scheme: light) {
-        @each $colour-name, $val in $lightMode {
-            --#{$colour-name}: #{$val};
-        }
+    @each $colour-name, $val in $lightMode {
+        --#{$colour-name}: #{$val};
     }
-    @media (prefers-color-scheme: dark) {
-        @each $colour-name, $val in $darkMode {
-            --#{$colour-name}: #{$val};
-        }
+}
+
+// overwrite vars in dark mode
+html.dark-theme {
+    @each $colour-name, $val in $darkMode {
+        --#{$colour-name}: #{$val};
     }
 }
 
