@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { useThemeStore } from '../../stores/ThemeToggle'
 import { storeToRefs } from 'pinia';
+import { useI18n } from 'vue-i18n';
+import { useThemeStore } from '../../stores/ThemeToggle';
 
 let html = document.querySelector('html')
-// const theme = ref<string>()
 
 const themeStore = useThemeStore()
 const { currentTheme } = storeToRefs(themeStore)
