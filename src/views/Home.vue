@@ -49,7 +49,7 @@ const showIframe = ref<boolean>(false)
             </ul>
         </section>
         <section id="courses">
-            <h2>Courses I have worked on with <abbr title="Canada School of Public Service">CSPS</abbr></h2>
+            <h2>Some courses I have worked on with <abbr title="Canada School of Public Service">CSPS</abbr></h2>
             <ul>
                 <li>
                     <ExternalLink href="https://catalogue.csps-efpc.gc.ca/product?catalog=INC118&cm_locale=en"
@@ -93,21 +93,46 @@ const showIframe = ref<boolean>(false)
                     href="https://glueottawa.com/2019/01/30/aikido-is-a-peaceful-martial-art-that-will-change-the-students-lives-completely/"
                     description="video story" /> about Aikido that was published by Glue Ottawa.
             </p>
-            <p id="show_iframe" tabindex="-1">You can find a quick demo reel showcasing my areas of expertice by
-                selecting the "Show
-                iframe" button
-                that follows. Visit the <router-link to="/privacy#iframe-info">privacy page</router-link> to learn why.
-            </p>
-            <button @click="showIframe = !showIframe" class="btn btn-primary">Show iframe</button>
 
-            <div aria-live="polite">
-                <div v-if="showIframe">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SXbIE0TMe50?si=z-3rQh4SbM4oWNIZ"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <section id="vue_advent">
+                <h3>Advent of Vue 2022</h3>
+                <p>For the 2022 holiday season, I created some projects, here are some that I think worked out the best:
+                </p>
+                <ul>
+                    <li>
+                        <ExternalLink href="https://bo7owers.github.io/aov-gift-label/"
+                            description="Interactive Gift Label" />. It's a fun, little web app that allows you to
+                        customise holiday labels for those times when you are wrapping presents and forget to buy
+                        labels. Just remember to allow background colors when printing!
+                    </li>
+                    <li>
+                        <ExternalLink href="https://bo7owers.github.io/2022-christmas-tree-lights-problem/"
+                            description="Vue Christmas Tree" />. Used some Vue Js directives to render the same
+                        component while creating an HTML and CSS Christmas tree.
+                    </li>
+                </ul>
+            </section>
+
+
+            <section id="demo_reel">
+                <h3>Demo Reel</h3>
+                <p id="show_iframe" tabindex="-1">You can find a quick demo reel showcasing my areas of expertice by
+                    selecting the "Show
+                    iframe" button
+                    that follows. Visit the <router-link to="/privacy#iframe-info">privacy page</router-link> to learn
+                    why.
+                </p>
+                <button @click="showIframe = !showIframe" class="btn btn-primary">Show iframe</button>
+                <div aria-live="polite">
+                    <div v-if="showIframe">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/SXbIE0TMe50?si=z-3rQh4SbM4oWNIZ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                 </div>
-            </div>
+            </section>
         </section>
     </div>
     <div v-else-if="locale === 'fr'">
