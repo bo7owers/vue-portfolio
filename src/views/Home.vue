@@ -13,18 +13,20 @@ const showIframe = ref<boolean>(false)
 
     <div v-if="locale === 'en'">
         <section>
-            <h2>A quick introduction.</h2>
+            <h2>A quick introduction</h2>
             <p>I am a web developer with experience on
                 <ExternalLink href="https://www.goskills.com/Resources/Adult-learning-theory"
                     description="adult learning" /> and
                 <ExternalLink href="https://dictionary.cambridge.org/dictionary/english/e-learning"
-                    description="e-learning" />. I have experience in multimedia journalism and content creation as
+                    description="e-learning" /> environments. I have experience in multimedia journalism and content
+                creation as
                 well.
             </p>
         </section>
         <section>
-            <h2>Web dev experience.</h2>
-            <p>During my time as web developer, I have used multiple Javascript framewors like:</p>
+            <h2>Web dev experience</h2>
+            <p>During my time as web developer, I have used multiple Javascript framewors to develop accessible and
+                interactive activities like:</p>
             <ul class="frameworks">
                 <li class="vue">
                     <ExternalLink href="https://vuejs.org/" description="Vue JS" />
@@ -37,12 +39,53 @@ const showIframe = ref<boolean>(false)
                 </li>
                 <li class="snap">
                     <ExternalLink href="https://github.com/snap-framework/snap" description="Snap!" /> Project led by
-                    <abbr title="Canada School of Public Service">CSPS</abbr>.
+                    the
+                    Canada School of Public Service (CSPS).
+                </li>
+                <li class="power-apps">
+                    <ExternalLink href="https://www.microsoft.com/en-us/power-platform/products/power-apps"
+                        description="Microsoft PowerApps" />
+                </li>
+            </ul>
+        </section>
+        <section id="courses">
+            <h2>Courses I have worked on with <abbr title="Canada School of Public Service">CSPS</abbr></h2>
+            <ul>
+                <li>
+                    <ExternalLink href="https://catalogue.csps-efpc.gc.ca/product?catalog=INC118&cm_locale=en"
+                        description="Fostering an Inclusive Workplace" />. <ul>
+                        <li>Use a custom, gulp-based workflow to create interactive activities.</li>
+                        <li>Use React Email to design engaging emails that are being sent to learners using the
+                            Brightspace Intelligent Agent System.</li>
+                        <li>Use release conditions to tailor the learer experience for students.</li>
+                        <li>Test pages for accessibility errors and fix them.</li>
+                    </ul>
+                </li>
+                <li>
+                    <ExternalLink href="https://catalogue.csps-efpc.gc.ca/product?catalog=INC101&cm_locale=en"
+                        description="Introduction to Gender-based Analysis Plus (GBA Plus)" />.
+                    <ul>
+                        <li>Collaborate with Instructional Designer (ID) to prototype a branching activity using Figma.
+                        </li>
+                        <li>Program activity with Brightspace's What you see is what you get (WYSIWYG) HTML editor so
+                            that <abbr title="Instructional Designers">IDs</abbr> can edit the activity without the need
+                            of a multimedia technician.</li>
+                        <li>Test pages for accessibility errors and fix them.</li>
+                    </ul>
+                </li>
+                <li>
+                    <ExternalLink href="https://catalogue.csps-efpc.gc.ca/product?catalog=WMT203&cm_locale=en"
+                        description="Mental Health and the Workplace: Raising Awareness" />
+                    <ul>
+                        <li>Assist fellow multimedia technician with building an Interactive Toolkit using Vue Js.</li>
+                        <li>Build a bilingual glossary.</li>
+                        <li>Test pages for accessibility errors and fix them.</li>
+                    </ul>
                 </li>
             </ul>
         </section>
         <section>
-            <h2>Multimedia projects.</h2>
+            <h2>Multimedia projects</h2>
             <p>Back when I was in school, I experimented with photography and videography.</p>
             <p>
                 One example is a
@@ -105,6 +148,11 @@ ul.frameworks {
         &.snap {
             --framework-img: url(../assets/img/frameworks/snap.png);
         }
+
+        &.power-apps {
+            --framework-img: url(../assets/img/frameworks/make.powerapps.com.ico);
+        }
+
     }
 }
 </style>

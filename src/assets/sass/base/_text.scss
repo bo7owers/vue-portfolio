@@ -74,7 +74,7 @@ a,
 
 html {
 	&.light-theme {
-		a {
+		a:not(.link) {
 			color: c.$brand-blue;
 			&:hover,
 			&:visited {
@@ -83,7 +83,7 @@ html {
 		}
 	}
 	&.dark-theme {
-		a {
+		a:not(.link) {
 			color: c.$brand-pink;
 			&:hover,
 			&:visited {
