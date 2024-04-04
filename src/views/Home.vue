@@ -37,8 +37,7 @@ const showIframe = ref<boolean>(false)
                 </li>
                 <li class="snap">
                     <ExternalLink href="https://github.com/snap-framework/snap" description="Snap!" /> Project led by
-                    the
-                    Canada School of public service.
+                    <abbr title="Canada School of Public Service">CSPS</abbr>.
                 </li>
             </ul>
         </section>
@@ -51,17 +50,20 @@ const showIframe = ref<boolean>(false)
                     href="https://glueottawa.com/2019/01/30/aikido-is-a-peaceful-martial-art-that-will-change-the-students-lives-completely/"
                     description="video story" /> about Aikido that was published by Glue Ottawa.
             </p>
-            <p>You can find a quick demo reel showcasing my areas of expertice by selecting the "Show iframe" button
-                that follows.</p>
-            <p>Visit the <router-link :to="{ name: 'Home' }">privacy page</router-link> to learn why.
+            <p id="show_iframe" tabindex="-1">You can find a quick demo reel showcasing my areas of expertice by
+                selecting the "Show
+                iframe" button
+                that follows. Visit the <router-link to="/privacy#iframe-info">privacy page</router-link> to learn why.
             </p>
             <button @click="showIframe = !showIframe" class="btn btn-primary">Show iframe</button>
 
-            <div v-if="showIframe">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/SXbIE0TMe50?si=z-3rQh4SbM4oWNIZ"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div aria-live="polite">
+                <div v-if="showIframe">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SXbIE0TMe50?si=z-3rQh4SbM4oWNIZ"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
         </section>
     </div>
