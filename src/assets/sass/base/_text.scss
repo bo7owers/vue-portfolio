@@ -16,7 +16,7 @@ h6 {
 	line-height: 1.1em;
 	font-weight: 400;
 	text-align: center;
-	margin-block-end: 0.75rem;
+	margin-block: 0.75rem;
 }
 
 h {
@@ -68,6 +68,27 @@ a,
 
 		&:visited {
 			color: c.$visited;
+		}
+	}
+}
+
+html {
+	&.light-theme {
+		a {
+			color: c.$brand-blue;
+			&:hover,
+			&:visited {
+				color: c.$tertiary-color;
+			}
+		}
+	}
+	&.dark-theme {
+		a {
+			color: c.$brand-pink;
+			&:hover,
+			&:visited {
+				color: c.$dropdown-shadow1;
+			}
 		}
 	}
 }
