@@ -78,6 +78,7 @@ const showIframe = ref<boolean>(false)
                         description="Mental Health and the Workplace: Raising Awareness" />
                     <ul>
                         <li>Assist fellow multimedia technician with building an Interactive Toolkit using Vue Js.</li>
+                        <li>Add an interactive video player to some videos in the course.</li>
                         <li>Build a bilingual glossary.</li>
                         <li>Test pages for accessibility errors and fix them.</li>
                     </ul>
