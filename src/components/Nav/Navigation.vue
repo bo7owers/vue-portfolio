@@ -152,7 +152,7 @@ header {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         padding: 1rem 0;
         transition: 0.5s ease-out all;
         width: 90%;
