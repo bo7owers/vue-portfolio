@@ -86,14 +86,6 @@ const showIframe = ref<boolean>(false)
         </section>
         <section>
             <h2>Multimedia projects</h2>
-            <p>Back when I was in school, I experimented with photography and videography.</p>
-            <p>
-                One example is a
-                <ExternalLink
-                    href="https://glueottawa.com/2019/01/30/aikido-is-a-peaceful-martial-art-that-will-change-the-students-lives-completely/"
-                    description="video story" /> about Aikido that was published by Glue Ottawa.
-            </p>
-
             <section id="vue_advent">
                 <h3>Advent of Vue 2022</h3>
                 <p>For the 2022 holiday season, I created some projects, here are some that I think worked out the best:
@@ -113,6 +105,16 @@ const showIframe = ref<boolean>(false)
                 </ul>
             </section>
 
+            <section id="j_school">
+                <h3>Video</h3>
+                <p>Back when I was in school, I experimented with photography, writing and videography.</p>
+                <p>
+                    One example is a
+                    <ExternalLink
+                        href="https://glueottawa.com/2019/01/30/aikido-is-a-peaceful-martial-art-that-will-change-the-students-lives-completely/"
+                        description="video story" /> about Aikido that was published by Glue Ottawa.
+                </p>
+            </section>
 
             <section id="demo_reel">
                 <h3>Demo Reel</h3>
