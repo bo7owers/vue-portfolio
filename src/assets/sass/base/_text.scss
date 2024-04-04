@@ -1,9 +1,9 @@
 @use '../vars/colors' as c;
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.65em;
-    color: var(--text-color);
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.65em;
+	color: var(--text-color);
 }
 
 h1,
@@ -12,61 +12,62 @@ h3,
 h4,
 h5,
 h6 {
-    color: c.$brand-blue;
-    line-height: 1.1em;
-    font-weight: 400;
-    text-align: center;
+	color: c.$brand-blue;
+	line-height: 1.1em;
+	font-weight: 400;
+	text-align: center;
+	margin-block-end: 0.75rem;
 }
 
 h {
-    &1 {
-        font-size: 2.25rem;
-    }
-    &2 {
-        font-size: 1.75rem;
-    }
-    &3 {
-        font-size: 1.625rem;
-    }
-    &4 {
-        font-size: 1.5rem;
-    }
-    &5 {
-        font-size: 1.125rem;
-    }
-    &6 {
-        font-size: 1.125rem;
-    }
+	&1 {
+		font-size: 2.25rem;
+	}
+	&2 {
+		font-size: 1.75rem;
+	}
+	&3 {
+		font-size: 1.625rem;
+	}
+	&4 {
+		font-size: 1.5rem;
+	}
+	&5 {
+		font-size: 1.125rem;
+	}
+	&6 {
+		font-size: 1.125rem;
+	}
 }
 
 p {
-    font-size: 1.05rem;
-    line-height: 1.65em;
+	font-size: 1.05rem;
+	line-height: 1.65em;
 }
 
 ul {
-    font-size: 1.25rem;
-    line-height: 1.65em;
-    margin-left: 3rem;
+	font-size: 1.25rem;
+	line-height: 1.65em;
+	margin-left: 3rem;
 }
 
 a,
 .close,
 .hamburger i {
-    &:visited {
-        color: c.$visited;
+	&:visited {
+		color: c.$visited;
 
-        &:hover {
-            color: c.$tertiary-color;
-        }
-    }
+		&:hover {
+			color: c.$tertiary-color;
+		}
+	}
 
-    &:focus:not(.link):not(.skip-to-main),
-    &:focus-visible:not(.link):not(.skip-to-main) {
-        color: c.$brand-blue;
+	&:focus:not(.link):not(.skip-to-main),
+	&:focus-visible:not(.link):not(.skip-to-main) {
+		color: c.$brand-blue;
 
-        &:visited {
-            color: c.$visited;
-        }
-    }
+		&:visited {
+			color: c.$visited;
+		}
+	}
 }
