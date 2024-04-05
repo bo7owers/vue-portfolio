@@ -26,10 +26,16 @@ defineProps({
 .card {
     display: flex;
     flex-flow: row wrap;
-    max-width: 20rem;
+    width: 15rem;
     border: 2px solid var(--brand-black);
     border-radius: 0.75rem;
     padding: 1rem 1.5rem;
+
+
+    @media (min-width: 1600px) {
+        width: 23rem;
+    }
+
 
     .card-img {
         width: 100%;
@@ -43,6 +49,30 @@ defineProps({
         .btn {
             margin-inline: auto;
             width: 100%;
+        }
+    }
+}
+
+html {
+    &.light-theme {
+        a:not(.btn) {
+            color: var(--brand-blue);
+
+            &:hover,
+            &:visited {
+                color: var(--tertiary-color);
+            }
+        }
+    }
+
+    &.dark-theme {
+        a:not(.btn) {
+            color: var(--brand-pink);
+
+            &:hover,
+            &:visited {
+                color: var(--dropdown-shadow1);
+            }
         }
     }
 }

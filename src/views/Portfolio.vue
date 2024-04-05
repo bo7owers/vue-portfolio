@@ -8,6 +8,40 @@ const { t, locale } = useI18n()
 
 const showIframe = ref<boolean>(false)
 
+const courses = {
+    inc118: {
+        title: 'Fostering an Inclusive Workplace',
+        href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=INC118&cm_locale=en',
+        desc: 'Access in the Learning Platform',
+        body:
+            ['Use a custom, gulp-based workflow to create interactive activities.',
+                'Use React Email to design engaging emails that are being sent to learners using the Brightspace Intelligent Agent System.',
+                'Use release conditions to tailor the learer experience for students.',
+                'Test pages for accessibility errors and fix them.']
+    },
+    inc101: {
+        title: 'Introduction to Gender-based Analysis Plus (GBA Plus)',
+        href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=INC101&cm_locale=en',
+        desc: 'Access in the Learning Platform',
+        body: [
+            `Collaborate with Instructional Designer (ID) to prototype a branching activity using Figma.`,
+            ` Program activity with Brightspace's What you see is what you get (WYSIWYG) HTML editor so that IDs can edit the activity without the need of a multimedia technician.`,
+            `Test pages for accessibility errors and fix them.`,
+        ]
+    },
+    wmt203: {
+        title: 'Mental Health and the Workplace: Raising Awareness',
+        href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=WMT203&cm_locale=en',
+        desc: 'Access in the Learning Platform',
+        body: [
+            ` Assist fellow multimedia technician with building an Interactive Toolkit using Vue Js.`,
+            ` Add an interactive video player to some videos in the course.`,
+            ` Build a bilingual glossary.`,
+            `  Test pages for accessibility errors and fix them.`,
+        ]
+    }
+}
+
 </script>
 <template>
     <h1>{{ t('portfolioView.portfolioHeading') }}</h1>
@@ -15,53 +49,19 @@ const showIframe = ref<boolean>(false)
     <div v-if="locale === 'en'">
         <section id="courses">
             <h2>Some courses I have worked on with <abbr title="Canada School of Public Service">CSPS</abbr></h2>
-            <Card cardTitle="Fostering an Inclusive Workplace"
-                url="https://catalogue.csps-efpc.gc.ca/product?catalog=INC118&cm_locale=en"
-                urlDesc="Access in the Learning Platform">
-                <template #cardBody>
-                    <ul>
-                        <li>Use a custom, gulp-based workflow to create interactive activities.</li>
-                        <li>Use React Email to design engaging emails that are being sent to learners using the
-                            Brightspace Intelligent Agent System.</li>
-                        <li>Use release conditions to tailor the learer experience for students.</li>
-                        <li>Test pages for accessibility errors and fix them.</li>
-                    </ul>
-                </template>
-            </Card>
-            <ul>
-                <li>
-                    <ExternalLink href="https://catalogue.csps-efpc.gc.ca/product?catalog=INC118&cm_locale=en"
-                        description="Fostering an Inclusive Workplace" />. <ul>
-                        <li>Use a custom, gulp-based workflow to create interactive activities.</li>
-                        <li>Use React Email to design engaging emails that are being sent to learners using the
-                            Brightspace Intelligent Agent System.</li>
-                        <li>Use release conditions to tailor the learer experience for students.</li>
-                        <li>Test pages for accessibility errors and fix them.</li>
-                    </ul>
-                </li>
-                <li>
-                    <ExternalLink href="https://catalogue.csps-efpc.gc.ca/product?catalog=INC101&cm_locale=en"
-                        description="Introduction to Gender-based Analysis Plus (GBA Plus)" />.
-                    <ul>
-                        <li>Collaborate with Instructional Designer (ID) to prototype a branching activity using Figma.
-                        </li>
-                        <li>Program activity with Brightspace's What you see is what you get (WYSIWYG) HTML editor so
-                            that <abbr title="Instructional Designers">IDs</abbr> can edit the activity without the need
-                            of a multimedia technician.</li>
-                        <li>Test pages for accessibility errors and fix them.</li>
-                    </ul>
-                </li>
-                <li>
-                    <ExternalLink href="https://catalogue.csps-efpc.gc.ca/product?catalog=WMT203&cm_locale=en"
-                        description="Mental Health and the Workplace: Raising Awareness" />
-                    <ul>
-                        <li>Assist fellow multimedia technician with building an Interactive Toolkit using Vue Js.</li>
-                        <li>Add an interactive video player to some videos in the course.</li>
-                        <li>Build a bilingual glossary.</li>
-                        <li>Test pages for accessibility errors and fix them.</li>
-                    </ul>
-                </li>
-            </ul>
+
+            <div class="card-container">
+                <Card v-for="(course, index) in courses" :key="index" :cardTitle="course.title" :url="course.href"
+                    :urlDesc="course.desc">
+                    <template #cardBody>
+                        <ul>
+                            <li v-for="(item, index) in course.body" :key="index">
+                                {{ item }}
+                            </li>
+                        </ul>
+                    </template>
+                </Card>
+            </div>
         </section>
         <section>
             <h2>Multimedia projects</h2>
@@ -125,3 +125,15 @@ const showIframe = ref<boolean>(false)
     </div>
 
 </template>
+
+<style>
+.card-container {
+    display: flex;
+    gap: 1.25rem 1.5rem;
+    justify-content: center;
+
+    @media (min-width: 810px) {
+        flex-flow: row wrap;
+    }
+}
+</style>
