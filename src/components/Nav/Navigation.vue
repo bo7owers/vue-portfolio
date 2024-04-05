@@ -51,13 +51,8 @@ function checkScreenSize() {
                     </router-link>
                 </li>
                 <li>
-                    <router-link class="link" to="/about">
-                        {{ t('navigation.about') }}
-                    </router-link>
-                </li>
-                <li>
-                    <router-link class="link" to="/programming">
-                        {{ t('navigation.programming') }}
+                    <router-link class="link" to="/portfolio">
+                        {{ t('navigation.portfolio') }}
                     </router-link>
                 </li>
                 <li>
@@ -93,14 +88,9 @@ function checkScreenSize() {
                             </router-link>
                         </li>
                         <li>
-                            <router-link class="link" @keypress="toggleSmallNav" @click="toggleSmallNav" to="/about">
-                                {{ t('navigation.about') }}
-                            </router-link>
-                        </li>
-                        <li>
                             <router-link class="link" @keypress="toggleSmallNav" @click="toggleSmallNav"
-                                to="/programming">
-                                {{ t('navigation.programming') }}
+                                to="/portfolio">
+                                {{ t('navigation.portfolio') }}
                             </router-link>
                         </li>
                         <li>

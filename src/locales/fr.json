@@ -8,10 +8,14 @@
 	"langName": "Fr",
 	"chLang": "Changer de langue",
 	"skipLink": "Passer au contenu principal",
+	"portfolioView": {
+		"portfolioHeading": "Titre de portfolio"
+	},
 	"navigation": {
 		"home": "Accueil",
 		"about": "À propos",
 		"programming": "Programmation",
+		"portfolio": "Portfolio",
 		"contact": "Contactez-moi",
 		"ariaLabels": {
 			"openMobile": "Ouvrir le menu de navigation",
