@@ -70,7 +70,7 @@ onMounted(() => {
             var(--brand-black) 20%);
     min-width: 4rem;
     padding-inline: 1rem;
-    height: 2rem;
+    min-height: 2rem;
     cursor: pointer;
     color: var(--btn-color);
     background-color: var(--btn-bg-color);
@@ -130,7 +130,23 @@ onMounted(() => {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+a.btn.btn-primary {
+    text-decoration: none;
+    color: var(--btn-color);
+    background-color: var(--btn-bg-color);
+
+    &:hover {
+        color: var(--btn-hover-color);
+        background-color: var(--btn-hover-bg-color);
+    }
+
+    &:visited {
+        color: var(--btn-color);
+        background-color: var(--btn-bg-color);
+    }
+}
+
+html.dark-theme {
     .btn {
         &.btn-primary {
             /* --btn-bg-color: #292d44; */

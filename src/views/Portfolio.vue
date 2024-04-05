@@ -2,6 +2,7 @@
 import { useI18n } from 'vue-i18n'
 import { ref } from 'vue';
 import ExternalLink from '../components/ExternalLink.vue'
+import Card from '../components/Card.vue'
 
 const { t, locale } = useI18n()
 
@@ -14,6 +15,19 @@ const showIframe = ref<boolean>(false)
     <div v-if="locale === 'en'">
         <section id="courses">
             <h2>Some courses I have worked on with <abbr title="Canada School of Public Service">CSPS</abbr></h2>
+            <Card cardTitle="Fostering an Inclusive Workplace"
+                url="https://catalogue.csps-efpc.gc.ca/product?catalog=INC118&cm_locale=en"
+                urlDesc="Access in the Learning Platform">
+                <template #cardBody>
+                    <ul>
+                        <li>Use a custom, gulp-based workflow to create interactive activities.</li>
+                        <li>Use React Email to design engaging emails that are being sent to learners using the
+                            Brightspace Intelligent Agent System.</li>
+                        <li>Use release conditions to tailor the learer experience for students.</li>
+                        <li>Test pages for accessibility errors and fix them.</li>
+                    </ul>
+                </template>
+            </Card>
             <ul>
                 <li>
                     <ExternalLink href="https://catalogue.csps-efpc.gc.ca/product?catalog=INC118&cm_locale=en"
@@ -58,7 +72,8 @@ const showIframe = ref<boolean>(false)
                 <ul>
                     <li>
                         <ExternalLink href="https://bo7owers.github.io/aov-gift-label/"
-                            description="Interactive Gift Label" />. It's a fun, little web app that allows you to
+                            description="Interactive Gift Label" />.
+                        It's a fun, little web app that allows you to
                         customise holiday labels for those times when you are wrapping presents and forget to buy
                         labels. Just remember to allow background colors when printing!
                     </li>
