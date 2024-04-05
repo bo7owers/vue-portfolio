@@ -48,7 +48,16 @@ const showIframe = ref<boolean>(false)
                 </li>
             </ul>
         </section>
-        <!-- LMS experiences -->
+        <section id="lms">
+            <h2>Learning Management System (LMS) experience</h2>
+            <p>My expertise working with <abbr title="Learning Management Systems">LMSs</abbr> varies from:</p>
+            <ul>
+                <li>Brightspace</li>
+                <li>Moodle</li>
+                <li>Blackboard</li>
+            </ul>
+            <p>My focus is on creating engaging and accessible learning experiences on the web.</p>
+        </section>
 
     </div>
     <div v-else-if="locale === 'fr'">
