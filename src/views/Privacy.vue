@@ -11,6 +11,6 @@
         <p>In the home page, there is a 'Show iframe' button. That is because my video is hosted on YouTube and youtube
             adds trackers to the website. Therefore, I leave it up to you, if you want to load all the YouTube-dependent
             scripts that will load when the iframe is shown.</p>
-        <p>Go to the <router-link to="/#show_iframe">Show iframe</router-link> section.</p>
+        <p>Go to the <router-link to="/portfolio">portfolio</router-link> page.</p>
     </section>
 </template>
