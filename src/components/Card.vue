@@ -49,12 +49,22 @@ defineProps({
     }
 
     .card-footer {
-        margin-inline: auto;
+        margin: auto;
         display: flex;
 
         .btn {
             margin-inline: auto;
             width: 100%;
+            padding-block: 0.25rem;
+            color: var(--btn-color);
+
+            &:visited {
+                color: var(--btn-color);
+            }
+
+            &:hover {
+                color: var(-btn-hover-color);
+            }
         }
     }
 }
