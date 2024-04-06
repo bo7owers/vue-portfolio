@@ -46,7 +46,7 @@ const courses = {
 <template>
     <h1>{{ t('portfolioView.portfolioHeading') }}</h1>
 
-    <div v-if="locale === 'en'">
+    <div class="portfolio-content" v-if="locale === 'en'">
         <section id="courses">
             <h2>Some courses I have worked on with <abbr title="Canada School of Public Service">CSPS</abbr></h2>
 
@@ -103,7 +103,7 @@ const courses = {
                 </p>
                 <button @click="showIframe = !showIframe" class="btn btn-primary">Show iframe</button>
                 <div aria-live="polite">
-                    <div v-if="showIframe">
+                    <div class="portfolio-content" v-if="showIframe">
                         <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/SXbIE0TMe50?si=z-3rQh4SbM4oWNIZ"
                             title="YouTube video player" frameborder="0"
@@ -114,26 +114,52 @@ const courses = {
             </section>
         </section>
     </div>
-    <div v-else-if="locale === 'fr'">
+    <div class="portfolio-content" v-else-if="locale === 'fr'">
         <p>fr</p>
     </div>
-    <div v-else-if="locale === 'es'">
+    <div class="portfolio-content" v-else-if="locale === 'es'">
         <p>es</p>
     </div>
-    <div v-else>
+    <div class="portfolio-content" v-else>
         <p>Content not found</p>
     </div>
 
 </template>
 
-<style>
+<style scoped>
+.portfolio-content {
+    display: grid;
+    grid-auto-columns: 0.25fr 1fr 1fr 0.25fr;
+
+    & section {
+        grid-column: 1/5;
+    }
+}
+
 .card-container {
-    display: flex;
+    display: grid;
     gap: 1.25rem 1.5rem;
     justify-content: center;
+    max-width: 35rem;
+    margin-inline: auto;
+
 
     @media (min-width: 810px) {
-        flex-flow: row wrap;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 40em;
+    }
+
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        column-gap: 1rem;
+        max-width: 70em;
+    }
+
+    @media(min-width: 1600px) {
+        max-width: 85em;
+        margin-inline: auto;
     }
 }
 </style>

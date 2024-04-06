@@ -6,6 +6,7 @@ import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
 import { useThemeStore } from './stores/ThemeToggle'
 import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 
 const navStore = useNavStore()
 const { dropdownMenuActive } = storeToRefs(navStore)
@@ -29,6 +30,9 @@ const { currentTheme } = storeToRefs(themeStore)
 
 const { setTheme } = themeStore
 
+const route = useRoute()
+console.log('route:', route.name);
+
 onMounted(() => {
     // set dark theme on page mounted
     currentTheme.value = 'dark'
@@ -38,7 +42,7 @@ onMounted(() => {
 </script>
 <template>
     <a href="#main_content" class="skip-to-main"> {{ t('skipLink') }}</a>
-    <div class="container all-info">
+    <div class="container all-info" :class="route.name === 'Portfolio' && 'portfolio-layout'">
         <Navigation class="row-full" />
         <div class="row-center">
             <main id="main_content" class="content-area row-center row-flex row-flex-center" role="main" tabindex="-1">

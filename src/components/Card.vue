@@ -30,10 +30,16 @@ defineProps({
     border: 2px solid var(--brand-black);
     border-radius: 0.75rem;
     padding: 1rem 1.5rem;
+    background-color: var(--so-white);
 
 
     @media (min-width: 1600px) {
-        width: 23rem;
+        width: 20rem;
+    }
+
+    .card-title {
+        text-align: left;
+        word-break: keep-all;
     }
 
 
