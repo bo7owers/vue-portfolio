@@ -3,6 +3,7 @@ import { useI18n } from 'vue-i18n'
 import { ref } from 'vue';
 import ExternalLink from '../components/ExternalLink.vue'
 import Card from '../components/Card.vue'
+import ActionCard from '../components/ActionCard.vue'
 
 const { t, locale } = useI18n()
 
@@ -42,6 +43,19 @@ const courses = {
     }
 }
 
+const projects = {
+    gift: {
+        title: 'Interactive Gift Label',
+        desc: `It's a fun, little web app that allows you to customise holiday labels for those times when you are wrapping presents and forget to buy labels. Just remember to allow background colors when printing!`,
+        href: `https://bo7owers.github.io/aov-gift-label/`,
+    },
+    tree: {
+        title: 'Vue Christmas Tree',
+        desc: `Used some Vue Js directives to render the same component while creating an HTML and CSS Christmas tree. `,
+        href: `https://bo7owers.github.io/2022-christmas-tree-lights-problem/`,
+    }
+}
+
 </script>
 <template>
     <h1>{{ t('portfolioView.portfolioHeading') }}</h1>
@@ -63,26 +77,14 @@ const courses = {
                 </Card>
             </div>
         </section>
-        <section>
+        <section id="personal_projects">
             <h2>Multimedia projects</h2>
             <section id="vue_advent">
                 <h3>Advent of Vue 2022</h3>
                 <p>For the 2022 holiday season, I created some projects, here are some that I think worked out the best:
                 </p>
-                <ul>
-                    <li>
-                        <ExternalLink href="https://bo7owers.github.io/aov-gift-label/"
-                            description="Interactive Gift Label" />.
-                        It's a fun, little web app that allows you to
-                        customise holiday labels for those times when you are wrapping presents and forget to buy
-                        labels. Just remember to allow background colors when printing!
-                    </li>
-                    <li>
-                        <ExternalLink href="https://bo7owers.github.io/2022-christmas-tree-lights-problem/"
-                            description="Vue Christmas Tree" />. Used some Vue Js directives to render the same
-                        component while creating an HTML and CSS Christmas tree.
-                    </li>
-                </ul>
+                <ActionCard v-for="(project, index) in projects" :key="index" :title="project.title"
+                    :desc="project.desc" :href="project.href" />
             </section>
 
             <section id="j_school">
