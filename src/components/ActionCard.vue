@@ -39,7 +39,6 @@ defineProps({
 
     @media (min-width: 810px) {
         flex-flow: row nowrap;
-        align-items: center;
     }
 
     color: var(--solid-black);
@@ -87,9 +86,25 @@ defineProps({
             color: var(--brand-black);
         }
 
-        & img {
-            order: 2;
+        @media (min-width: 810px) {
+            & img {
+                order: 2;
+            }
         }
+
+        @container a-card (min-width: 800px) {
+            & img {
+                order: 1;
+            }
+
+
+            .ac-wrapper {
+                order: 2;
+            }
+
+
+        }
+
 
         .ac-wrapper {
             margin-inline-end: 1rem;

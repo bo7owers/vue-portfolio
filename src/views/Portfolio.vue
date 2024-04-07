@@ -10,25 +10,27 @@ const { t, locale } = useI18n()
 const showIframe = ref<boolean>(false)
 
 const courses = {
-    inc118: {
-        title: 'Fostering an Inclusive Workplace',
-        href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=INC118&cm_locale=en',
-        desc: 'Access in the Learning Platform',
-        body:
-            ['Use a custom, gulp-based workflow to create interactive activities.',
-                'Use React Email to design engaging emails that are being sent to learners using the Brightspace Intelligent Agent System.',
-                'Use release conditions to tailor the learer experience for students.',
-                'Test pages for accessibility errors and fix them.']
-    },
-    inc101: {
-        title: 'Introduction to Gender-based Analysis Plus (GBA Plus)',
-        href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=INC101&cm_locale=en',
-        desc: 'Access in the Learning Platform',
-        body: [
-            `Collaborate with Instructional Designer (ID) to prototype a branching activity using Figma.`,
-            ` Program activity with Brightspace's What you see is what you get (WYSIWYG) HTML editor so that IDs can edit the activity without the need of a multimedia technician.`,
-            `Test pages for accessibility errors and fix them.`,
-        ]
+    main: {
+        inc118: {
+            title: 'Fostering an Inclusive Workplace',
+            href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=INC118&cm_locale=en',
+            desc: 'Access in the Learning Platform',
+            body:
+                ['Use a custom, gulp-based workflow to create interactive activities.',
+                    'Use React Email to design engaging emails that are being sent to learners using the Brightspace Intelligent Agent System.',
+                    'Use release conditions to tailor the learer experience for students.',
+                    'Test pages for accessibility errors and fix them.']
+        },
+        inc101: {
+            title: 'Introduction to Gender-based Analysis Plus (GBA Plus)',
+            href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=INC101&cm_locale=en',
+            desc: 'Access in the Learning Platform',
+            body: [
+                `Collaborate with Instructional Designer (ID) to prototype a branching activity using Figma.`,
+                ` Program activity with Brightspace's What you see is what you get (WYSIWYG) HTML editor so that IDs can edit the activity without the need of a multimedia technician.`,
+                `Test pages for accessibility errors and fix them.`,
+            ]
+        }
     },
     wmt203: {
         title: 'Mental Health and the Workplace: Raising Awareness',
@@ -64,10 +66,15 @@ const projects = {
         <section id="courses">
             <h2>Some courses I have worked on with <abbr title="Canada School of Public Service">CSPS</abbr></h2>
             <div class="action-card-container">
-
-                <ActionCard v-for="(course, index) in courses" :key="index" :title="course.title" :desc="course.desc"
-                    :href="course.href" :card-body="course.body">
-                </ActionCard>
+                <div class="main-courses">
+                    <ActionCard v-for="(course, index) in courses.main" :key="index" :title="course.title"
+                        :desc="course.desc" :href="course.href" :card-body="course.body">
+                    </ActionCard>
+                </div>
+                <div class="last-course">
+                    <ActionCard :title="courses.wmt203.title" :desc="courses.wmt203.desc" :href="courses.wmt203.href"
+                        :card-body="courses.wmt203.body" />
+                </div>
             </div>
 
 
@@ -201,17 +208,27 @@ const projects = {
     }
 }
 
-/* .action-card-container {
+.action-card-container {
     container-type: inline-size;
+    container-name: a-card;
 
-    .action-card {
-        background-color: yellow;
-        width: 50%;
+}
 
-        @container(min-width: 900px) {
-            background-color: blue;
-            width: 100%;
+@container a-card (min-width: 500px) {
+    .main-courses {
+        display: block;
+    }
+}
+
+@container a-card (min-width: 800px) {
+    .main-courses {
+        display: flex;
+        column-gap: 0.5rem;
+
+        .action-card {
+            flex-flow: column wrap;
+            width: 50%;
         }
     }
-} */
+}
 </style>
