@@ -9,7 +9,7 @@ defineProps({
 </script>
 <template>
     <div class="action-card">
-        <img src="../assets/img/thumbnails/inc118.png" :alt="`Screenshot of ${title}`">
+        <img :src="img" :alt="`Screenshot of ${title}`">
         <div class="ac-wrapper">
             <h4>{{ title }}</h4>
 

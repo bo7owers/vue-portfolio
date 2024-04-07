@@ -19,7 +19,8 @@ const courses = {
                 ['Use a custom, gulp-based workflow to create interactive activities.',
                     'Use React Email to design engaging emails that are being sent to learners using the Brightspace Intelligent Agent System.',
                     'Use release conditions to tailor the learer experience for students.',
-                    'Test pages for accessibility errors and fix them.']
+                    'Test pages for accessibility errors and fix them.'],
+            img: `./src/assets/img/thumbnails/inc118.png`
         },
         inc101: {
             title: 'Introduction to Gender-based Analysis Plus (GBA Plus)',
@@ -29,7 +30,8 @@ const courses = {
                 `Collaborate with Instructional Designer (ID) to prototype a branching activity using Figma.`,
                 ` Program activity with Brightspace's What you see is what you get (WYSIWYG) HTML editor so that IDs can edit the activity without the need of a multimedia technician.`,
                 `Test pages for accessibility errors and fix them.`,
-            ]
+            ],
+            img: `./src/assets/img/thumbnails/inc101.png`
         }
     },
     wmt203: {
@@ -41,7 +43,8 @@ const courses = {
             ` Add an interactive video player to some videos in the course.`,
             ` Build a bilingual glossary.`,
             `  Test pages for accessibility errors and fix them.`,
-        ]
+        ],
+        img: `./src/assets/img/thumbnails/wmt203.png`
     }
 }
 
@@ -50,11 +53,13 @@ const projects = {
         title: 'Interactive Gift Label',
         desc: `It's a fun, little web app that allows you to customise holiday labels for those times when you are wrapping presents and forget to buy labels. Just remember to allow background colors when printing!`,
         href: `https://bo7owers.github.io/aov-gift-label/`,
+        img: `./src/assets/img/thumbnails/gift-label.png`
     },
     tree: {
         title: 'Vue Christmas Tree',
         desc: `Used some Vue Js directives to render the same component while creating an HTML and CSS Christmas tree. `,
         href: `https://bo7owers.github.io/2022-christmas-tree-lights-problem/`,
+        img: `./src/assets/img/thumbnails/tree.png`
     }
 }
 
@@ -68,12 +73,12 @@ const projects = {
             <div class="action-card-container">
                 <div class="main-courses">
                     <ActionCard v-for="(course, index) in courses.main" :key="index" :title="course.title"
-                        :desc="course.desc" :href="course.href" :card-body="course.body">
+                        :desc="course.desc" :href="course.href" :img="course.img" :card-body="course.body">
                     </ActionCard>
                 </div>
                 <div class="last-course">
                     <ActionCard :title="courses.wmt203.title" :desc="courses.wmt203.desc" :href="courses.wmt203.href"
-                        :card-body="courses.wmt203.body" />
+                        :img="courses.wmt203.img" :card-body="courses.wmt203.body" />
                 </div>
             </div>
 
@@ -88,7 +93,7 @@ const projects = {
 
                 <div class="card-container">
                     <Card v-for="(project, index) in projects" :key="index" :cardTitle="project.title"
-                        :url="project.href">
+                        :url="project.href" :img="project.img">
                         <template #cardBody>
                             <p>{{ project.desc }}</p>
                         </template>
@@ -191,13 +196,11 @@ const projects = {
 
     @media (min-width: 810px) {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
         max-width: 40em;
     }
 
     @media (min-width: 992px) {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, auto);
         column-gap: 1rem;
         max-width: 70em;
     }

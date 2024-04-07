@@ -3,7 +3,8 @@
 defineProps({
     cardTitle: String,
     url: String,
-    urlDesc: String
+    urlDesc: String,
+    img: String
 })
 
 </script>
@@ -11,11 +12,11 @@ defineProps({
     <div class="card">
         <h3 class="card-title">{{ cardTitle }}</h3>
         <div class="card-body">
-            <img src="../assets/img/thumbnails/inc118.png" :alt="`Screenshot of ${cardTitle}`" class="card-img">
+            <img :src="img" :alt="`Screenshot of ${cardTitle}`" class="card-img">
             <slot name="cardBody"></slot>
         </div>
         <div class="card-footer">
-            <a :href="url" class="btn btn-primary" target="_blank" rel="noopener noreferrer">{{ urlDesc }}</a>
+            <a :href="url" class="btn btn-primary">Visit the site!</a>
         </div>
 
     </div>
@@ -38,8 +39,8 @@ defineProps({
     }
 
     .card-title {
-        text-align: left;
         word-break: keep-all;
+        margin-inline: auto;
     }
 
 
@@ -54,8 +55,7 @@ defineProps({
 
         .btn {
             margin-inline: auto;
-            width: 100%;
-            padding-block: 0.25rem;
+            margin-block: 0.25rem;
             color: var(--btn-color);
 
             &:visited {
