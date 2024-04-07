@@ -40,23 +40,23 @@ function checkScreenSize() {
     <header>
         <nav role="navigation" :aria-label="t('navigation.ariaLabels.topNav')">
             <div class="logo">
-                <router-link class="link" :to="{ name: 'Home' }">
+                <router-link class="link nav-link" :to="{ name: 'Home' }">
                     <img src="../../assets/logo.png" alt="René Torres' logo" />
                 </router-link>
             </div>
             <ul v-if="!mobile" class="navigation">
                 <li>
-                    <router-link class="link" to="/">
+                    <router-link class="link nav-link" to="/">
                         {{ t('navigation.home') }}
                     </router-link>
                 </li>
                 <li>
-                    <router-link class="link" to="/portfolio">
+                    <router-link class="link nav-link" to="/portfolio">
                         {{ t('navigation.portfolio') }}
                     </router-link>
                 </li>
                 <li>
-                    <router-link class="link" to="/contact">
+                    <router-link class="link nav-link" to="/contact">
                         {{ t('navigation.contact') }}
                     </router-link>
                 </li>
@@ -83,18 +83,20 @@ function checkScreenSize() {
                 <div v-if="mobileNav" class="mobile-nav">
                     <ul class="nav-list">
                         <li>
-                            <router-link class="link" @keypress="toggleSmallNav" @click="toggleSmallNav" to="/">
+                            <router-link class="link nav-link" @keypress="toggleSmallNav" @click="toggleSmallNav"
+                                to="/">
                                 {{ t('navigation.home') }}
                             </router-link>
                         </li>
                         <li>
-                            <router-link class="link" @keypress="toggleSmallNav" @click="toggleSmallNav"
+                            <router-link class="link nav-link" @keypress="toggleSmallNav" @click="toggleSmallNav"
                                 to="/portfolio">
                                 {{ t('navigation.portfolio') }}
                             </router-link>
                         </li>
                         <li>
-                            <router-link class="link" @keypress="toggleSmallNav" @click="toggleSmallNav" to="/contact">
+                            <router-link class="link nav-link" @keypress="toggleSmallNav" @click="toggleSmallNav"
+                                to="/contact">
                                 {{ t('navigation.contact') }}
                             </router-link>
                         </li>
