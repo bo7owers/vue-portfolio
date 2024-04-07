@@ -31,11 +31,12 @@ const { currentTheme } = storeToRefs(themeStore)
 const { setTheme } = themeStore
 
 const route = useRoute()
-console.log('route:', route.name);
+
+let localStorageTheme = localStorage.getItem('theme')
 
 onMounted(() => {
     // set dark theme on page mounted
-    currentTheme.value = 'dark'
+    localStorageTheme ? currentTheme.value = localStorageTheme : currentTheme.value = 'dark'
     setTheme()
 })
 

@@ -23,6 +23,8 @@ function toggleTheme() {
     }
 
     html?.classList.add(`${currentTheme.value}-theme`)
+    localStorage.setItem('theme', currentTheme.value)
+
 }
 
 </script>
