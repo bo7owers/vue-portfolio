@@ -20,7 +20,7 @@ const courses = {
                     'Use React Email to design engaging emails that are being sent to learners using the Brightspace Intelligent Agent System.',
                     'Use release conditions to tailor the learer experience for students.',
                     'Test pages for accessibility errors and fix them.'],
-            img: `./src/assets/img/thumbnails/inc118.png`
+            img: `./thumbnails/inc118.png`
         },
         inc101: {
             title: 'Introduction to Gender-based Analysis Plus (GBA Plus)',
@@ -31,7 +31,7 @@ const courses = {
                 ` Program activity with Brightspace's What you see is what you get (WYSIWYG) HTML editor so that IDs can edit the activity without the need of a multimedia technician.`,
                 `Test pages for accessibility errors and fix them.`,
             ],
-            img: `./src/assets/img/thumbnails/inc101.png`
+            img: `./thumbnails/inc101.png`
         }
     },
     wmt203: {
@@ -44,7 +44,7 @@ const courses = {
             ` Build a bilingual glossary.`,
             `  Test pages for accessibility errors and fix them.`,
         ],
-        img: `./src/assets/img/thumbnails/wmt203.png`
+        img: `./thumbnails/wmt203.png`
     }
 }
 
@@ -53,13 +53,13 @@ const projects = {
         title: 'Interactive Gift Label',
         desc: `It's a fun, little web app that allows you to customise holiday labels for those times when you are wrapping presents and forget to buy labels. Just remember to allow background colors when printing!`,
         href: `https://bo7owers.github.io/aov-gift-label/`,
-        img: `./src/assets/img/thumbnails/gift-label.png`
+        img: `./thumbnails/gift-label.png`
     },
     tree: {
         title: 'Vue Christmas Tree',
         desc: `Used some Vue Js directives to render the same component while creating an HTML and CSS Christmas tree. `,
         href: `https://bo7owers.github.io/2022-christmas-tree-lights-problem/`,
-        img: `./src/assets/img/thumbnails/tree.png`
+        img: `./thumbnails/tree.png`
     }
 }
 
