@@ -83,7 +83,8 @@ html {
 		}
 	}
 	&.dark-theme {
-		a:not(.link) {
+		a:not(.link),
+		a:not(.action-link) {
 			color: c.$brand-pink;
 			&:hover,
 			&:visited {

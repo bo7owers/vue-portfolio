@@ -45,7 +45,7 @@ watch(locale, () => {
 </script>
 
 <template>
-    <a href="javascript:;" class="link lang-dropdown" @click.prevent="navStore.toggleIsNavOpen"
+    <a href="javascript:;" class="link lang-dropdown" id="lang_dropdown" @click.prevent="navStore.toggleIsNavOpen"
         @keyup.esc="closeDropdown($event)" :class="dropdownMenuActive && 'router-link-active'" v-tippy="title"
         aria-haspopup="menu" :aria-label="t('chLang')">
         <span aria-hidden="true">
@@ -73,10 +73,15 @@ watch(locale, () => {
     width: calc(var(--ddm-width) - 2rem);
 }
 
-.lang-dropdown {
+#lang_dropdown.lang-dropdown {
     margin-block-start: 0.25rem;
     background-color: c.$so-white;
     cursor: pointer;
+    color: var(--brand-black);
+
+    &:visited {
+        color: var(--brand-black);
+    }
 }
 
 .dropdown-menu {

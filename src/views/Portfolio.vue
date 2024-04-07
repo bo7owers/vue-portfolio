@@ -2,72 +2,103 @@
 import { useI18n } from 'vue-i18n'
 import { ref } from 'vue';
 import ExternalLink from '../components/ExternalLink.vue'
+import Card from '../components/Card.vue'
+import ActionCard from '../components/ActionCard.vue'
 
 const { t, locale } = useI18n()
 
 const showIframe = ref<boolean>(false)
 
+const courses = {
+    main: {
+        inc118: {
+            title: 'Fostering an Inclusive Workplace',
+            href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=INC118&cm_locale=en',
+            desc: 'Access in the Learning Platform',
+            body:
+                ['Use a custom, gulp-based workflow to create interactive activities.',
+                    'Use React Email to design engaging emails that are being sent to learners using the Brightspace Intelligent Agent System.',
+                    'Use release conditions to tailor the learer experience for students.',
+                    'Test pages for accessibility errors and fix them.'],
+            img: `./src/assets/img/thumbnails/inc118.png`
+        },
+        inc101: {
+            title: 'Introduction to Gender-based Analysis Plus (GBA Plus)',
+            href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=INC101&cm_locale=en',
+            desc: 'Access in the Learning Platform',
+            body: [
+                `Collaborate with Instructional Designer (ID) to prototype a branching activity using Figma.`,
+                ` Program activity with Brightspace's What you see is what you get (WYSIWYG) HTML editor so that IDs can edit the activity without the need of a multimedia technician.`,
+                `Test pages for accessibility errors and fix them.`,
+            ],
+            img: `./src/assets/img/thumbnails/inc101.png`
+        }
+    },
+    wmt203: {
+        title: 'Mental Health and the Workplace: Raising Awareness',
+        href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=WMT203&cm_locale=en',
+        desc: 'Access in the Learning Platform',
+        body: [
+            ` Assist fellow multimedia technician with building an Interactive Toolkit using Vue Js.`,
+            ` Add an interactive video player to some videos in the course.`,
+            ` Build a bilingual glossary.`,
+            `  Test pages for accessibility errors and fix them.`,
+        ],
+        img: `./src/assets/img/thumbnails/wmt203.png`
+    }
+}
+
+const projects = {
+    gift: {
+        title: 'Interactive Gift Label',
+        desc: `It's a fun, little web app that allows you to customise holiday labels for those times when you are wrapping presents and forget to buy labels. Just remember to allow background colors when printing!`,
+        href: `https://bo7owers.github.io/aov-gift-label/`,
+        img: `./src/assets/img/thumbnails/gift-label.png`
+    },
+    tree: {
+        title: 'Vue Christmas Tree',
+        desc: `Used some Vue Js directives to render the same component while creating an HTML and CSS Christmas tree. `,
+        href: `https://bo7owers.github.io/2022-christmas-tree-lights-problem/`,
+        img: `./src/assets/img/thumbnails/tree.png`
+    }
+}
+
 </script>
 <template>
     <h1>{{ t('portfolioView.portfolioHeading') }}</h1>
 
-    <div v-if="locale === 'en'">
+    <div class="portfolio-content" v-if="locale === 'en'">
         <section id="courses">
             <h2>Some courses I have worked on with <abbr title="Canada School of Public Service">CSPS</abbr></h2>
-            <ul>
-                <li>
-                    <ExternalLink href="https://catalogue.csps-efpc.gc.ca/product?catalog=INC118&cm_locale=en"
-                        description="Fostering an Inclusive Workplace" />. <ul>
-                        <li>Use a custom, gulp-based workflow to create interactive activities.</li>
-                        <li>Use React Email to design engaging emails that are being sent to learners using the
-                            Brightspace Intelligent Agent System.</li>
-                        <li>Use release conditions to tailor the learer experience for students.</li>
-                        <li>Test pages for accessibility errors and fix them.</li>
-                    </ul>
-                </li>
-                <li>
-                    <ExternalLink href="https://catalogue.csps-efpc.gc.ca/product?catalog=INC101&cm_locale=en"
-                        description="Introduction to Gender-based Analysis Plus (GBA Plus)" />.
-                    <ul>
-                        <li>Collaborate with Instructional Designer (ID) to prototype a branching activity using Figma.
-                        </li>
-                        <li>Program activity with Brightspace's What you see is what you get (WYSIWYG) HTML editor so
-                            that <abbr title="Instructional Designers">IDs</abbr> can edit the activity without the need
-                            of a multimedia technician.</li>
-                        <li>Test pages for accessibility errors and fix them.</li>
-                    </ul>
-                </li>
-                <li>
-                    <ExternalLink href="https://catalogue.csps-efpc.gc.ca/product?catalog=WMT203&cm_locale=en"
-                        description="Mental Health and the Workplace: Raising Awareness" />
-                    <ul>
-                        <li>Assist fellow multimedia technician with building an Interactive Toolkit using Vue Js.</li>
-                        <li>Add an interactive video player to some videos in the course.</li>
-                        <li>Build a bilingual glossary.</li>
-                        <li>Test pages for accessibility errors and fix them.</li>
-                    </ul>
-                </li>
-            </ul>
+            <div class="action-card-container">
+                <div class="main-courses">
+                    <ActionCard v-for="(course, index) in courses.main" :key="index" :title="course.title"
+                        :desc="course.desc" :href="course.href" :img="course.img" :card-body="course.body">
+                    </ActionCard>
+                </div>
+                <div class="last-course">
+                    <ActionCard :title="courses.wmt203.title" :desc="courses.wmt203.desc" :href="courses.wmt203.href"
+                        :img="courses.wmt203.img" :card-body="courses.wmt203.body" />
+                </div>
+            </div>
+
+
         </section>
-        <section>
+        <section id="personal_projects">
             <h2>Multimedia projects</h2>
             <section id="vue_advent">
                 <h3>Advent of Vue 2022</h3>
                 <p>For the 2022 holiday season, I created some projects, here are some that I think worked out the best:
                 </p>
-                <ul>
-                    <li>
-                        <ExternalLink href="https://bo7owers.github.io/aov-gift-label/"
-                            description="Interactive Gift Label" />. It's a fun, little web app that allows you to
-                        customise holiday labels for those times when you are wrapping presents and forget to buy
-                        labels. Just remember to allow background colors when printing!
-                    </li>
-                    <li>
-                        <ExternalLink href="https://bo7owers.github.io/2022-christmas-tree-lights-problem/"
-                            description="Vue Christmas Tree" />. Used some Vue Js directives to render the same
-                        component while creating an HTML and CSS Christmas tree.
-                    </li>
-                </ul>
+
+                <div class="card-container">
+                    <Card v-for="(project, index) in projects" :key="index" :cardTitle="project.title"
+                        :url="project.href" :img="project.img">
+                        <template #cardBody>
+                            <p>{{ project.desc }}</p>
+                        </template>
+                    </Card>
+                </div>
             </section>
 
             <section id="j_school">
@@ -88,7 +119,7 @@ const showIframe = ref<boolean>(false)
                 </p>
                 <button @click="showIframe = !showIframe" class="btn btn-primary">Show iframe</button>
                 <div aria-live="polite">
-                    <div v-if="showIframe">
+                    <div class="portfolio-iframe" v-if="showIframe">
                         <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/SXbIE0TMe50?si=z-3rQh4SbM4oWNIZ"
                             title="YouTube video player" frameborder="0"
@@ -99,14 +130,108 @@ const showIframe = ref<boolean>(false)
             </section>
         </section>
     </div>
-    <div v-else-if="locale === 'fr'">
+    <div class="portfolio-content" v-else-if="locale === 'fr'">
         <p>fr</p>
     </div>
-    <div v-else-if="locale === 'es'">
+    <div class="portfolio-content" v-else-if="locale === 'es'">
         <p>es</p>
     </div>
-    <div v-else>
+    <div class="portfolio-content" v-else>
         <p>Content not found</p>
     </div>
 
 </template>
+
+<style scoped>
+.portfolio-content {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr 1fr 0.25fr;
+
+    & section {
+
+        &#courses {
+            grid-column: 1/5;
+        }
+
+        &#personal_projects {
+            grid-column: 1/5;
+            display: grid;
+            grid-template-columns: 0.25fr 1fr 1fr 0.25fr;
+
+            h2 {
+                grid-column: 1/5;
+            }
+        }
+
+        &#vue_advent {
+            /* background-color: aqua; */
+            grid-column: 2/4;
+        }
+
+        &#j_school {
+            /* background-color: antiquewhite; */
+            grid-column: 1/5;
+            grid-row: 3/4;
+            display: flex;
+            flex-flow: column wrap;
+
+            & .btn {
+                margin-inline-end: auto;
+            }
+
+            & [aria-live='polite'] {
+                margin-inline: auto;
+            }
+        }
+    }
+}
+
+.card-container {
+    display: grid;
+    gap: 1.25rem 1.5rem;
+    justify-content: center;
+    max-width: 35rem;
+    margin-inline: auto;
+
+
+    @media (min-width: 810px) {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 40em;
+    }
+
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+        max-width: 70em;
+    }
+
+    @media(min-width: 1600px) {
+        max-width: 85em;
+        margin-inline: auto;
+    }
+}
+
+.action-card-container {
+    container-type: inline-size;
+    container-name: a-card;
+
+}
+
+@container a-card (min-width: 500px) {
+    .main-courses {
+        display: block;
+    }
+}
+
+@container a-card (min-width: 800px) {
+    .main-courses {
+        display: flex;
+        column-gap: 0.5rem;
+
+        .action-card {
+            flex-flow: column wrap;
+            width: 50%;
+        }
+    }
+}
+</style>

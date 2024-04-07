@@ -6,6 +6,7 @@ import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
 import { useThemeStore } from './stores/ThemeToggle'
 import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 
 const navStore = useNavStore()
 const { dropdownMenuActive } = storeToRefs(navStore)
@@ -29,6 +30,9 @@ const { currentTheme } = storeToRefs(themeStore)
 
 const { setTheme } = themeStore
 
+const route = useRoute()
+console.log('route:', route.name);
+
 onMounted(() => {
     // set dark theme on page mounted
     currentTheme.value = 'dark'
@@ -38,7 +42,7 @@ onMounted(() => {
 </script>
 <template>
     <a href="#main_content" class="skip-to-main"> {{ t('skipLink') }}</a>
-    <div class="container all-info">
+    <div class="container all-info" :class="route.name === 'Portfolio' && 'portfolio-layout'">
         <Navigation class="row-full" />
         <div class="row-center">
             <main id="main_content" class="content-area row-center row-flex row-flex-center" role="main" tabindex="-1">
@@ -70,7 +74,7 @@ onMounted(() => {
             var(--brand-black) 20%);
     min-width: 4rem;
     padding-inline: 1rem;
-    height: 2rem;
+    min-height: 2rem;
     cursor: pointer;
     color: var(--btn-color);
     background-color: var(--btn-bg-color);
@@ -130,7 +134,23 @@ onMounted(() => {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+a.btn.btn-primary {
+    text-decoration: none;
+    color: var(--btn-color);
+    background-color: var(--btn-bg-color);
+
+    &:hover {
+        color: var(--btn-hover-color);
+        background-color: var(--btn-hover-bg-color);
+    }
+
+    &:visited {
+        color: var(--btn-color);
+        background-color: var(--btn-bg-color);
+    }
+}
+
+html.dark-theme {
     .btn {
         &.btn-primary {
             /* --btn-bg-color: #292d44; */
