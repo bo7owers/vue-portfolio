@@ -63,9 +63,12 @@ const projects = {
     <div class="portfolio-content" v-if="locale === 'en'">
         <section id="courses">
             <h2>Some courses I have worked on with <abbr title="Canada School of Public Service">CSPS</abbr></h2>
-            <ActionCard v-for="(course, index) in courses" :key="index" :title="course.title" :desc="course.desc"
-                :href="course.href" :card-body="course.body">
-            </ActionCard>
+            <div class="action-card-container">
+
+                <ActionCard v-for="(course, index) in courses" :key="index" :title="course.title" :desc="course.desc"
+                    :href="course.href" :card-body="course.body">
+                </ActionCard>
+            </div>
 
 
         </section>
@@ -104,7 +107,7 @@ const projects = {
                 </p>
                 <button @click="showIframe = !showIframe" class="btn btn-primary">Show iframe</button>
                 <div aria-live="polite">
-                    <div class="portfolio-content" v-if="showIframe">
+                    <div class="portfolio-iframe" v-if="showIframe">
                         <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/SXbIE0TMe50?si=z-3rQh4SbM4oWNIZ"
                             title="YouTube video player" frameborder="0"
@@ -130,10 +133,44 @@ const projects = {
 <style scoped>
 .portfolio-content {
     display: grid;
-    grid-auto-columns: 0.25fr 1fr 1fr 0.25fr;
+    grid-template-columns: 0.25fr 1fr 1fr 0.25fr;
 
     & section {
-        grid-column: 1/5;
+
+        &#courses {
+            grid-column: 1/5;
+        }
+
+        &#personal_projects {
+            grid-column: 1/5;
+            display: grid;
+            grid-template-columns: 0.25fr 1fr 1fr 0.25fr;
+
+            h2 {
+                grid-column: 1/5;
+            }
+        }
+
+        &#vue_advent {
+            /* background-color: aqua; */
+            grid-column: 2/4;
+        }
+
+        &#j_school {
+            /* background-color: antiquewhite; */
+            grid-column: 1/5;
+            grid-row: 3/4;
+            display: flex;
+            flex-flow: column wrap;
+
+            & .btn {
+                margin-inline-end: auto;
+            }
+
+            & [aria-live='polite'] {
+                margin-inline: auto;
+            }
+        }
     }
 }
 
@@ -163,4 +200,18 @@ const projects = {
         margin-inline: auto;
     }
 }
+
+/* .action-card-container {
+    container-type: inline-size;
+
+    .action-card {
+        background-color: yellow;
+        width: 50%;
+
+        @container(min-width: 900px) {
+            background-color: blue;
+            width: 100%;
+        }
+    }
+} */
 </style>

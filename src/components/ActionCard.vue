@@ -29,17 +29,20 @@ defineProps({
 .action-card {
     --border-radius: 5px;
     display: flex;
+    flex-flow: column wrap;
+    align-items: center;
     border-radius: var(--border-radius);
     margin-block: 1rem;
     border: 1px solid var(--dropdown-shadow1);
     padding: 0.75rem 1rem;
     background-color: var(--brand-black);
 
-    color: var(--solid-black);
+    @media (min-width: 810px) {
+        flex-flow: row nowrap;
+        align-items: center;
+    }
 
-    /* ul {
-        background-color: yellow;
-    } */
+    color: var(--solid-black);
 
     & li {
         color: var(--solid-black);
@@ -50,7 +53,9 @@ defineProps({
     }
 
     & img {
-        width: 20em;
+        width: 18em;
+        height: 11em;
+        object-fit: cover;
         border-radius: var(--border-radius);
     }
 
