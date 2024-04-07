@@ -63,19 +63,11 @@ const projects = {
     <div class="portfolio-content" v-if="locale === 'en'">
         <section id="courses">
             <h2>Some courses I have worked on with <abbr title="Canada School of Public Service">CSPS</abbr></h2>
+            <ActionCard v-for="(course, index) in courses" :key="index" :title="course.title" :desc="course.desc"
+                :href="course.href" :card-body="course.body">
+            </ActionCard>
 
-            <div class="card-container">
-                <Card v-for="(course, index) in courses" :key="index" :cardTitle="course.title" :url="course.href"
-                    :urlDesc="course.desc">
-                    <template #cardBody>
-                        <ul>
-                            <li v-for="(item, index) in course.body" :key="index">
-                                {{ item }}
-                            </li>
-                        </ul>
-                    </template>
-                </Card>
-            </div>
+
         </section>
         <section id="personal_projects">
             <h2>Multimedia projects</h2>
@@ -83,8 +75,15 @@ const projects = {
                 <h3>Advent of Vue 2022</h3>
                 <p>For the 2022 holiday season, I created some projects, here are some that I think worked out the best:
                 </p>
-                <ActionCard v-for="(project, index) in projects" :key="index" :title="project.title"
-                    :desc="project.desc" :href="project.href" />
+
+                <div class="card-container">
+                    <Card v-for="(project, index) in projects" :key="index" :cardTitle="project.title"
+                        :url="project.href">
+                        <template #cardBody>
+                            <p>{{ project.desc }}</p>
+                        </template>
+                    </Card>
+                </div>
             </section>
 
             <section id="j_school">

@@ -11,7 +11,7 @@ defineProps({
     <div class="card">
         <h3 class="card-title">{{ cardTitle }}</h3>
         <div class="card-body">
-            <img src="../assets/img/thumbnails/inc118.png" alt="" class="card-img">
+            <img src="../assets/img/thumbnails/inc118.png" :alt="`Screenshot of ${cardTitle}`" class="card-img">
             <slot name="cardBody"></slot>
         </div>
         <div class="card-footer">
