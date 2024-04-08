@@ -17,19 +17,6 @@ const { locale } = useI18n()
     position: relative;
     height: 50em;
 
-    /* &::before {
-        content: '';
-        display: inline-block;
-        position: absolute;
-        width: 12em;
-        height: 12em;
-        border: 3px solid var(--brand-blue);
-        border-radius: 50%;
-        left: 25px;
-        top: -7px;
-        z-index: -1;
-    } */
-
     &::after {
         content: '';
         display: inline-block;
