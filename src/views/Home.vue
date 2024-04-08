@@ -14,11 +14,8 @@ const showIframe = ref<boolean>(false)
     <div v-if="locale === 'en'">
         <section>
             <h2>A quick introduction</h2>
-            <p>I am a web developer with experience on
-                <ExternalLink href="https://www.goskills.com/Resources/Adult-learning-theory"
-                    description="adult learning" /> and
-                <ExternalLink href="https://dictionary.cambridge.org/dictionary/english/e-learning"
-                    description="e-learning" /> environments. I have experience in multimedia journalism and content
+            <p>I am a web developer with experience on adult learningand
+                e-learning environments. I have experience in multimedia journalism and content
                 creation as
                 well.
             </p>

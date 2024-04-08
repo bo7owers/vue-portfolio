@@ -7,6 +7,7 @@ import { useI18n } from 'vue-i18n'
 import { useThemeStore } from './stores/ThemeToggle'
 import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import Avatar from './components/Avatar.vue'
 
 const navStore = useNavStore()
 const { dropdownMenuActive } = storeToRefs(navStore)
@@ -49,8 +50,10 @@ onMounted(() => {
             <main id="main_content" class="content-area row-center row-flex row-flex-center" role="main" tabindex="-1">
                 <router-view />
             </main>
-            <!-- <div class="row-left">Aside goes here</div> -->
         </div>
+        <aside>
+            <Avatar v-if="route.name === 'Home'" />
+        </aside>
         <Footer />
     </div>
 </template>
