@@ -5,12 +5,14 @@ import { useNavStore } from './stores/NavStore'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
 import { useThemeStore } from './stores/ThemeToggle'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import Avatar from './components/Avatar.vue'
 
 const navStore = useNavStore()
 const { dropdownMenuActive } = storeToRefs(navStore)
+
+let html = document.querySelector('html')
 
 // Close dropdown menu if is open and you click outside of it
 document.addEventListener('click', (e: any) => {
@@ -51,8 +53,8 @@ onMounted(() => {
                 <router-view />
             </main>
         </div>
-        <aside>
-            <Avatar v-if="route.name === 'Home'" />
+        <aside v-if="!html?.classList.contains('mobile-view') && route.name === 'Home'">
+            <Avatar />
         </aside>
         <Footer />
     </div>

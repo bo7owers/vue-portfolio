@@ -23,6 +23,8 @@ onMounted(() => {
     checkScreenSize()
 })
 
+let html = document.querySelector('html')
+
 function toggleSmallNav() {
     mobileNav.value = !mobileNav.value
 }
@@ -32,8 +34,12 @@ function checkScreenSize() {
 
     if (windowWidth.value <= 768) {
         mobile.value = true
+        mobile.value === true && html?.classList.add('mobile-view')
+
         return
     }
+
+    (mobile.value !== true && html?.classList.contains('mobile-view')) && html?.classList.remove('mobile-view')
     mobile.value = false
     mobileNav.value = false
     return
