@@ -28,7 +28,7 @@ const courses = {
             desc: 'Access in the Learning Platform',
             body: [
                 `Collaborate with Instructional Designer (ID) to prototype a branching activity using Figma.`,
-                ` Program activity with Brightspace's What you see is what you get (WYSIWYG) HTML editor so that IDs can edit the activity without the need of a multimedia technician.`,
+                ` Program activity in a way that Brightspace's What you see is what you get (WYSIWYG) HTML editor will allow IDs to edit its content without the need of a Multimedia Technician.`,
                 `Test pages for accessibility errors and fix them.`,
             ],
             img: `./thumbnails/inc101.png`
@@ -39,10 +39,10 @@ const courses = {
         href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=WMT203&cm_locale=en',
         desc: 'Access in the Learning Platform',
         body: [
-            ` Assist fellow multimedia technician with building an Interactive Toolkit using Vue Js.`,
-            ` Add an interactive video player to some videos in the course.`,
+            ` Assist with the creation an Interactive Toolkit using Vue Js.`,
+            ` Add an interactive video player that will dynamically ask questions based on the content of the video.`,
             ` Build a bilingual glossary.`,
-            `  Test pages for accessibility errors and fix them.`,
+            `Test pages for accessibility errors and fix them.`,
         ],
         img: `./thumbnails/wmt203.png`
     }
@@ -70,6 +70,9 @@ const projects = {
     <div class="portfolio-content" v-if="locale === 'en'">
         <section id="courses">
             <h2>Some courses I have worked on with <abbr title="Canada School of Public Service">CSPS</abbr></h2>
+            <p>Most things I have built are for Canadian Public Servants, because of that, they can only be accessed
+                through the <abbr title="Canada School of Public Service">CSPS</abbr> Learning Platform. You can find
+                links to some of the courses I contrubuted in this page.</p>
             <div class="action-card-container">
                 <div class="main-courses">
                     <ActionCard v-for="(course, index) in courses.main" :key="index" :title="course.title"

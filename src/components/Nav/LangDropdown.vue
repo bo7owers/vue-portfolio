@@ -97,15 +97,6 @@ watch(locale, () => {
     width: var(--ddm-width);
     background-color: c.$bg-color;
 
-    @media (prefers-color-scheme: light) {
-        box-shadow: -10px 10px 19px c.$dropdown-shadow1,
-            10px -10px 19px c.$dropdown-shadow2;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        outline: 1px solid c.$dropdown-shadow1;
-    }
-
     @include b.breakpoint(small) {
         top: 60px;
         right: -10px;
@@ -135,6 +126,19 @@ watch(locale, () => {
         &:focus-visible {
             @extend %link-styles-hover;
         }
+    }
+}
+
+html.light-theme {
+    .dropdown-menu {
+        box-shadow: -10px 10px 19px c.$dropdown-shadow1,
+            10px -10px 19px c.$dropdown-shadow2;
+    }
+}
+
+html.dark-theme {
+    .dropdown-menu {
+        outline: 1px solid c.$dropdown-shadow1;
     }
 }
 </style>

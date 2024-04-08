@@ -33,22 +33,12 @@ defineProps({
     align-items: center;
     border-radius: var(--border-radius);
     margin-block: 1rem;
-    border: 1px solid var(--dropdown-shadow1);
+    border: 2px solid var(--dropdown-shadow1);
     padding: 0.75rem 1rem;
-    background-color: var(--brand-black);
+    background-color: var(--so-white);
 
     @media (min-width: 810px) {
         flex-flow: row nowrap;
-    }
-
-    color: var(--solid-black);
-
-    & li {
-        color: var(--solid-black);
-    }
-
-    & h4 {
-        color: var(--solid-black);
     }
 
     & img {
@@ -66,25 +56,11 @@ defineProps({
 
     a.action-link {
         margin-inline: auto;
-
-        &:hover,
-        &:visited,
-        &:active {
-            color: var(--so-white);
-        }
     }
 
 
 
     &:nth-of-type(2n) {
-        background-color: var(--so-white);
-
-        h4,
-        a,
-        p,
-        li {
-            color: var(--brand-black);
-        }
 
         @media (min-width: 810px) {
             & img {
@@ -108,36 +84,6 @@ defineProps({
 
         .ac-wrapper {
             margin-inline-end: 1rem;
-        }
-    }
-}
-
-html.light-theme {
-    .action-card {
-
-        h4,
-        a,
-        p,
-        li {
-            color: var(--so-white);
-        }
-
-        h4 {
-            color: var(--so-white);
-        }
-
-        &:nth-of-type(2n) {
-
-            a,
-            h4,
-            p,
-            li {
-                color: var(--solid-black);
-            }
-
-            & a:hover {
-                color: var(--dropdown-shadow1)
-            }
         }
     }
 }

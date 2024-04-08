@@ -3,7 +3,7 @@ import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
 import { useNavStore } from '../../stores/NavStore'
 import LangDropdown from './LangDropdown.vue'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import ThemeToggle from './ThemeToggle.vue'
 
 // Translations
@@ -19,6 +19,12 @@ const windowWidth = ref<number>()
 // check window size
 window.addEventListener('resize', checkScreenSize)
 
+onMounted(() => {
+    checkScreenSize()
+})
+
+let html = document.querySelector('html')
+
 function toggleSmallNav() {
     mobileNav.value = !mobileNav.value
 }
@@ -28,8 +34,12 @@ function checkScreenSize() {
 
     if (windowWidth.value <= 768) {
         mobile.value = true
+        mobile.value === true && html?.classList.add('mobile-view')
+
         return
     }
+
+    (mobile.value !== true && html?.classList.contains('mobile-view')) && html?.classList.remove('mobile-view')
     mobile.value = false
     mobileNav.value = false
     return
