@@ -56,6 +56,7 @@ footer {
     background-color: c.$brand-grey;
     grid-column: 1/4;
     padding-bottom: 0.5rem;
+    border-top: 1px solid var(--dropdown-shadow2);
 
     .call-to {
         >h3 {
