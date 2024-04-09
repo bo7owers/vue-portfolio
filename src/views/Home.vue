@@ -58,7 +58,47 @@ const showIframe = ref<boolean>(false)
 
     </div>
     <div v-else-if="locale === 'fr'">
-        <p>fr</p>
+        <section>
+            <h2>Une petite introduction</h2>
+            <p>Je suis développeur web et j'ai de l'expérience dans le domaine de la formation des adultes et des
+                environnements d'apprentissage en ligne. J'ai également de l'expérience dans le journalisme multimédia
+                et la création de contenu.
+            </p>
+        </section>
+        <section>
+            <h2>Expérience en développement web</h2>
+            <p>En tant que développeur web, j'ai utilisé de nombreux frameworks Javascript pour développer des activités
+                accessibles et interactives telles que :</p>
+            <ul class="frameworks">
+                <li class="vue">
+                    Vue JS
+                </li>
+                <li class="react">
+                    React
+                </li>
+                <li class="svelte">
+                    Svelte
+                </li>
+                <li class="snap">
+                    Snap! Project led by
+                    the
+                    Canada School of Public Service (CSPS).
+                </li>
+                <li class="power-apps">
+                    Microsoft PowerApps
+                </li>
+            </ul>
+        </section>
+        <section id="lms">
+            <h2>Expérience en matière de système de gestion de l'apprentissage</h2>
+            <p>J'ai de l'expérience avec les systèmes de gestion de l'apprentissage suivants :</p>
+            <ul>
+                <li>Brightspace</li>
+                <li>Moodle</li>
+                <li>Blackboard</li>
+            </ul>
+            <p>Mon objectif est de créer des expériences d'apprentissage attrayantes et accessibles sur le web.</p>
+        </section>
     </div>
     <div v-else-if="locale === 'es'">
         <p>es</p>
