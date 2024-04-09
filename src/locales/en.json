@@ -15,6 +15,10 @@
 	"portfolioView": {
 		"portfolioHeading": "Things I've built"
 	},
+	"privacyView": {
+		"heading": "Privacy page"
+	},
+
 	"navigation": {
 		"home": "Home",
 		"about": "About",

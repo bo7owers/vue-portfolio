@@ -15,6 +15,9 @@
 	"portfolioView": {
 		"portfolioHeading": "Titre de portfolio"
 	},
+	"privacyView": {
+		"heading": "Page de confidentialité"
+	},
 	"navigation": {
 		"home": "Accueil",
 		"about": "À propos",

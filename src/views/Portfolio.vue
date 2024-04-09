@@ -240,7 +240,8 @@ const frProjects = {
                         description="vidéo (en anglais seulement)" /> sur l'aïkido qui a été publiée par Glue Ottawa.
                 </p>
                 <h3>Bobine démo</h3>
-                <p id="show_iframe" tabindex="-1">Vous pouvez trouver une brève bande démo présentant mes domaines
+                <p id="show_iframe" tabindex="-1">Vous pouvez trouver une brève bande démo (en anglais seulement)
+                    présentant mes domaines
                     d'expertise en
                     sélectionnant le bouton "Afficher l'iframe" qui suit
                     qui suit. Visitez le site <router-link to="/privacy#iframe-info">page de
