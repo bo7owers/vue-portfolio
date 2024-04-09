@@ -9,7 +9,8 @@
 	"chLang": "Changer de langue",
 	"skipLink": "Passer au contenu principal",
 	"thumbnails": {
-		"thumbnailAltText": "Capture d'écran de {imgTitle}"
+		"thumbnailAltText": "Capture d'écran de {imgTitle}",
+		"visitSite": "Visitez le site !"
 	},
 	"portfolioView": {
 		"portfolioHeading": "Titre de portfolio"

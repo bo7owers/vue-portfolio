@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 defineProps({
     cardTitle: String,
@@ -12,11 +14,11 @@ defineProps({
     <div class="card">
         <h3 class="card-title">{{ cardTitle }}</h3>
         <div class="card-body">
-            <img :src="img" :alt="`Screenshot of ${cardTitle}`" class="card-img">
+            <img :src="img" :alt="t('thumbnails.thumbnailAltText', { imgTitle: cardTitle })" class="card-img">
             <slot name="cardBody"></slot>
         </div>
         <div class="card-footer">
-            <a :href="url" class="btn btn-primary">Visit the site!</a>
+            <a :href="url" class="btn btn-primary">{{ t('thumbnails.visitSite') }}</a>
         </div>
 
     </div>

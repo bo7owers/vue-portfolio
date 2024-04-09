@@ -106,13 +106,13 @@ const projects = {
 const frProjects = {
     gift: {
         title: 'Interactive Gift Label',
-        desc: `It's a fun, little web app that allows you to customise holiday labels for those times when you are wrapping presents and forget to buy labels. Just remember to allow background colors when printing!`,
+        desc: `C'est une petite application web amusante qui vous permet de personnaliser des étiquettes de vacances pour les moments où vous emballez des cadeaux et oubliez d'acheter des étiquettes. N'oubliez pas d'autoriser les couleurs d'arrière-plan lors de l'impression !`,
         href: `https://bo7owers.github.io/aov-gift-label/`,
         img: `./thumbnails/gift-label.png`
     },
     tree: {
         title: 'Vue Christmas Tree',
-        desc: `Used some Vue Js directives to render the same component while creating an HTML and CSS Christmas tree. `,
+        desc: `J'ai utilisé quelques directives Vue Js pour rendre le même composant tout en créant un arbre de Noël HTML et CSS.`,
         href: `https://bo7owers.github.io/2022-christmas-tree-lights-problem/`,
         img: `./thumbnails/tree.png`
     }
@@ -212,14 +212,16 @@ const frProjects = {
 
         </section>
         <section id="personal_projects">
-            <h2>Multimedia projects</h2>
+            <h2>Projets multimédias</h2>
             <section id="vue_advent">
-                <h3>Advent of Vue 2022</h3>
-                <p>For the 2022 holiday season, I created some projects, here are some that I think worked out the best:
+                <h3>L'avènement de Vue JS 2022</h3>
+                <p>Pour les fêtes de fin d'année 2022, j'ai créé quelques projets, dont voici ceux qui me semblent les
+                    plus
+                    réussis :
                 </p>
 
                 <div class="card-container">
-                    <Card v-for="(project, index) in projects" :key="index" :cardTitle="project.title"
+                    <Card v-for="(project, index) in frProjects" :key="index" :cardTitle="project.title"
                         :url="project.href" :img="project.img">
                         <template #cardBody>
                             <p>{{ project.desc }}</p>
@@ -229,22 +231,23 @@ const frProjects = {
             </section>
 
             <section id="j_school">
-                <h3>Video</h3>
-                <p>Back when I was in school, I experimented with photography, writing and videography.</p>
+                <h3>Vidéo</h3>
+                <p>Lorsque j'étais à l'école, j'ai expérimenté la photographie, l'écriture et la vidéographie.</p>
                 <p>
-                    One example is a
+                    Par exemple, j'ai réalisé une
                     <ExternalLink
                         href="https://glueottawa.com/2019/01/30/aikido-is-a-peaceful-martial-art-that-will-change-the-students-lives-completely/"
-                        description="video story" /> about Aikido that was published by Glue Ottawa.
+                        description="vidéo (en anglais seulement)" /> sur l'aïkido qui a été publiée par Glue Ottawa.
                 </p>
-                <h3>Demo Reel</h3>
-                <p id="show_iframe" tabindex="-1">You can find a quick demo reel showcasing my areas of expertice by
-                    selecting the "Show
-                    iframe" button
-                    that follows. Visit the <router-link to="/privacy#iframe-info">privacy page</router-link> to learn
-                    why.
+                <h3>Bobine démo</h3>
+                <p id="show_iframe" tabindex="-1">Vous pouvez trouver une brève bande démo présentant mes domaines
+                    d'expertise en
+                    sélectionnant le bouton "Afficher l'iframe" qui suit
+                    qui suit. Visitez le site <router-link to="/privacy#iframe-info">page de
+                        confidentialité</router-link>
+                    pour apprendre pourquoi.
                 </p>
-                <button @click="showIframe = !showIframe" class="btn btn-primary">Show iframe</button>
+                <button @click="showIframe = !showIframe" class="btn btn-primary">Afficher l'iframe</button>
                 <div aria-live="polite">
                     <div class="portfolio-iframe" v-if="showIframe">
                         <iframe width="560" height="315"

@@ -9,7 +9,8 @@
 	"chLang": "Change Language",
 	"skipLink": "Skip to main content.",
 	"thumbnails": {
-		"thumbnailAltText": "Screenshot of {imgTitle}"
+		"thumbnailAltText": "Screenshot of {imgTitle}",
+		"visitSite": "Visit the site!"
 	},
 	"portfolioView": {
 		"portfolioHeading": "Things I've built"
