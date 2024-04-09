@@ -1,15 +1,22 @@
 {
 	"Hello": "Bonjour",
-	"homeHeading": "Accueil titre",
+	"homeHeading": "Bonjour, c'est René",
 	"aboutHeading": "À propos titre",
 	"programmingHeading": "Programmation titre",
-	"ContactHeading": "Contactez-moi titre",
+	"ContactHeading": "Contactez-moi",
 	"openIn": "Ouvrir le lien dans un nouvel onglet",
 	"langName": "Fr",
 	"chLang": "Changer de langue",
 	"skipLink": "Passer au contenu principal",
+	"thumbnails": {
+		"thumbnailAltText": "Capture d'écran de {imgTitle}",
+		"visitSite": "Visitez le site !"
+	},
 	"portfolioView": {
 		"portfolioHeading": "Titre de portfolio"
+	},
+	"privacyView": {
+		"heading": "Page de confidentialité"
 	},
 	"navigation": {
 		"home": "Accueil",
