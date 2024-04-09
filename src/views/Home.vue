@@ -80,9 +80,7 @@ const showIframe = ref<boolean>(false)
                     Svelte
                 </li>
                 <li class="snap">
-                    Snap! Project led by
-                    the
-                    Canada School of Public Service (CSPS).
+                    Snap! Projet mené par l'École de la fonction publique du Canada (EFPC).
                 </li>
                 <li class="power-apps">
                     Microsoft PowerApps

@@ -18,7 +18,7 @@ const courses = {
             body:
                 ['Use a custom, gulp-based workflow to create interactive activities.',
                     'Use React Email to design engaging emails that are being sent to learners using the Brightspace Intelligent Agent System.',
-                    'Use release conditions to tailor the learer experience for students.',
+                    'Use release conditions to tailor the learner experience for students.',
                     'Test pages for accessibility errors and fix them.'],
             img: `./thumbnails/inc118.png`
         },
@@ -48,6 +48,46 @@ const courses = {
     }
 }
 
+
+const frCourses = {
+    main: {
+        inc118: {
+            title: 'Favoriser un milieu de travail inclusif',
+            href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=INC118&cm_locale=fr',
+            desc: 'Vue dans la plateforme d\'apprentissage',
+            body:
+                [`Utiliser un flux de travail personnalisé, basé sur gulp, pour créer des activités interactives.`,
+                    `Utiliser React Email pour concevoir des courriels attrayants qui sont envoyés aux apprenants à l'aide du système d'agent intelligent Brightspace.`,
+                    `Utiliser les conditions de libération pour adapter l'expérience de l'apprenant aux étudiants.`,
+                    `Tester les pages pour détecter les erreurs d'accessibilité et les corriger.`,],
+            img: `./thumbnails/inc118_fr.png`
+        },
+        inc101: {
+            title: 'Introduction à l\'analyse comparative entre les sexes plus (ACS Plus) ',
+            href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=INC101&cm_locale=fr',
+            desc: 'Vue dans la plateforme d\'apprentissage',
+            body: [
+                ` Collaborer avec le concepteur pédagogique pour créer un prototype d'activité à embranchements à l'aide de Figma.`,
+                `Programmer l'activité de manière à ce que l'éditeur HTML WYSIWYG (Ce que vous voyez est ce que vous obtenez en anglais) de Brightspace permette aux concepteur pédagogiques de modifier son contenu sans l'aide d'un technicien multimédia.`,
+                `Tester les pages pour détecter les erreurs d'accessibilité et les corriger.`,
+            ],
+            img: `./thumbnails/inc101_fr.png`
+        }
+    },
+    wmt203: {
+        title: 'La santé mentale et le milieu de travail : accroître la sensibilisation ',
+        href: 'https://catalogue.csps-efpc.gc.ca/product?catalog=WMT203&cm_locale=fr',
+        desc: 'Vue dans la plateforme d\'apprentissage',
+        body: [
+            ` Aider à la création d'une boîte à outils interactive en utilisant Vue Js.`,
+            `Ajouter un lecteur vidéo interactif qui posera dynamiquement des questions basées sur le contenu de la vidéo.`,
+            `Créer un glossaire bilingue.`,
+            `Tester les pages pour détecter les erreurs d'accessibilité et les corriger.`,
+        ],
+        img: `./thumbnails/wmt203_fr.png`
+    }
+}
+
 const projects = {
     gift: {
         title: 'Interactive Gift Label',
@@ -63,6 +103,20 @@ const projects = {
     }
 }
 
+const frProjects = {
+    gift: {
+        title: 'Interactive Gift Label',
+        desc: `It's a fun, little web app that allows you to customise holiday labels for those times when you are wrapping presents and forget to buy labels. Just remember to allow background colors when printing!`,
+        href: `https://bo7owers.github.io/aov-gift-label/`,
+        img: `./thumbnails/gift-label.png`
+    },
+    tree: {
+        title: 'Vue Christmas Tree',
+        desc: `Used some Vue Js directives to render the same component while creating an HTML and CSS Christmas tree. `,
+        href: `https://bo7owers.github.io/2022-christmas-tree-lights-problem/`,
+        img: `./thumbnails/tree.png`
+    }
+}
 </script>
 <template>
     <h1>{{ t('portfolioView.portfolioHeading') }}</h1>
@@ -134,7 +188,74 @@ const projects = {
         </section>
     </div>
     <div class="portfolio-content" v-else-if="locale === 'fr'">
-        <p>fr</p>
+        <section id="courses">
+            <h2>Quelques cours sur lesquels j'ai travaillé avec l'<abbr
+                    title="École de la fonction publique du Canada">EFPC</abbr></h2>
+            <p>La plupart des cours que j'ai créés sont destinés aux fonctionnaires canadiens, c'est pourquoi ils ne
+                sont
+                accessibles que via la plateforme d'apprentissage de l'<abbr
+                    title="École de la fonction publique du Canada">EFPC</abbr>. Sur cette page, vous trouverez des
+                liens
+                vers certains des cours auxquels j'ai contribué.</p>
+            <div class="action-card-container">
+                <div class="main-courses">
+                    <ActionCard v-for="(course, index) in frCourses.main" :key="index" :title="course.title"
+                        :desc="course.desc" :href="course.href" :img="course.img" :card-body="course.body">
+                    </ActionCard>
+                </div>
+                <div class="last-course">
+                    <ActionCard :title="frCourses.wmt203.title" :desc="frCourses.wmt203.desc"
+                        :href="frCourses.wmt203.href" :img="frCourses.wmt203.img" :card-body="frCourses.wmt203.body" />
+                </div>
+            </div>
+
+
+        </section>
+        <section id="personal_projects">
+            <h2>Multimedia projects</h2>
+            <section id="vue_advent">
+                <h3>Advent of Vue 2022</h3>
+                <p>For the 2022 holiday season, I created some projects, here are some that I think worked out the best:
+                </p>
+
+                <div class="card-container">
+                    <Card v-for="(project, index) in projects" :key="index" :cardTitle="project.title"
+                        :url="project.href" :img="project.img">
+                        <template #cardBody>
+                            <p>{{ project.desc }}</p>
+                        </template>
+                    </Card>
+                </div>
+            </section>
+
+            <section id="j_school">
+                <h3>Video</h3>
+                <p>Back when I was in school, I experimented with photography, writing and videography.</p>
+                <p>
+                    One example is a
+                    <ExternalLink
+                        href="https://glueottawa.com/2019/01/30/aikido-is-a-peaceful-martial-art-that-will-change-the-students-lives-completely/"
+                        description="video story" /> about Aikido that was published by Glue Ottawa.
+                </p>
+                <h3>Demo Reel</h3>
+                <p id="show_iframe" tabindex="-1">You can find a quick demo reel showcasing my areas of expertice by
+                    selecting the "Show
+                    iframe" button
+                    that follows. Visit the <router-link to="/privacy#iframe-info">privacy page</router-link> to learn
+                    why.
+                </p>
+                <button @click="showIframe = !showIframe" class="btn btn-primary">Show iframe</button>
+                <div aria-live="polite">
+                    <div class="portfolio-iframe" v-if="showIframe">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/SXbIE0TMe50?si=z-3rQh4SbM4oWNIZ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+        </section>
     </div>
     <div class="portfolio-content" v-else-if="locale === 'es'">
         <p>es</p>

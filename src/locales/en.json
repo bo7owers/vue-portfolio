@@ -8,6 +8,9 @@
 	"langName": "En",
 	"chLang": "Change Language",
 	"skipLink": "Skip to main content.",
+	"thumbnails": {
+		"thumbnailAltText": "Screenshot of {imgTitle}"
+	},
 	"portfolioView": {
 		"portfolioHeading": "Things I've built"
 	},

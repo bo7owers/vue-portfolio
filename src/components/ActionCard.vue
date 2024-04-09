@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 defineProps({
     title: String,
     desc: String,
@@ -9,7 +11,7 @@ defineProps({
 </script>
 <template>
     <div class="action-card">
-        <img :src="img" :alt="`Screenshot of ${title}`">
+        <img :src="img" :alt="t('thumbnails.thumbnailAltText', { imgTitle: title })">
         <div class="ac-wrapper">
             <h4>{{ title }}</h4>
 
