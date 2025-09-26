@@ -236,9 +236,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@intlify/core-base@npm:9.14.3":
-  version: 9.14.3
-  resolution: "@intlify/core-base@npm:9.14.3"
+"@intlify/core-base@npm:9.14.5":
+  version: 9.14.5
+  resolution: "@intlify/core-base@npm:9.14.5"
   dependencies:
     "@intlify/message-compiler": "npm:9.14.3"
     "@intlify/shared": "npm:9.14.3"
@@ -246,9 +246,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@intlify/message-compiler@npm:9.14.3":
-  version: 9.14.3
-  resolution: "@intlify/message-compiler@npm:9.14.3"
+"@intlify/message-compiler@npm:9.14.5":
+  version: 9.14.5
+  resolution: "@intlify/message-compiler@npm:9.14.5"
   dependencies:
     "@intlify/shared": "npm:9.14.3"
     source-map-js: "npm:^1.0.2"
@@ -1231,7 +1231,7 @@ __metadata:
 
 "fsevents@patch:fsevents@npm%3A~2.3.2#optional!builtin<compat/fsevents>, fsevents@patch:fsevents@npm%3A~2.3.3#optional!builtin<compat/fsevents>":
   version: 2.3.3
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.3#~builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"
   dependencies:
     node-gyp: "npm:latest"
   conditions: os=darwin
@@ -2177,9 +2177,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^4.6.4#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@^4.6.4#~builtin<compat/typescript>":
   version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
@@ -2277,12 +2277,12 @@ __metadata:
   linkType: hard
 
 "vue-i18n@npm:9":
-  version: 9.14.3
-  resolution: "vue-i18n@npm:9.14.3"
+  version: 9.14.5
+  resolution: "vue-i18n@npm:9.14.5"
   dependencies:
-    "@intlify/core-base": "npm:9.14.3"
-    "@intlify/shared": "npm:9.14.3"
-    "@vue/devtools-api": "npm:^6.5.0"
+    "@intlify/core-base": 9.14.5
+    "@intlify/shared": 9.14.5
+    "@vue/devtools-api": ^6.5.0
   peerDependencies:
     vue: ^3.0.0
   checksum: 10/f970a93fde9f8f191e9a880a3c783b74517a594a8bc3b477da179cbb22b176c1e847997bf05e1a104c89eba7a8ddfebebda4689f0bdbe3ec4039fb0cae672878
