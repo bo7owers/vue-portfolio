@@ -1,0 +1,14 @@
+{
+  "name": "vue-portfolio",
+  "private": true,
+  "version": "0.0.5",
+  "type": "module",
+  "scripts": {
+    "dev": "yarn exec eleventy -- --serve",
+    "build": "yarn exec eleventy"
+  },
+  "packageManager": "yarn@4.9.2",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
