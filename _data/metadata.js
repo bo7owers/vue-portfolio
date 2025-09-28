@@ -1,5 +1,5 @@
 export default {
-	title: "Eleventy Base Blog v9",
+	title: "BotTowers with a number 7",
 	url: "https://bo7owers.dev/",
 	language: "en",
 	description: "Tech that matters.",
