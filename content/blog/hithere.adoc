@@ -1,0 +1,11 @@
+---
+title: New adoc title
+description: Learning adoc
+date: 2025-09-30
+tags: number 2
+---
+
+= Hello World
+
+Hello everyone!
+I am learning asciidoc!
