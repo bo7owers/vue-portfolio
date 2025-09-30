@@ -1,0 +1,10 @@
+---
+title: hsnth adoc title
+description: Learning adoc
+date: 2025-09-30
+tags: number 2
+---
+
+hi there
+snth
+sh

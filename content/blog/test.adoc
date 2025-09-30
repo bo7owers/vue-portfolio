@@ -1,0 +1,18 @@
+---
+title: New adoc title
+description: Learning adoc
+date: 2025-09-30
+tags: adoc
+---
+= My First Post
+John Doe <john@example.com>
+:toc:
+
+== Introduction
+
+Hello world!
+I am writing more
+hsth
+snthshsthsh
+hithere
+snth
