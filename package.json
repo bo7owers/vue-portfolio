@@ -30,6 +30,7 @@
 		"type": "opencollective",
 		"url": "https://opencollective.com/11ty"
 	},
+	"type": "module",
 	"bugs": {
 		"url": "https://github.com/11ty/eleventy-base-blog/issues"
 	},
